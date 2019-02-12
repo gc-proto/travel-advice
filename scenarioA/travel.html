@@ -694,5 +694,16 @@
   		<![endif]-->
   <script src="../GCWeb/js/theme.js"></script>
   <script src="https://gc-proto.github.io/cra-contactus/js/cannedsearch-querystring.js"></script>
+
+  <script type="text/javascript">
+            $(document).ready(function () {
+                $(document).on('click', '#btnGoToCountry', function () {
+                    mySelection = $(this).parent().siblings("#CountryDropDown1_ddlCountries").find(":selected").val();
+                    window.location.href = "https://gc-proto.github.io/travel-advice/scenarioA/travelling/destinations/" + mySelection + ".html";
+                    return false;
+                });
+            });
+        </script>
+
 </body>
 </html>
