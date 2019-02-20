@@ -127,7 +127,7 @@
 
 <main role="main" property="mainContentOfPage" class="container">
 	<h1 id="wb-cont" class="tr-title" style="background-image:url('http://travel.gc.ca/vt/custom/images/flags/48/CU.png');"><span class="font-xxlarge"><span id="Label1">Cuba</span></span>
-	<span class="pull-right">
+	<span class="pull-right mrgn-bttm-sm">
     <a href="https://travel.gc.ca/travelling/registration" class="btn btn-primary tr-features hidden-sm hidden-xs" role="button">Register</a>
     <a href="../health-safety/travel-insurance.html" class="btn btn-primary tr-features hidden-sm hidden-xs" role="button">Travel insurance</a>
     <a href="../advisories.html" class="btn btn-primary tr-features hidden-sm hidden-xs" role="button">Destinations</a>
@@ -151,19 +151,20 @@
 	<br>
 	<span class="pull-right">
 
-<!-- <button class=" btn btn-default tr-features" role="button">Expand all</button> -->
 
-<button type="button" class="btn btn-default wb-toggle wb-init wb-toggle-inited mrgn-bttm-sm" data-toggle="{"selector": ".acc-group", "type": "on"}" aria-controls="wb-auto-2 wb-auto-3 wb-auto-4 wb-auto-5 wb-auto-6 wb-auto-7">Expand all</button>
+
+<button type="button" class="btn btn-primary wb-toggle mrgn-bttm-sm" data-toggle='{"selector": "details", "parent": ".accordion", "print": "on"}'>Expand all</button>
 
 		<!-- <a href="../destinations-print/cuba" class="btn btn-default tr-features" role="button">Expand all</a> -->
 	</span>
     <span class="clearfix"></span>
 
 	<!-- <div class="wb-tabs"> -->
-	<!-- <div class="tabpanels"> -->
-		<details id="risk" open>
+<div class="accordion">
+		<details id="risk" class="acc-group" open>
 
-			<summary>Summary</summary>
+			<summary class="wb-toggle tgl-tab" data-toggle='{"parent": ".accordion", "group": ".acc-group"}'>Summary</summary>
+      <div class="tgl-panel">
 			<h2>Summary</h2>
 
 
@@ -171,7 +172,8 @@
 
 			<div class="advisories report-status-0">
 
-			<div class="AdvisoryContainer ExNormal"><span><h3 class="text-success normal-precautions"></span>Cuba - Take normal security precautions</h3><p><a class="wb-lbx" title="Risk Levels" href="#levels">No travel advisory in place</a> in Cuba.</p></div><section class="alert alert-warning"><h3><p>Update on Canadian Embassy in Cuba staff Health and Safety</p></h3><p><a title="" href="https://www.canada.ca/en/global-affairs/news/2019/01/statement-on-health-and-security-of-canadian-diplomatic-staff-in-havana-cuba.html">Statement on the health and security of Canadian diplomatic staff in Havana, Cuba</a></p></section><h4>Travel Health Notice - Zika virus</h4><p>The Public Health Agency of Canada has issued <a title="" href="https://travel.gc.ca/travelling/health-safety/travel-health-notices/152">advice for travellers on the Zika virus</a>, recommending that Canadians practice special health precautions while travelling in affected countries. Pregnant women and those considering becoming pregnant should avoid travel to Cuba. See <a title="" href="#health">Health</a> for more information.</p>
+			<div class="AdvisoryContainer ExNormal"><span><h3 class="text-success normal-precautions"></span>Cuba - Take normal security precautions</h3><p><a class="wb-lbx" title="Risk Levels" href="#levels">No travel advisory in place</a> in Cuba.</p></div><section class="alert alert-warning"><h3><p>Update on Canadian Embassy in Cuba staff Health and Safety</p></h3><p><a title="" href="https://www.canada.ca/en/global-affairs/news/2019/01/statement-on-health-and-security-of-canadian-diplomatic-staff-in-havana-cuba.html">Statement on the health and security of Canadian diplomatic staff in Havana, Cuba</a></p></section><h4>Travel Health Notice - Zika virus</h4><p>The Public Health Agency of Canada has issued <a title="" href="https://travel.gc.ca/travelling/health-safety/travel-health-notices/152">advice for travellers on the Zika virus</a>, recommending that Canadians practice special health precautions while travelling in affected countries. Pregnant women and those considering becoming pregnant should avoid travel to Cuba.<br> See <a title="" href="#health">Health</a> for more information.</p>
+        <!-- <a href="https://gc-proto.github.io/travel-advice/scenarioA/travelling/destinations/cuba-1.html#health" class="btn btn-primary tr-features" role="button">Health</a> -->
 			</div>
 
 			<!-- END advisories -->
@@ -192,7 +194,7 @@
 			<summary>Health</summary>
 			<h2>Health</h2>
 			<!-- PHAC Data Start --><!-- PHAC Notices Start --><div class="col-md-12"><div class="panel panel-primary"><div class="panel-heading">Related Travel Health Notices</div><div class="panel-body"><ul><li><a href="http://travel.gc.ca/travelling/health-safety/travel-health-notices/152">Zika virus: Advice for travellers</a> - January 17, 2019</li></ul></div></div></div><!-- PHAC Notices End --><!-- PHAC Care Start --><div class="col-md-12"><div class="panel panel-primary"><div class="panel-body">Consult a health care professional or visit a travel health clinic preferably six weeks before you travel.</div></div></div><!-- PHAC Care End -->
-      <!-- <details open="open" class="health-tab health-monitoring"></details><div class="clear"></div><details open="open" class="health-tab health-monitoring"></details><div class="clear"></div> -->
+      <details open="open" class="health-tab health-monitoring"></details><div class="clear"></div>
       <!-- PHAC Vaccines Start -->
       <details class="health-tab"><summary class="healthtabexpandablesection">Vaccines</summary><h3>Routine Vaccines</h3><p>Be sure that your&nbsp;<a href="http://www.phac-aspc.gc.ca/im/is-cv/index-eng.php">routine vaccines</a>, as per your province or territory, are up-to-date regardless of your travel destination.</p><p>Some of these vaccines include: measles-mumps-rubella (MMR), diphtheria, tetanus, pertussis, polio, varicella (chickenpox), influenza and others.</p><h3>Vaccines to Consider</h3><p>You may be at risk for these vaccine-preventable diseases while travelling in this country. Talk to your travel health professional about which ones are right for you.</p><details class="health-tab"><summary class="background-light healthtabexpandablesection">Hepatitis A</summary><p>
 	<a href="http://travel.gc.ca/travelling/health-safety/diseases/hepatitis-a">Hepatitis A</a> is a disease of the liver spread&nbsp;through contaminated food&nbsp;and water or contact with an infected person. All those travelling to regions with a risk of hepatitis A infection should get vaccinated.</p>
@@ -338,16 +340,18 @@
 					<h1 class="modal-title">Risk Levels</h1>
 			 </header>
 			 <div class="modal-body">
-					<b>Exercise normal security precautions</b>
+					<b class="text-success">Exercise normal security precautions</b>
 					<p>There are no significant safety and security concerns. The overall safety and security situation is similar to that of Canada. You should take normal security precautions.</p>
-					<b>Exercise a high degree of caution</b>
+					<b class="text-warning">Exercise a high degree of caution</b>
 					<p>There are identifiable safety and security concerns or the safety and security situation could change with little notice. You should exercise a high degree of caution at all times, monitor local media and follow the instructions of local authorities.</p>
 					<section class="alert alert-danger">
 						 <p><b>IMPORTANT:</b> The two levels below are official Government of Canada Travel Advisories and are issued when the safety and security of Canadians travelling or living in the country may be compromised.</p>
 					</section>
-					<b>Avoid non-essential travel</b>
+					<b class="text-danger">Avoid non-essential travel</b><br>
+          <b>Advisory in place</b>
 					<p>There are specific safety and security concerns that could put you at risk. You should reconsider your need to travel to the country, territory or region. If you are already in the country, territory or region, you should reconsider whether or not you really need to be there. If not, you should consider leaving while it is still safe to do so. It is up to you to decide what &ldquo;non-essential travel&rdquo; means, based on family or business requirements, knowledge of or familiarity with a country, territory or region, and other factors.</p>
-					<b>Avoid all travel</b>
+					<b class="text-danger">AVOID ALL TRAVEL</b><br>
+              <b>Advisory in place</b>
 					<p>There is an extreme risk to your personal safety and security. You should not travel to this country, territory or region. If you are already in the country, territory or region, you should consider leaving if it is safe to do so.</p>
 			 </div>
 </section>
