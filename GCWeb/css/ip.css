@@ -68,7 +68,7 @@ ul.feeds-cont li a {
 }
 .text-background-1 {
 
-		background-color: #26374a;
+		background-color: #fff;
 		padding-top: 20px !important;
 	/*	text-shadow: 2px 2px 4px #111; */
 
@@ -79,7 +79,7 @@ ul.feeds-cont li a {
 
 .text-background-2 {
 
-		background-color: #26374a;
+		background-color: #fff;
 		padding-bottom: 20px;
 	/*	text-shadow: 2px 2px 4px #111; */
 		/* opacity: .95; */
