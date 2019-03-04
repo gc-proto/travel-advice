@@ -16,3 +16,28 @@ h1.tr-title {
     background: no-repeat transparent;
     padding: 6px 0 6px 61px;
 }
+
+
+/* start custom breadcrumb  */
+
+
+@media screen and (max-width: 737px) {
+#wb-bc li:before {
+		color: #333;
+		content: "<"!important;
+		font-size: 1.5em;
+}
+
+.gcweb-v2~#wb-bc ol {
+
+  margin-top: 5px !important;
+}
+
+}
+@media screen and (min-width: 737px) {
+.no-break-breadcrumb {
+	display: inline-block!important;
+}
+
+
+}
