@@ -25,7 +25,8 @@ ul.feeds-cont li a {
 
 	font-size: 17px !important;
 	font-weight: 600 !important;
-	padding-bottom: 6px ;
+	line-height: 1.35em !important;
+	padding-bottom: 10px ;
 	font-family: 'Lato', sans-serif !important;
 
 }
