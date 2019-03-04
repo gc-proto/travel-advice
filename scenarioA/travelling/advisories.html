@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
 		wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
-    <title>Travel Advice and Advisories - Travel.gc.ca</title>
+    <title>Travel advice and advisories - Canada.ca</title>
 
 <meta content="width=device-width,initial-scale=1" name="viewport">
 <meta name="description" content="Web Experience Toolkit (WET) includes reusable components for building and maintaining innovative Web sites that are accessible, usable, and interoperable. These reusable components are open source software and free for use by departments and external Web communities">
@@ -126,21 +126,26 @@
                    <div class="alert alert-info">
                        <p>Please help improve our website. <a href="http://fluidsurveys.com/s/tbsr3/langeng/">See if you qualify</a>.</p>
                    </div> -->
-                   <h1 id="wb-cont">Travel Advice and Advisories</h1>
+                   <h1 id="wb-cont">Travel advice and advisories</h1>
 
-                   <p>The Travel Advice and Advisories are the Government of Canada’s official source of destination-specific travel information. They give you important advice to help you to make informed decisions and to travel safely while you are abroad.</p>
-                   <p>No matter where you plan to travel, make sure you check the Travel Advice and Advisories page for your destination twice: once when you are planning your trip, and again shortly before you leave. Safety and security conditions may change between the date you book your travel and your departure date.</p>
-                   <p>See <a href="https://travel.gc.ca/travelling/advisories/faq">Travel Advice and Advisories – FAQ</a> for more information.</p>
-                   <p>Choose your destination below to see regularly updated information on:</p>
+                   <p>Official destination-specific travel information from the Government of Canada. Important advice to help you to make informed decisions and to travel safely while abroad.</p>
+                   <p>Check the Travel advice page for your destination <strong>twice</strong>:
+                     <ol>
+                       <li>when you are planning your trip</li>
+                       <li>shortly before you leave</li>
+                     </ol>
+                       Conditions <strong>may change</strong> between when you book your travel and when you leave.</p>
+                   <!-- <p>See <a href="https://travel.gc.ca/travelling/advisories/faq">Travel Advice and Advisories – FAQ</a> for more information.</p> -->
+                   <!-- <p>Choose your destination below to see regularly updated information on:</p> -->
 
-                   <ul>
+                   <!-- <ul>
                      <li>local safety and security conditions and areas to avoid</li>
                      <li>entry and exit requirements</li>
                      <li>local laws and culture</li>
                      <li>possible health hazards and health restrictions</li>
                      <li>natural hazards and climate</li>
                      <li>where to find help while you are travelling abroad</li>
-                   </ul>
+                   </ul> -->
 
                    <div class="row">
                        <div class="col-md-4">
@@ -148,7 +153,7 @@
 
 <div class="input-group">
    <label for="CountryDropDown1_ddlCountries" class="wb-inv">Where do you want to go?</label>
-   <select name="CountryDropDown1$ddlCountries" id="CountryDropDown1_ddlCountries" placeholder="Type in your destination" class="form-control" Title="Where do you want to go?">
+   <select name="CountryDropDown1$ddlCountries" id="CountryDropDown1_ddlCountries" placeholder="Type in your destination" class="form-control" Title="Where will you travel?">
  <option value="">Select a destination</option>
  <option value="afghanistan">Afghanistan</option>
  <option value="albania">Albania</option>
@@ -211,6 +216,7 @@
  <option value="dominica">Dominica</option>
  <option value="dominican-republic">Dominican Republic</option>
  <option value="ecuador">Ecuador</option>
+ <option value="united-kingdom">England (United Kingdom)</option>
  <option value="egypt">Egypt</option>
  <option value="el-salvador">El Salvador</option>
  <option value="equatorial-guinea">Equatorial Guinea</option>
@@ -304,6 +310,7 @@
  <option value="niger">Niger</option>
  <option value="nigeria">Nigeria</option>
  <option value="niue">Niue</option>
+ <option value="united-kingdom">Northern Ireland (United Kingdom)</option>
  <option value="northern-marianas">Northern Marianas</option>
  <option value="norway">Norway</option>
  <option value="oman">Oman</option>
@@ -333,6 +340,7 @@
  <option value="san-marino">San Marino</option>
  <option value="sao-tome-and-principe">Sao Tome and Principe</option>
  <option value="saudi-arabia">Saudi Arabia</option>
+ <option value="united-kingdom">Scotland (United Kingdom)</option>
  <option value="senegal">Senegal</option>
  <option value="serbia">Serbia</option>
  <option value="seychelles">Seychelles</option>
@@ -377,12 +385,13 @@
  <option value="venezuela">Venezuela</option>
  <option value="vietnam">Vietnam</option>
  <option value="virgin-islands-u-s">Virgin Islands (U.S.)</option>
+ <option value="united-kingdom">Wales (United Kingdom)</option>
  <option value="yemen">Yemen</option>
  <option value="zambia">Zambia</option>
  <option value="zimbabwe">Zimbabwe</option>
 </select>
    <span class="input-group-btn">
-       <button class="btn btn-default" id="btnGoToCountry" type="button">Go!</button>
+       <button class="btn btn-default" id="btnGoToCountry" type="button">Go</button>
    </span>
 </div>
 
@@ -393,7 +402,7 @@
                        <div class="col-md-6">
                            <div id="mapLauncher">
                                <br/>
-                               <button id="btnViewMap" onClick="launchMap(); _gaq.push(['_trackEvent', 'travel_advice', 'click', 'view_map', 'true']); return false;" type="button" class="btn btn-default">View map</button>
+                               <button id="btnViewMap" onClick="launchMap(); _gaq.push(['_trackEvent', 'travel_advice', 'click', 'view_map', 'true']); return false;" type="button" class="btn btn-default">Choose destination by  map</button>
                            </div>
                        </div>
                    </div>
@@ -433,12 +442,13 @@
  3. Column 4 is sorted by desc first then asc
  -->
 
-   <table id="reportlist" class="wb-tables table" data-wb-tables='{ "bPaginate": false, "order": [ 3, "desc" ],
+   <table id="reportlist" class="wb-tables table" data-wb-tables='{ "bPaginate": false, "order": [ 1, "asc" ],
    "oLanguage": { "sSearch": "Filter destinations" },
    "aoColumns": [
      { "bVisible": false },
      { "iDataSort": 0 },
      null,
+     { "bVisible": false },
      { "asSorting": [ "desc", "asc" ] }
    ]
    }'>
@@ -449,7 +459,7 @@
          <th>English</th> <!-- hidden column -->
          <th>Destination</th>
          <th>Advisory</th>
-         <!-- <th>Latest Updates</th> -->
+         <th>Keywords</th> <!-- hidden column -->
          <th>Last updated</th>
        </tr>
      </thead>
@@ -465,7 +475,7 @@
      <td><a href='https://travel.gc.ca/destinations/afghanistan'>Afghanistan</a></td>
      <td><!-- START adv-afghanistan -->Avoid all travel<!-- END adv-afghanistan --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
-     <td style="width: 200px;">2018-11-26 13:08:10</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-26 13:08:10</td>
      </tr>
 
 
@@ -479,7 +489,7 @@
      <td><a href='https://travel.gc.ca/destinations/albania'>Albania</a></td>
      <td><!-- START adv-albania -->Exercise normal security precautions (with regional advisories)<!-- END adv-albania --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-11-26 10:48:04</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-26 10:48:04</td>
      </tr>
 
 
@@ -493,7 +503,7 @@
      <td><a href='https://travel.gc.ca/destinations/algeria'>Algeria</a></td>
      <td><!-- START adv-algeria -->Exercise a high degree of caution (with regional advisories)<!-- END adv-algeria --></td>
      <!-- <td>Safety and security - Elections.</td> -->
-     <td style="width: 200px;">2019-01-28 14:13:52</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-28 14:13:52</td>
      </tr>
 
 
@@ -507,7 +517,7 @@
      <td><a href='https://travel.gc.ca/destinations/american-samoa'>American Samoa</a></td>
      <td><!-- START adv-american-samoa -->Exercise normal security precautions<!-- END adv-american-samoa --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-03-09 12:01:07</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-03-09 12:01:07</td>
      </tr>
 
 
@@ -521,7 +531,7 @@
      <td><a href='https://travel.gc.ca/destinations/andorra'>Andorra</a></td>
      <td><!-- START adv-andorra -->Exercise normal security precautions<!-- END adv-andorra --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
-     <td style="width: 200px;">2018-06-25 12:17:05</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-06-25 12:17:05</td>
      </tr>
 
 
@@ -535,7 +545,7 @@
      <td><a href='https://travel.gc.ca/destinations/angola'>Angola</a></td>
      <td><!-- START adv-angola -->Exercise a high degree of caution (with regional advisories)<!-- END adv-angola --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:33:11</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:33:11</td>
      </tr>
 
 
@@ -549,7 +559,7 @@
      <td><a href='https://travel.gc.ca/destinations/anguilla'>Anguilla</a></td>
      <td><!-- START adv-anguilla -->Exercise normal security precautions<!-- END adv-anguilla --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:28:58</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:28:58</td>
      </tr>
 
 
@@ -563,7 +573,7 @@
      <td><a href='https://travel.gc.ca/destinations/antarctica'>Antarctica</a></td>
      <td><!-- START adv-antarctica -->Exercise normal security precautions<!-- END adv-antarctica --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
-     <td style="width: 200px;">2018-07-24 15:13:58</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-07-24 15:13:58</td>
      </tr>
 
 
@@ -577,7 +587,7 @@
      <td><a href='https://travel.gc.ca/destinations/antigua-and-barbuda'>Antigua and Barbuda</a></td>
      <td><!-- START adv-antigua-and-barbuda -->Exercise normal security precautions<!-- END adv-antigua-and-barbuda --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:28:58</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:28:58</td>
      </tr>
 
 
@@ -591,7 +601,7 @@
      <td><a href='https://travel.gc.ca/destinations/argentina'>Argentina</a></td>
      <td><!-- START adv-argentina -->Exercise normal security precautions<!-- END adv-argentina --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:46:23</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:46:23</td>
      </tr>
 
 
@@ -605,7 +615,7 @@
      <td><a href='https://travel.gc.ca/destinations/armenia'>Armenia</a></td>
      <td><!-- START adv-armenia -->Exercise a high degree of caution (with regional advisories)<!-- END adv-armenia --></td>
      <!-- <td>Assistance - email of Consulate of Canada in Yerevan</td> -->
-     <td style="width: 200px;">2018-11-05 16:50:12</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-05 16:50:12</td>
      </tr>
 
 
@@ -619,7 +629,7 @@
      <td><a href='https://travel.gc.ca/destinations/aruba'>Aruba</a></td>
      <td><!-- START adv-aruba -->Exercise normal security precautions<!-- END adv-aruba --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:28:58</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:28:58</td>
      </tr>
 
 
@@ -633,7 +643,7 @@
      <td><a href='https://travel.gc.ca/destinations/australia'>Australia</a></td>
      <td><!-- START adv-australia -->Exercise normal security precautions<!-- END adv-australia --></td>
      <!-- <td>Natural disasters and climate - removal of information on tropical cyclone Owen</td> -->
-     <td style="width: 200px;">2018-12-17 11:39:52</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-17 11:39:52</td>
      </tr>
 
 
@@ -647,7 +657,7 @@
      <td><a href='https://travel.gc.ca/destinations/austria'>Austria</a></td>
      <td><!-- START adv-austria -->Exercise normal security precautions<!-- END adv-austria --></td>
      <!-- <td>Editorial.</td> -->
-     <td style="width: 200px;">2018-05-01 10:55:56</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-05-01 10:55:56</td>
      </tr>
 
 
@@ -661,7 +671,7 @@
      <td><a href='https://travel.gc.ca/destinations/azerbaijan'>Azerbaijan</a></td>
      <td><!-- START adv-azerbaijan -->Exercise a high degree of caution (with regional advisories)<!-- END adv-azerbaijan --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-10-30 17:05:06</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-10-30 17:05:06</td>
      </tr>
 
 
@@ -675,7 +685,7 @@
      <td><a href='https://travel.gc.ca/destinations/azores'>Azores</a></td>
      <td><!-- START adv-azores -->Exercise normal security precautions<!-- END adv-azores --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
-     <td style="width: 200px;">2019-01-31 15:01:06</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-31 15:01:06</td>
      </tr>
 
 
@@ -689,7 +699,7 @@
      <td><a href='https://travel.gc.ca/destinations/bahamas'>Bahamas</a></td>
      <td><!-- START adv-bahamas -->Exercise a high degree of caution<!-- END adv-bahamas --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2019-01-29 10:42:09</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-29 10:42:09</td>
      </tr>
 
 
@@ -703,7 +713,7 @@
      <td><a href='https://travel.gc.ca/destinations/bahrain'>Bahrain</a></td>
      <td><!-- START adv-bahrain -->Exercise a high degree of caution<!-- END adv-bahrain --></td>
      <!-- <td>Safety and security - removal of information on elections</td> -->
-     <td style="width: 200px;">2018-12-03 12:31:40</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-03 12:31:40</td>
      </tr>
 
 
@@ -717,7 +727,7 @@
      <td><a href='https://travel.gc.ca/destinations/bangladesh'>Bangladesh</a></td>
      <td><!-- START adv-bangladesh -->Exercise a high degree of caution (with regional advisories)<!-- END adv-bangladesh --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:49:07</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:49:07</td>
      </tr>
 
 
@@ -731,7 +741,7 @@
      <td><a href='https://travel.gc.ca/destinations/barbados'>Barbados</a></td>
      <td><!-- START adv-barbados -->Exercise normal security precautions<!-- END adv-barbados --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:28:58</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:28:58</td>
      </tr>
 
 
@@ -745,7 +755,7 @@
      <td><a href='https://travel.gc.ca/destinations/belarus'>Belarus</a></td>
      <td><!-- START adv-belarus -->Exercise normal security precautions<!-- END adv-belarus --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-12-14 11:58:40</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
 
 
@@ -759,7 +769,7 @@
      <td><a href='https://travel.gc.ca/destinations/belgium'>Belgium</a></td>
      <td><!-- START adv-belgium -->Exercise a high degree of caution<!-- END adv-belgium --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-10-30 16:19:05</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-10-30 16:19:05</td>
      </tr>
 
 
@@ -773,7 +783,7 @@
      <td><a href='https://travel.gc.ca/destinations/belize'>Belize</a></td>
      <td><!-- START adv-belize -->Exercise a high degree of caution<!-- END adv-belize --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:34:58</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:34:58</td>
      </tr>
 
 
@@ -787,7 +797,7 @@
      <td><a href='https://travel.gc.ca/destinations/benin'>Benin</a></td>
      <td><!-- START adv-benin -->Exercise a high degree of caution (with regional advisories)<!-- END adv-benin --></td>
      <!-- <td>Assistance - Consular assistance.</td> -->
-     <td style="width: 200px;">2018-12-11 15:56:25</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-11 15:56:25</td>
      </tr>
 
 
@@ -801,7 +811,7 @@
      <td><a href='https://travel.gc.ca/destinations/bermuda'>Bermuda</a></td>
      <td><!-- START adv-bermuda -->Exercise normal security precautions<!-- END adv-bermuda --></td>
      <!-- <td>Assistance - Consulate of Canada in Bermuda</td> -->
-     <td style="width: 200px;">2019-01-11 12:01:35</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-11 12:01:35</td>
      </tr>
 
 
@@ -815,7 +825,7 @@
      <td><a href='https://travel.gc.ca/destinations/bhutan'>Bhutan</a></td>
      <td><!-- START adv-bhutan -->Exercise normal security precautions<!-- END adv-bhutan --></td>
      <!-- <td>Editorial change</td> -->
-     <td style="width: 200px;">2018-08-31 16:28:27</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-08-31 16:28:27</td>
      </tr>
 
 
@@ -829,7 +839,7 @@
      <td><a href='https://travel.gc.ca/destinations/bolivia'>Bolivia</a></td>
      <td><!-- START adv-bolivia -->Exercise a high degree of caution<!-- END adv-bolivia --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:46:23</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:46:23</td>
      </tr>
 
 
@@ -843,7 +853,7 @@
      <td><a href='https://travel.gc.ca/destinations/bonaire'>Bonaire</a></td>
      <td><!-- START adv-bonaire -->Exercise normal security precautions<!-- END adv-bonaire --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:28:58</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:28:58</td>
      </tr>
 
 
@@ -857,7 +867,7 @@
      <td><a href='https://travel.gc.ca/destinations/bosnia-and-herzegovina'>Bosnia and Herzegovina</a></td>
      <td><!-- START adv-bosnia-and-herzegovina -->Exercise a high degree of caution<!-- END adv-bosnia-and-herzegovina --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2019-02-01 09:09:48</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-02-01 09:09:48</td>
      </tr>
 
 
@@ -871,7 +881,7 @@
      <td><a href='https://travel.gc.ca/destinations/botswana'>Botswana</a></td>
      <td><!-- START adv-botswana -->Exercise normal security precautions<!-- END adv-botswana --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-12-18 10:16:59</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-18 10:16:59</td>
      </tr>
 
 
@@ -885,7 +895,7 @@
      <td><a href='https://travel.gc.ca/destinations/brazil'>Brazil</a></td>
      <td><!-- START adv-brazil -->Exercise a high degree of caution<!-- END adv-brazil --></td>
      <!-- <td>Safety and security - dam collapse</td> -->
-     <td style="width: 200px;">2019-01-28 11:12:16</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-28 11:12:16</td>
      </tr>
 
 
@@ -899,7 +909,7 @@
      <td><a href='https://travel.gc.ca/destinations/british-virgin-islands'>British Virgin Islands</a></td>
      <td><!-- START adv-british-virgin-islands -->Exercise normal security precautions<!-- END adv-british-virgin-islands --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:29:58</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:29:58</td>
      </tr>
 
 
@@ -913,7 +923,7 @@
      <td><a href='https://travel.gc.ca/destinations/brunei-darussalam'>Brunei Darussalam</a></td>
      <td><!-- START adv-brunei-darussalam -->Exercise normal security precautions<!-- END adv-brunei-darussalam --></td>
      <!-- <td>Laws and culture - Ramadan 2019.</td> -->
-     <td style="width: 200px;">2018-06-20 12:54:38</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-06-20 12:54:38</td>
      </tr>
 
 
@@ -927,7 +937,7 @@
      <td><a href='https://travel.gc.ca/destinations/bulgaria'>Bulgaria</a></td>
      <td><!-- START adv-bulgaria -->Exercise normal security precautions<!-- END adv-bulgaria --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2019-01-17 09:10:10</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-17 09:10:10</td>
      </tr>
 
 
@@ -941,7 +951,7 @@
      <td><a href='https://travel.gc.ca/destinations/burkina-faso'>Burkina Faso</a></td>
      <td><!-- START adv-burkina-faso -->Avoid non-essential travel (with regional advisories)<!-- END adv-burkina-faso --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:57:12</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:57:12</td>
      </tr>
 
 
@@ -955,7 +965,7 @@
      <td><a href='https://travel.gc.ca/destinations/burundi'>Burundi</a></td>
      <td><!-- START adv-burundi -->Avoid all travel<!-- END adv-burundi --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:38:40</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:38:40</td>
      </tr>
 
 
@@ -969,7 +979,7 @@
      <td><a href='https://travel.gc.ca/destinations/cabo-verde'>Cabo Verde</a></td>
      <td><!-- START adv-cabo-verde -->Exercise a high degree of caution<!-- END adv-cabo-verde --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:57:12</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:57:12</td>
      </tr>
 
 
@@ -983,7 +993,7 @@
      <td><a href='./destinations/cambodia.html'>Cambodia</a></td>
      <td><!-- START adv-cambodia -->Exercise a high degree of caution<!-- END adv-cambodia --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:52:05</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:52:05</td>
      </tr>
 
 
@@ -997,7 +1007,7 @@
      <td><a href='https://travel.gc.ca/destinations/cameroon'>Cameroon</a></td>
      <td><!-- START adv-cameroon -->Exercise a high degree of caution (with regional advisories)<!-- END adv-cameroon --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:33:11</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:33:11</td>
      </tr>
 
 
@@ -1011,7 +1021,7 @@
      <td><a href='https://travel.gc.ca/destinations/canary-islands'>Canary Islands</a></td>
      <td><!-- START adv-canary-islands -->Exercise normal security precautions<!-- END adv-canary-islands --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-11-26 10:49:48</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-26 10:49:48</td>
      </tr>
 
 
@@ -1025,7 +1035,7 @@
      <td><a href='./destinations/cayman-islands.html'>Cayman Islands</a></td>
      <td><!-- START adv-cayman-islands -->Exercise normal security precautions<!-- END adv-cayman-islands --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-11-27 13:40:58</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-27 13:40:58</td>
      </tr>
 
 
@@ -1039,7 +1049,7 @@
      <td><a href='https://travel.gc.ca/destinations/central-african-republic'>Central African Republic</a></td>
      <td><!-- START adv-central-african-republic -->Avoid all travel<!-- END adv-central-african-republic --></td>
      <!-- <td>Editorial Change</td> -->
-     <td style="width: 200px;">2019-01-29 12:05:15</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-29 12:05:15</td>
      </tr>
 
 
@@ -1053,7 +1063,7 @@
      <td><a href='https://travel.gc.ca/destinations/chad'>Chad</a></td>
      <td><!-- START adv-chad -->Avoid non-essential travel (with regional advisories)<!-- END adv-chad --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2019-01-07 13:39:43</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-07 13:39:43</td>
      </tr>
 
 
@@ -1067,7 +1077,7 @@
      <td><a href='https://travel.gc.ca/destinations/chile'>Chile</a></td>
      <td><!-- START adv-chile -->Exercise normal security precautions<!-- END adv-chile --></td>
      <!-- <td>Safety and security - removal of information on the explosion in Santiago</td> -->
-     <td style="width: 200px;">2019-01-17 14:27:05</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-17 14:27:05</td>
      </tr>
 
 
@@ -1081,7 +1091,7 @@
      <td><a href='https://travel.gc.ca/destinations/china'>China</a></td>
      <td><!-- START adv-china -->Exercise a high degree of caution<!-- END adv-china --></td>
      <!-- <td>Risk level(s) - risk of arbitrary enforcement of local laws; Laws and culture - death penalty, penalties for drug-related offences</td> -->
-     <td style="width: 200px;">2019-01-14 19:29:40</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-14 19:29:40</td>
      </tr>
 
 
@@ -1095,7 +1105,7 @@
      <td><a href='https://travel.gc.ca/destinations/colombia'>Colombia</a></td>
      <td><!-- START adv-colombia -->Exercise a high degree of caution (with regional advisories)<!-- END adv-colombia --></td>
      <!-- <td>Safety and security - peace talks broke down</td> -->
-     <td style="width: 200px;">2019-01-25 10:49:36</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-25 10:49:36</td>
      </tr>
 
 
@@ -1109,7 +1119,7 @@
      <td><a href='https://travel.gc.ca/destinations/comoros'>Comoros</a></td>
      <td><!-- START adv-comoros -->Exercise a high degree of caution<!-- END adv-comoros --></td>
      <!-- <td>Safety and security - Elections.</td> -->
-     <td style="width: 200px;">2019-01-31 08:51:45</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-31 08:51:45</td>
      </tr>
 
 
@@ -1123,7 +1133,7 @@
      <td><a href='https://travel.gc.ca/destinations/cook-islands'>Cook Islands</a></td>
      <td><!-- START adv-cook-islands -->Exercise normal security precautions<!-- END adv-cook-islands --></td>
      <!-- <td>Editorial.</td> -->
-     <td style="width: 200px;">2018-05-01 10:55:56</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-05-01 10:55:56</td>
      </tr>
 
 
@@ -1137,7 +1147,7 @@
      <td><a href='./destinations/costa-rica.html'>Costa Rica</a></td>
      <td><!-- START adv-costa-rica -->Exercise a high degree of caution<!-- END adv-costa-rica --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:34:58</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:34:58</td>
      </tr>
 
 
@@ -1151,7 +1161,7 @@
      <td><a href='https://travel.gc.ca/destinations/cote-d-ivoire-ivory-coast'>C&#244;te d&#39;Ivoire (Ivory Coast)</a></td>
      <td><!-- START adv-cote-d-ivoire-ivory-coast -->Exercise a high degree of caution (with regional advisories)<!-- END adv-cote-d-ivoire-ivory-coast --></td>
      <!-- <td>Editorial Change</td> -->
-     <td style="width: 200px;">2019-01-29 12:15:02</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-29 12:15:02</td>
      </tr>
 
 
@@ -1165,7 +1175,7 @@
      <td><a href='https://travel.gc.ca/destinations/croatia'>Croatia</a></td>
      <td><!-- START adv-croatia -->Exercise normal security precautions<!-- END adv-croatia --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-12-14 11:58:40</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
 
 
@@ -1179,7 +1189,7 @@
      <td><a href='./destinations/cuba.html'>Cuba</a></td>
      <td><!-- START adv-cuba -->Exercise normal security precautions<!-- END adv-cuba --></td>
      <!-- <td>Natural disasters and climate - tornado in Havana</td> -->
-     <td style="width: 200px;">2019-01-31 12:10:55</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-31 12:10:55</td>
      </tr>
 
 
@@ -1193,7 +1203,7 @@
      <td><a href='https://travel.gc.ca/destinations/curacao'>Cura&#231;ao</a></td>
      <td><!-- START adv-curacao -->Exercise normal security precautions<!-- END adv-curacao --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:29:58</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:29:58</td>
      </tr>
 
 
@@ -1207,7 +1217,7 @@
      <td><a href='https://travel.gc.ca/destinations/cyprus'>Cyprus</a></td>
      <td><!-- START adv-cyprus -->Exercise normal security precautions<!-- END adv-cyprus --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
-     <td style="width: 200px;">2018-08-08 14:12:17</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-08-08 14:12:17</td>
      </tr>
 
 
@@ -1221,7 +1231,7 @@
      <td><a href='https://travel.gc.ca/destinations/czech-republic'>Czech Republic</a></td>
      <td><!-- START adv-czech-republic -->Exercise normal security precautions<!-- END adv-czech-republic --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-12-14 11:58:40</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
 
 
@@ -1235,7 +1245,7 @@
      <td><a href='https://travel.gc.ca/destinations/congo-kinshasa'>Democratic Republic of Congo (Kinshasa)</a></td>
      <td><!-- START adv-congo-kinshasa -->Avoid non-essential travel (with regional advisories)<!-- END adv-congo-kinshasa --></td>
      <!-- <td>Safety and security - Elections.</td> -->
-     <td style="width: 200px;">2019-01-25 15:05:01</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-25 15:05:01</td>
      </tr>
 
 
@@ -1249,7 +1259,7 @@
      <td><a href='https://travel.gc.ca/destinations/denmark'>Denmark</a></td>
      <td><!-- START adv-denmark -->Exercise normal security precautions<!-- END adv-denmark --></td>
      <!-- <td>Laws and culture - Identification</td> -->
-     <td style="width: 200px;">2018-07-13 14:23:43</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-07-13 14:23:43</td>
      </tr>
 
 
@@ -1263,7 +1273,7 @@
      <td><a href='https://travel.gc.ca/destinations/djibouti'>Djibouti</a></td>
      <td><!-- START adv-djibouti -->Exercise a high degree of caution (with regional advisories)<!-- END adv-djibouti --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-12-27 16:07:41</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-27 16:07:41</td>
      </tr>
 
 
@@ -1277,7 +1287,7 @@
      <td><a href='https://travel.gc.ca/destinations/dominica'>Dominica</a></td>
      <td><!-- START adv-dominica -->Exercise normal security precautions<!-- END adv-dominica --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:29:58</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:29:58</td>
      </tr>
 
 
@@ -1291,7 +1301,7 @@
      <td><a href='https://travel.gc.ca/destinations/dominican-republic'>Dominican Republic</a></td>
      <td><!-- START adv-dominican-republic -->Exercise a high degree of caution<!-- END adv-dominican-republic --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:29:58</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:29:58</td>
      </tr>
 
 
@@ -1305,7 +1315,7 @@
      <td><a href='https://travel.gc.ca/destinations/ecuador'>Ecuador</a></td>
      <td><!-- START adv-ecuador -->Exercise a high degree of caution (with regional advisories)<!-- END adv-ecuador --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:46:23</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:46:23</td>
      </tr>
 
 
@@ -1319,7 +1329,7 @@
      <td><a href='https://travel.gc.ca/destinations/egypt'>Egypt</a></td>
      <td><!-- START adv-egypt -->Avoid non-essential travel (with regional advisories)<!-- END adv-egypt --></td>
      <!-- <td>Safety and security - attack on tourist bus near Giza</td> -->
-     <td style="width: 200px;">2018-12-28 16:01:09</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-28 16:01:09</td>
      </tr>
 
 
@@ -1333,7 +1343,7 @@
      <td><a href='https://travel.gc.ca/destinations/el-salvador'>El Salvador</a></td>
      <td><!-- START adv-el-salvador -->Exercise a high degree of caution<!-- END adv-el-salvador --></td>
      <!-- <td>Safety and security - presidential elections</td> -->
-     <td style="width: 200px;">2019-01-31 16:29:19</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-31 16:29:19</td>
      </tr>
 
 
@@ -1347,7 +1357,7 @@
      <td><a href='https://travel.gc.ca/destinations/equatorial-guinea'>Equatorial Guinea</a></td>
      <td><!-- START adv-equatorial-guinea -->Exercise a high degree of caution<!-- END adv-equatorial-guinea --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-10-30 17:13:34</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-10-30 17:13:34</td>
      </tr>
 
 
@@ -1361,7 +1371,7 @@
      <td><a href='https://travel.gc.ca/destinations/eritrea'>Eritrea</a></td>
      <td><!-- START adv-eritrea -->Avoid non-essential travel (with regional advisories)<!-- END adv-eritrea --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
-     <td style="width: 200px;">2018-11-27 16:33:35</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-27 16:33:35</td>
      </tr>
 
 
@@ -1375,7 +1385,7 @@
      <td><a href='https://travel.gc.ca/destinations/estonia'>Estonia</a></td>
      <td><!-- START adv-estonia -->Exercise normal security precautions<!-- END adv-estonia --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-12-14 11:58:40</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
 
 
@@ -1389,7 +1399,7 @@
      <td><a href='https://travel.gc.ca/destinations/eswatini'>Eswatini</a></td>
      <td><!-- START adv-eswatini -->Exercise normal security precautions<!-- END adv-eswatini --></td>
      <!-- <td>Safety and security - removal of elections information</td> -->
-     <td style="width: 200px;">2018-10-05 10:47:33</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-10-05 10:47:33</td>
      </tr>
 
 
@@ -1403,7 +1413,7 @@
      <td><a href='https://travel.gc.ca/destinations/ethiopia'>Ethiopia</a></td>
      <td><!-- START adv-ethiopia -->Exercise a high degree of caution (with regional advisories)<!-- END adv-ethiopia --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-10-30 17:16:39</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-10-30 17:16:39</td>
      </tr>
 
 
@@ -1417,7 +1427,7 @@
      <td><a href='https://travel.gc.ca/destinations/falkland-islands'>Falkland Islands</a></td>
      <td><!-- START adv-falkland-islands -->Exercise normal security precautions<!-- END adv-falkland-islands --></td>
      <!-- <td>Editorial.</td> -->
-     <td style="width: 200px;">2018-05-01 10:55:56</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-05-01 10:55:56</td>
      </tr>
 
 
@@ -1431,7 +1441,7 @@
      <td><a href='https://travel.gc.ca/destinations/fiji'>Fiji</a></td>
      <td><!-- START adv-fiji -->Exercise normal security precautions<!-- END adv-fiji --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:42:11</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:42:11</td>
      </tr>
 
 
@@ -1445,7 +1455,7 @@
      <td><a href='https://travel.gc.ca/destinations/finland'>Finland</a></td>
      <td><!-- START adv-finland -->Exercise normal security precautions<!-- END adv-finland --></td>
      <!-- <td>Safety and security - demonstrations</td> -->
-     <td style="width: 200px;">2018-08-20 16:21:44</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-08-20 16:21:44</td>
      </tr>
 
 
@@ -1459,7 +1469,7 @@
      <td><a href='https://travel.gc.ca/destinations/france'>France</a></td>
      <td><!-- START adv-france -->Exercise a high degree of caution<!-- END adv-france --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2019-01-17 12:13:21</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-17 12:13:21</td>
      </tr>
 
 
@@ -1473,7 +1483,7 @@
      <td><a href='https://travel.gc.ca/destinations/french-guiana'>French Guiana</a></td>
      <td><!-- START adv-french-guiana -->Exercise normal security precautions<!-- END adv-french-guiana --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:46:59</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:46:59</td>
      </tr>
 
 
@@ -1487,7 +1497,7 @@
      <td><a href='https://travel.gc.ca/destinations/french-polynesia'>French Polynesia</a></td>
      <td><!-- START adv-french-polynesia -->Exercise normal security precautions<!-- END adv-french-polynesia --></td>
      <!-- <td>Editorial.</td> -->
-     <td style="width: 200px;">2018-05-01 10:55:56</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-05-01 10:55:56</td>
      </tr>
 
 
@@ -1501,7 +1511,7 @@
      <td><a href='https://travel.gc.ca/destinations/gabon'>Gabon</a></td>
      <td><!-- START adv-gabon -->Exercise a high degree of caution<!-- END adv-gabon --></td>
      <!-- <td>Safety and security - Removal of information in regards to the attempted military coup.</td> -->
-     <td style="width: 200px;">2019-01-29 10:41:21</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-29 10:41:21</td>
      </tr>
 
 
@@ -1515,7 +1525,7 @@
      <td><a href='https://travel.gc.ca/destinations/gambia-the'>Gambia, The</a></td>
      <td><!-- START adv-gambia-the -->Exercise a high degree of caution<!-- END adv-gambia-the --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
-     <td style="width: 200px;">2018-12-05 11:11:45</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-05 11:11:45</td>
      </tr>
 
 
@@ -1529,7 +1539,7 @@
      <td><a href='https://travel.gc.ca/destinations/georgia'>Georgia</a></td>
      <td><!-- START adv-georgia -->Exercise normal security precautions (with regional advisories)<!-- END adv-georgia --></td>
      <!-- <td>Assistance - Consulate of Canada in Tbilisi reopens</td> -->
-     <td style="width: 200px;">2018-12-27 15:48:04</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-27 15:48:04</td>
      </tr>
 
 
@@ -1543,7 +1553,7 @@
      <td><a href='https://travel.gc.ca/destinations/germany'>Germany</a></td>
      <td><!-- START adv-germany -->Exercise normal security precautions<!-- END adv-germany --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-12-11 09:00:26</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-11 09:00:26</td>
      </tr>
 
 
@@ -1557,7 +1567,7 @@
      <td><a href='https://travel.gc.ca/destinations/ghana'>Ghana</a></td>
      <td><!-- START adv-ghana -->Exercise a high degree of caution<!-- END adv-ghana --></td>
      <!-- <td>Safety and security - Inter-ethnic violence.</td> -->
-     <td style="width: 200px;">2019-01-31 16:01:06</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-31 16:01:06</td>
      </tr>
 
 
@@ -1571,7 +1581,7 @@
      <td><a href='https://travel.gc.ca/destinations/gibraltar'>Gibraltar</a></td>
      <td><!-- START adv-gibraltar -->Exercise normal security precautions<!-- END adv-gibraltar --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
-     <td style="width: 200px;">2018-07-24 15:48:32</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-07-24 15:48:32</td>
      </tr>
 
 
@@ -1585,7 +1595,7 @@
      <td><a href='https://travel.gc.ca/destinations/greece'>Greece</a></td>
      <td><!-- START adv-greece -->Exercise normal security precautions<!-- END adv-greece --></td>
      <!-- <td>Safety and security - demonstrations and strikes</td> -->
-     <td style="width: 200px;">2019-01-22 16:01:47</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-22 16:01:47</td>
      </tr>
 
 
@@ -1599,7 +1609,7 @@
      <td><a href='https://travel.gc.ca/destinations/greenland'>Greenland</a></td>
      <td><!-- START adv-greenland -->Exercise normal security precautions<!-- END adv-greenland --></td>
      <!-- <td>Editorial.</td> -->
-     <td style="width: 200px;">2018-05-01 10:55:56</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-05-01 10:55:56</td>
      </tr>
 
 
@@ -1613,7 +1623,7 @@
      <td><a href='https://travel.gc.ca/destinations/grenada'>Grenada</a></td>
      <td><!-- START adv-grenada -->Exercise normal security precautions<!-- END adv-grenada --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:30:28</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:30:28</td>
      </tr>
 
 
@@ -1627,7 +1637,7 @@
      <td><a href='https://travel.gc.ca/destinations/guadeloupe'>Guadeloupe</a></td>
      <td><!-- START adv-guadeloupe -->Exercise normal security precautions<!-- END adv-guadeloupe --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-11-27 13:40:58</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-27 13:40:58</td>
      </tr>
 
 
@@ -1641,7 +1651,7 @@
      <td><a href='https://travel.gc.ca/destinations/guam'>Guam</a></td>
      <td><!-- START adv-guam -->Exercise normal security precautions<!-- END adv-guam --></td>
      <!-- <td>Natural disasters and climate - typhoon Manghkut</td> -->
-     <td style="width: 200px;">2018-09-21 11:54:53</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-09-21 11:54:53</td>
      </tr>
 
 
@@ -1655,7 +1665,7 @@
      <td><a href='https://travel.gc.ca/destinations/guatemala'>Guatemala</a></td>
      <td><!-- START adv-guatemala -->Exercise a high degree of caution<!-- END adv-guatemala --></td>
      <!-- <td>Safety and security - update on demonstrations</td> -->
-     <td style="width: 200px;">2019-01-21 10:25:55</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-21 10:25:55</td>
      </tr>
 
 
@@ -1669,7 +1679,7 @@
      <td><a href='https://travel.gc.ca/destinations/guinea'>Guinea</a></td>
      <td><!-- START adv-guinea -->Exercise a high degree of caution<!-- END adv-guinea --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
-     <td style="width: 200px;">2018-11-27 15:11:15</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-27 15:11:15</td>
      </tr>
 
 
@@ -1683,7 +1693,7 @@
      <td><a href='https://travel.gc.ca/destinations/guinea-bissau'>Guinea-Bissau</a></td>
      <td><!-- START adv-guinea-bissau -->Exercise a high degree of caution (with regional advisories)<!-- END adv-guinea-bissau --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:57:12</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:57:12</td>
      </tr>
 
 
@@ -1697,7 +1707,7 @@
      <td><a href='https://travel.gc.ca/destinations/guyana'>Guyana</a></td>
      <td><!-- START adv-guyana -->Exercise a high degree of caution<!-- END adv-guyana --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:57:12</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:57:12</td>
      </tr>
 
 
@@ -1711,7 +1721,7 @@
      <td><a href='https://travel.gc.ca/destinations/haiti'>Haiti</a></td>
      <td><!-- START adv-haiti -->Exercise a high degree of caution<!-- END adv-haiti --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:30:28</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:30:28</td>
      </tr>
 
 
@@ -1725,7 +1735,7 @@
      <td><a href='https://travel.gc.ca/destinations/honduras'>Honduras</a></td>
      <td><!-- START adv-honduras -->Exercise a high degree of caution (with regional advisories)<!-- END adv-honduras --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:35:33</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:35:33</td>
      </tr>
 
 
@@ -1739,7 +1749,7 @@
      <td><a href='https://travel.gc.ca/destinations/hong-kong'>Hong Kong</a></td>
      <td><!-- START adv-hong-kong -->Exercise normal security precautions<!-- END adv-hong-kong --></td>
      <!-- <td>Natural disasters and climate - removal of text on Typhoon Mangkhut</td> -->
-     <td style="width: 200px;">2018-10-03 11:57:10</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-10-03 11:57:10</td>
      </tr>
 
 
@@ -1753,7 +1763,7 @@
      <td><a href='https://travel.gc.ca/destinations/hungary'>Hungary</a></td>
      <td><!-- START adv-hungary -->Exercise normal security precautions<!-- END adv-hungary --></td>
      <!-- <td>Safety and security - update on demonstrations</td> -->
-     <td style="width: 200px;">2019-01-21 10:24:29</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-21 10:24:29</td>
      </tr>
 
 
@@ -1767,7 +1777,7 @@
      <td><a href='https://travel.gc.ca/destinations/iceland'>Iceland</a></td>
      <td><!-- START adv-iceland -->Exercise normal security precautions<!-- END adv-iceland --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
-     <td style="width: 200px;">2018-06-19 08:02:00</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-06-19 08:02:00</td>
      </tr>
 
 
@@ -1781,7 +1791,7 @@
      <td><a href='https://travel.gc.ca/destinations/india'>India</a></td>
      <td><!-- START adv-india -->Exercise a high degree of caution (with regional advisories)<!-- END adv-india --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:49:07</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:49:07</td>
      </tr>
 
 
@@ -1795,7 +1805,7 @@
      <td><a href='./destinations/indonesia.html'>Indonesia</a></td>
      <td><!-- START adv-indonesia -->Exercise a high degree of caution (with regional advisories)<!-- END adv-indonesia --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:52:05</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:52:05</td>
      </tr>
 
 
@@ -1809,7 +1819,7 @@
      <td><a href='https://travel.gc.ca/destinations/iran'>Iran</a></td>
      <td><!-- START adv-iran -->Exercise a high degree of caution (with regional advisories)<!-- END adv-iran --></td>
      <!-- <td>Entry/exit requirements - Iranian office serving Canadians, tourist visa</td> -->
-     <td style="width: 200px;">2019-01-24 11:29:14</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-24 11:29:14</td>
      </tr>
 
 
@@ -1823,7 +1833,7 @@
      <td><a href='https://travel.gc.ca/destinations/iraq'>Iraq</a></td>
      <td><!-- START adv-iraq -->Avoid all travel<!-- END adv-iraq --></td>
      <!-- <td>Safety and security - removal of information on demonstrations</td> -->
-     <td style="width: 200px;">2018-08-21 10:28:49</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-08-21 10:28:49</td>
      </tr>
 
 
@@ -1837,7 +1847,7 @@
      <td><a href='https://travel.gc.ca/destinations/ireland'>Ireland</a></td>
      <td><!-- START adv-ireland -->Exercise normal security precautions<!-- END adv-ireland --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-12-14 11:58:40</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
 
 
@@ -1851,7 +1861,7 @@
      <td><a href='https://travel.gc.ca/destinations/israel-the-west-bank-and-the-gaza-strip'>Israel, the West Bank and the Gaza Strip</a></td>
      <td><!-- START adv-israel-the-west-bank-and-the-gaza-strip -->Exercise a high degree of caution (with regional advisories)<!-- END adv-israel-the-west-bank-and-the-gaza-strip --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-11-02 15:46:49</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-02 15:46:49</td>
      </tr>
 
 
@@ -1865,7 +1875,7 @@
      <td><a href='https://travel.gc.ca/destinations/italy'>Italy</a></td>
      <td><!-- START adv-italy -->Exercise normal security precautions<!-- END adv-italy --></td>
      <!-- <td>Natural disasters and climate - removal of information on recent floods</td> -->
-     <td style="width: 200px;">2018-11-15 10:58:57</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-15 10:58:57</td>
      </tr>
 
 
@@ -1879,7 +1889,7 @@
      <td><a href='https://travel.gc.ca/destinations/jamaica'>Jamaica</a></td>
      <td><!-- START adv-jamaica -->Exercise a high degree of caution<!-- END adv-jamaica --></td>
      <!-- <td>Safety and security - removal of information about the state of emergency in effect in the parish of St.James</td> -->
-     <td style="width: 200px;">2019-01-31 16:40:48</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-31 16:40:48</td>
      </tr>
 
 
@@ -1893,7 +1903,7 @@
      <td><a href='https://travel.gc.ca/destinations/japan'>Japan</a></td>
      <td><!-- START adv-japan -->Exercise normal security precautions (with regional advisories)<!-- END adv-japan --></td>
      <!-- <td>Natural disasters and climate - removal of text on Kong-Rey</td> -->
-     <td style="width: 200px;">2018-10-05 11:37:29</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-10-05 11:37:29</td>
      </tr>
 
 
@@ -1907,7 +1917,7 @@
      <td><a href='https://travel.gc.ca/destinations/jordan'>Jordan</a></td>
      <td><!-- START adv-jordan -->Exercise a high degree of caution (with regional advisories)<!-- END adv-jordan --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-12-19 13:36:23</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-19 13:36:23</td>
      </tr>
 
 
@@ -1921,7 +1931,7 @@
      <td><a href='https://travel.gc.ca/destinations/kazakhstan'>Kazakhstan</a></td>
      <td><!-- START adv-kazakhstan -->Exercise a high degree of caution<!-- END adv-kazakhstan --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-11-02 16:00:00</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-02 16:00:00</td>
      </tr>
 
 
@@ -1935,7 +1945,7 @@
      <td><a href='https://travel.gc.ca/destinations/kenya'>Kenya</a></td>
      <td><!-- START adv-kenya -->Exercise a high degree of caution (with regional advisories)<!-- END adv-kenya --></td>
      <!-- <td>Safety and security - terrorism</td> -->
-     <td style="width: 200px;">2019-01-17 11:37:46</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-17 11:37:46</td>
      </tr>
 
 
@@ -1949,7 +1959,7 @@
      <td><a href='https://travel.gc.ca/destinations/kiribati'>Kiribati</a></td>
      <td><!-- START adv-kiribati -->Exercise normal security precautions<!-- END adv-kiribati --></td>
      <!-- <td>Editorial.</td> -->
-     <td style="width: 200px;">2018-05-01 10:55:56</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-05-01 10:55:56</td>
      </tr>
 
 
@@ -1963,7 +1973,7 @@
      <td><a href='https://travel.gc.ca/destinations/korea-north-dprk'>Korea, North (DPRK)</a></td>
      <td><!-- START adv-korea-north-dprk -->Avoid all travel<!-- END adv-korea-north-dprk --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
-     <td style="width: 200px;">2018-06-18 10:34:38</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-06-18 10:34:38</td>
      </tr>
 
 
@@ -1977,7 +1987,7 @@
      <td><a href='https://travel.gc.ca/destinations/korea-south'>Korea, South</a></td>
      <td><!-- START adv-korea-south -->Exercise normal security precautions<!-- END adv-korea-south --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
-     <td style="width: 200px;">2018-12-12 16:21:08</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-12 16:21:08</td>
      </tr>
 
 
@@ -1991,7 +2001,7 @@
      <td><a href='https://travel.gc.ca/destinations/kosovo'>Kosovo</a></td>
      <td><!-- START adv-kosovo -->Exercise normal security precautions (with regional advisories)<!-- END adv-kosovo --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-12-14 11:58:40</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
 
 
@@ -2005,7 +2015,7 @@
      <td><a href='https://travel.gc.ca/destinations/kuwait'>Kuwait</a></td>
      <td><!-- START adv-kuwait -->Exercise a high degree of caution<!-- END adv-kuwait --></td>
      <!-- <td>Assistance - the Embassy of Canada is open</td> -->
-     <td style="width: 200px;">2018-11-19 10:00:20</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-19 10:00:20</td>
      </tr>
 
 
@@ -2019,7 +2029,7 @@
      <td><a href='https://travel.gc.ca/destinations/kyrgyzstan'>Kyrgyzstan</a></td>
      <td><!-- START adv-kyrgyzstan -->Exercise a high degree of caution<!-- END adv-kyrgyzstan --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-11-02 16:05:47</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-02 16:05:47</td>
      </tr>
 
 
@@ -2033,7 +2043,7 @@
      <td><a href='https://travel.gc.ca/destinations/laos'>Laos</a></td>
      <td><!-- START adv-laos -->Exercise a high degree of caution (with regional advisories)<!-- END adv-laos --></td>
      <!-- <td>Editorial Change</td> -->
-     <td style="width: 200px;">2019-01-29 12:19:07</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-29 12:19:07</td>
      </tr>
 
 
@@ -2047,7 +2057,7 @@
      <td><a href='https://travel.gc.ca/destinations/latvia'>Latvia</a></td>
      <td><!-- START adv-latvia -->Exercise normal security precautions<!-- END adv-latvia --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-12-14 11:58:40</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
 
 
@@ -2061,7 +2071,7 @@
      <td><a href='https://travel.gc.ca/destinations/lebanon'>Lebanon</a></td>
      <td><!-- START adv-lebanon -->Exercise a high degree of caution (with regional advisories)<!-- END adv-lebanon --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-11-02 16:11:08</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-02 16:11:08</td>
      </tr>
 
 
@@ -2075,7 +2085,7 @@
      <td><a href='https://travel.gc.ca/destinations/lesotho'>Lesotho</a></td>
      <td><!-- START adv-lesotho -->Exercise a high degree of caution<!-- END adv-lesotho --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-11-02 16:12:16</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-02 16:12:16</td>
      </tr>
 
 
@@ -2089,7 +2099,7 @@
      <td><a href='https://travel.gc.ca/destinations/liberia'>Liberia</a></td>
      <td><!-- START adv-liberia -->Exercise a high degree of caution<!-- END adv-liberia --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-11-02 16:13:21</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-02 16:13:21</td>
      </tr>
 
 
@@ -2103,7 +2113,7 @@
      <td><a href='https://travel.gc.ca/destinations/libya'>Libya</a></td>
      <td><!-- START adv-libya -->Avoid all travel<!-- END adv-libya --></td>
      <!-- <td>Safety and security - Mitiga airport reopened.</td> -->
-     <td style="width: 200px;">2018-09-07 13:33:11</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-09-07 13:33:11</td>
      </tr>
 
 
@@ -2117,7 +2127,7 @@
      <td><a href='https://travel.gc.ca/destinations/liechtenstein'>Liechtenstein</a></td>
      <td><!-- START adv-liechtenstein -->Exercise normal security precautions<!-- END adv-liechtenstein --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2019-01-03 16:11:45</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-03 16:11:45</td>
      </tr>
 
 
@@ -2131,7 +2141,7 @@
      <td><a href='https://travel.gc.ca/destinations/lithuania'>Lithuania</a></td>
      <td><!-- START adv-lithuania -->Exercise normal security precautions<!-- END adv-lithuania --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-12-14 11:58:40</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
 
 
@@ -2145,7 +2155,7 @@
      <td><a href='https://travel.gc.ca/destinations/luxembourg'>Luxembourg</a></td>
      <td><!-- START adv-luxembourg -->Exercise normal security precautions<!-- END adv-luxembourg --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-12-14 11:58:40</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
 
 
@@ -2159,7 +2169,7 @@
      <td><a href='https://travel.gc.ca/destinations/macao'>Macao</a></td>
      <td><!-- START adv-macao -->Exercise normal security precautions<!-- END adv-macao --></td>
      <!-- <td>Natural disasters and climate - removal of text on Typhoon Mangkhut</td> -->
-     <td style="width: 200px;">2018-10-03 11:57:59</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-10-03 11:57:59</td>
      </tr>
 
 
@@ -2173,7 +2183,7 @@
      <td><a href='https://travel.gc.ca/destinations/macedonia'>Macedonia</a></td>
      <td><!-- START adv-macedonia -->Exercise normal security precautions<!-- END adv-macedonia --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-12-14 11:58:40</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
 
 
@@ -2187,7 +2197,7 @@
      <td><a href='https://travel.gc.ca/destinations/madagascar'>Madagascar</a></td>
      <td><!-- START adv-madagascar -->Exercise a high degree of caution (with regional advisories)<!-- END adv-madagascar --></td>
      <!-- <td>Safety and security - removal of information in regards to the elections.</td> -->
-     <td style="width: 200px;">2018-12-20 10:15:41</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-20 10:15:41</td>
      </tr>
 
 
@@ -2201,7 +2211,7 @@
      <td><a href='https://travel.gc.ca/destinations/malawi'>Malawi</a></td>
      <td><!-- START adv-malawi -->Exercise a high degree of caution<!-- END adv-malawi --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-11-02 16:26:39</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-02 16:26:39</td>
      </tr>
 
 
@@ -2215,7 +2225,7 @@
      <td><a href='https://travel.gc.ca/destinations/malaysia'>Malaysia</a></td>
      <td><!-- START adv-malaysia -->Exercise a high degree of caution (with regional advisories)<!-- END adv-malaysia --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:52:05</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:52:05</td>
      </tr>
 
 
@@ -2229,7 +2239,7 @@
      <td><a href='https://travel.gc.ca/destinations/maldives'>Maldives</a></td>
      <td><!-- START adv-maldives -->Exercise a high degree of caution<!-- END adv-maldives --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:49:07</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:49:07</td>
      </tr>
 
 
@@ -2243,7 +2253,7 @@
      <td><a href='https://travel.gc.ca/destinations/mali'>Mali</a></td>
      <td><!-- START adv-mali -->Avoid all travel<!-- END adv-mali --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
-     <td style="width: 200px;">2018-11-29 15:07:50</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-29 15:07:50</td>
      </tr>
 
 
@@ -2257,7 +2267,7 @@
      <td><a href='https://travel.gc.ca/destinations/malta'>Malta</a></td>
      <td><!-- START adv-malta -->Exercise normal security precautions<!-- END adv-malta --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-12-14 11:58:40</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
 
 
@@ -2271,7 +2281,7 @@
      <td><a href='https://travel.gc.ca/destinations/marshall-islands'>Marshall Islands</a></td>
      <td><!-- START adv-marshall-islands -->Exercise normal security precautions<!-- END adv-marshall-islands --></td>
      <!-- <td>Editorial.</td> -->
-     <td style="width: 200px;">2018-05-01 10:55:56</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-05-01 10:55:56</td>
      </tr>
 
 
@@ -2285,7 +2295,7 @@
      <td><a href='https://travel.gc.ca/destinations/martinique'>Martinique</a></td>
      <td><!-- START adv-martinique -->Exercise normal security precautions<!-- END adv-martinique --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-11-27 13:40:58</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-27 13:40:58</td>
      </tr>
 
 
@@ -2299,7 +2309,7 @@
      <td><a href='https://travel.gc.ca/destinations/mauritania'>Mauritania</a></td>
      <td><!-- START adv-mauritania -->Avoid non-essential travel (with regional advisories)<!-- END adv-mauritania --></td>
      <!-- <td>Safety and security - removal of legislative elections information</td> -->
-     <td style="width: 200px;">2018-09-27 15:45:41</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-09-27 15:45:41</td>
      </tr>
 
 
@@ -2313,7 +2323,7 @@
      <td><a href='https://travel.gc.ca/destinations/mauritius'>Mauritius</a></td>
      <td><!-- START adv-mauritius -->Exercise normal security precautions<!-- END adv-mauritius --></td>
      <!-- <td>Natural disasters & climate -  removal of information on tropical cyclone Cilida</td> -->
-     <td style="width: 200px;">2018-12-24 08:58:16</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-24 08:58:16</td>
      </tr>
 
 
@@ -2327,7 +2337,7 @@
      <td><a href='https://travel.gc.ca/destinations/mayotte'>Mayotte</a></td>
      <td><!-- START adv-mayotte -->Exercise normal security precautions<!-- END adv-mayotte --></td>
      <!-- <td>Thorough review and update of the entire travel advice content</td> -->
-     <td style="width: 200px;">2018-07-19 14:09:00</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-07-19 14:09:00</td>
      </tr>
 
 
@@ -2341,7 +2351,7 @@
      <td><a href='https://travel.gc.ca/destinations/mexico'>Mexico</a></td>
      <td><!-- START adv-mexico -->Exercise a high degree of caution (with regional advisories)<!-- END adv-mexico --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:35:33</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:35:33</td>
      </tr>
 
 
@@ -2355,7 +2365,7 @@
      <td><a href='https://travel.gc.ca/destinations/micronesia-fsm'>Micronesia (FSM)</a></td>
      <td><!-- START adv-micronesia-fsm -->Exercise normal security precautions<!-- END adv-micronesia-fsm --></td>
      <!-- <td>Editorial.</td> -->
-     <td style="width: 200px;">2018-05-01 10:55:56</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-05-01 10:55:56</td>
      </tr>
 
 
@@ -2369,7 +2379,7 @@
      <td><a href='https://travel.gc.ca/destinations/moldova'>Moldova</a></td>
      <td><!-- START adv-moldova -->Exercise normal security precautions (with regional advisories)<!-- END adv-moldova --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-12-14 11:58:40</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
 
 
@@ -2383,7 +2393,7 @@
      <td><a href='https://travel.gc.ca/destinations/monaco'>Monaco</a></td>
      <td><!-- START adv-monaco -->Exercise normal security precautions<!-- END adv-monaco --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-12-14 11:58:40</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
 
 
@@ -2397,7 +2407,7 @@
      <td><a href='https://travel.gc.ca/destinations/mongolia'>Mongolia</a></td>
      <td><!-- START adv-mongolia -->Exercise normal security precautions<!-- END adv-mongolia --></td>
      <!-- <td>Safety and security - removal of information on demonstrations in Suhkbaatar Square</td> -->
-     <td style="width: 200px;">2019-01-24 10:53:06</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-24 10:53:06</td>
      </tr>
 
 
@@ -2411,7 +2421,7 @@
      <td><a href='https://travel.gc.ca/destinations/montenegro'>Montenegro</a></td>
      <td><!-- START adv-montenegro -->Exercise normal security precautions<!-- END adv-montenegro --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-12-14 11:58:40</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
 
 
@@ -2425,7 +2435,7 @@
      <td><a href='https://travel.gc.ca/destinations/montserrat'>Montserrat</a></td>
      <td><!-- START adv-montserrat -->Exercise normal security precautions<!-- END adv-montserrat --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:30:28</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:30:28</td>
      </tr>
 
 
@@ -2439,7 +2449,7 @@
      <td><a href='https://travel.gc.ca/destinations/morocco'>Morocco</a></td>
      <td><!-- START adv-morocco -->Exercise a high degree of caution<!-- END adv-morocco --></td>
      <!-- <td>Safety and security - Terrorism.</td> -->
-     <td style="width: 200px;">2018-12-20 15:37:15</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-20 15:37:15</td>
      </tr>
 
 
@@ -2453,7 +2463,7 @@
      <td><a href='https://travel.gc.ca/destinations/mozambique'>Mozambique</a></td>
      <td><!-- START adv-mozambique -->Exercise a high degree of caution (with regional advisories)<!-- END adv-mozambique --></td>
      <!-- <td>Risk level(s), Safety and security - Cabo Delgado Province</td> -->
-     <td style="width: 200px;">2018-12-27 11:09:00</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-27 11:09:00</td>
      </tr>
 
 
@@ -2467,7 +2477,7 @@
      <td><a href='https://travel.gc.ca/destinations/myanmar'>Myanmar</a></td>
      <td><!-- START adv-myanmar -->Exercise a high degree of caution (with regional advisories)<!-- END adv-myanmar --></td>
      <!-- <td>Editorial change</td> -->
-     <td style="width: 200px;">2019-01-29 15:24:23</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-29 15:24:23</td>
      </tr>
 
 
@@ -2481,7 +2491,7 @@
      <td><a href='https://travel.gc.ca/destinations/namibia'>Namibia</a></td>
      <td><!-- START adv-namibia -->Exercise a high degree of caution<!-- END adv-namibia --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-11-02 16:33:23</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-02 16:33:23</td>
      </tr>
 
 
@@ -2495,7 +2505,7 @@
      <td><a href='https://travel.gc.ca/destinations/nauru'>Nauru</a></td>
      <td><!-- START adv-nauru -->Exercise normal security precautions<!-- END adv-nauru --></td>
      <!-- <td>Editorial.</td> -->
-     <td style="width: 200px;">2018-05-01 10:55:56</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-05-01 10:55:56</td>
      </tr>
 
 
@@ -2509,7 +2519,7 @@
      <td><a href='https://travel.gc.ca/destinations/nepal'>Nepal</a></td>
      <td><!-- START adv-nepal -->Exercise a high degree of caution<!-- END adv-nepal --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-11-02 16:34:20</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-02 16:34:20</td>
      </tr>
 
 
@@ -2523,7 +2533,7 @@
      <td><a href='https://travel.gc.ca/destinations/netherlands'>Netherlands</a></td>
      <td><!-- START adv-netherlands -->Exercise a high degree of caution<!-- END adv-netherlands --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-11-16 10:42:32</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-16 10:42:32</td>
      </tr>
 
 
@@ -2537,7 +2547,7 @@
      <td><a href='https://travel.gc.ca/destinations/new-caledonia'>New Caledonia</a></td>
      <td><!-- START adv-new-caledonia -->Exercise normal security precautions<!-- END adv-new-caledonia --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
-     <td style="width: 200px;">2018-12-17 14:16:45</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-17 14:16:45</td>
      </tr>
 
 
@@ -2551,7 +2561,7 @@
      <td><a href='https://travel.gc.ca/destinations/new-zealand'>New Zealand</a></td>
      <td><!-- START adv-new-zealand -->Exercise normal security precautions<!-- END adv-new-zealand --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
-     <td style="width: 200px;">2018-05-28 11:07:25</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-05-28 11:07:25</td>
      </tr>
 
 
@@ -2565,7 +2575,7 @@
      <td><a href='https://travel.gc.ca/destinations/nicaragua'>Nicaragua</a></td>
      <td><!-- START adv-nicaragua -->Exercise a high degree of caution<!-- END adv-nicaragua --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:35:33</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:35:33</td>
      </tr>
 
 
@@ -2579,7 +2589,7 @@
      <td><a href='https://travel.gc.ca/destinations/niger'>Niger</a></td>
      <td><!-- START adv-niger -->Avoid non-essential travel (with regional advisories)<!-- END adv-niger --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
-     <td style="width: 200px;">2018-11-21 12:06:22</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-21 12:06:22</td>
      </tr>
 
 
@@ -2593,7 +2603,7 @@
      <td><a href='https://travel.gc.ca/destinations/nigeria'>Nigeria</a></td>
      <td><!-- START adv-nigeria -->Avoid non-essential travel (with regional advisories)<!-- END adv-nigeria --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:57:12</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:57:12</td>
      </tr>
 
 
@@ -2607,7 +2617,7 @@
      <td><a href='https://travel.gc.ca/destinations/niue'>Niue</a></td>
      <td><!-- START adv-niue -->Exercise normal security precautions<!-- END adv-niue --></td>
      <!-- <td>Editorial.</td> -->
-     <td style="width: 200px;">2018-05-01 10:55:56</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-05-01 10:55:56</td>
      </tr>
 
 
@@ -2621,7 +2631,7 @@
      <td><a href='https://travel.gc.ca/destinations/northern-marianas'>Northern Marianas</a></td>
      <td><!-- START adv-northern-marianas -->Exercise normal security precautions<!-- END adv-northern-marianas --></td>
      <!-- <td>Risk level(s) - removal of advisory; Natural disasters and climate - recovery efforts</td> -->
-     <td style="width: 200px;">2019-01-09 15:02:17</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-09 15:02:17</td>
      </tr>
 
 
@@ -2635,7 +2645,7 @@
      <td><a href='https://travel.gc.ca/destinations/norway'>Norway</a></td>
      <td><!-- START adv-norway -->Exercise normal security precautions<!-- END adv-norway --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-11-27 15:03:46</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-27 15:03:46</td>
      </tr>
 
 
@@ -2649,7 +2659,7 @@
      <td><a href='https://travel.gc.ca/destinations/oman'>Oman</a></td>
      <td><!-- START adv-oman -->Exercise a high degree of caution (with regional advisories)<!-- END adv-oman --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-11-02 16:35:30</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-02 16:35:30</td>
      </tr>
 
 
@@ -2663,7 +2673,7 @@
      <td><a href='https://travel.gc.ca/destinations/pakistan'>Pakistan</a></td>
      <td><!-- START adv-pakistan -->Avoid non-essential travel<!-- END adv-pakistan --></td>
      <!-- <td>The Health tab was updated - travel health notices (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-30 08:51:27</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-30 08:51:27</td>
      </tr>
 
 
@@ -2677,7 +2687,7 @@
      <td><a href='https://travel.gc.ca/destinations/palau'>Palau</a></td>
      <td><!-- START adv-palau -->Exercise normal security precautions<!-- END adv-palau --></td>
      <!-- <td>Editorial.</td> -->
-     <td style="width: 200px;">2018-05-01 10:55:56</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-05-01 10:55:56</td>
      </tr>
 
 
@@ -2691,7 +2701,7 @@
      <td><a href='./destinations/panama.html'>Panama</a></td>
      <td><!-- START adv-panama -->Exercise normal security precautions (with regional advisories)<!-- END adv-panama --></td>
      <!-- <td>Safety and security - removal of information on World Youth Day</td> -->
-     <td style="width: 200px;">2019-01-29 09:31:09</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-29 09:31:09</td>
      </tr>
 
 
@@ -2705,7 +2715,7 @@
      <td><a href='https://travel.gc.ca/destinations/papua-new-guinea'>Papua New Guinea</a></td>
      <td><!-- START adv-papua-new-guinea -->Exercise a high degree of caution<!-- END adv-papua-new-guinea --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:42:11</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:42:11</td>
      </tr>
 
 
@@ -2719,7 +2729,7 @@
      <td><a href='https://travel.gc.ca/destinations/paraguay'>Paraguay</a></td>
      <td><!-- START adv-paraguay -->Exercise a high degree of caution<!-- END adv-paraguay --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:46:59</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:46:59</td>
      </tr>
 
 
@@ -2733,7 +2743,7 @@
      <td><a href='https://travel.gc.ca/destinations/peru'>Peru</a></td>
      <td><!-- START adv-peru -->Exercise a high degree of caution (with regional advisories)<!-- END adv-peru --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:46:59</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:46:59</td>
      </tr>
 
 
@@ -2747,7 +2757,7 @@
      <td><a href='https://travel.gc.ca/destinations/philippines'>Philippines</a></td>
      <td><!-- START adv-philippines -->Exercise a high degree of caution (with regional advisories)<!-- END adv-philippines --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:53:18</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:53:18</td>
      </tr>
 
 
@@ -2761,7 +2771,7 @@
      <td><a href='https://travel.gc.ca/destinations/poland'>Poland</a></td>
      <td><!-- START adv-poland -->Exercise normal security precautions<!-- END adv-poland --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-12-14 11:58:40</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
 
 
@@ -2775,7 +2785,7 @@
      <td><a href='https://travel.gc.ca/destinations/portugal'>Portugal</a></td>
      <td><!-- START adv-portugal -->Exercise normal security precautions<!-- END adv-portugal --></td>
      <!-- <td>Natural disasters and climate - removal of information about Hurricane Leslie</td> -->
-     <td style="width: 200px;">2018-10-15 09:25:56</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-10-15 09:25:56</td>
      </tr>
 
 
@@ -2789,7 +2799,7 @@
      <td><a href='https://travel.gc.ca/destinations/puerto-rico'>Puerto Rico</a></td>
      <td><!-- START adv-puerto-rico -->Exercise normal security precautions<!-- END adv-puerto-rico --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:30:28</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:30:28</td>
      </tr>
 
 
@@ -2803,7 +2813,7 @@
      <td><a href='https://travel.gc.ca/destinations/qatar'>Qatar</a></td>
      <td><!-- START adv-qatar -->Exercise normal security precautions<!-- END adv-qatar --></td>
      <!-- <td>Risk level(s) - take normal security precautions; Safety and security - terrorism</td> -->
-     <td style="width: 200px;">2019-01-28 17:17:27</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-28 17:17:27</td>
      </tr>
 
 
@@ -2817,7 +2827,7 @@
      <td><a href='https://travel.gc.ca/destinations/congo-brazzaville'>Republic of Congo (Brazzaville)</a></td>
      <td><!-- START adv-congo-brazzaville -->Exercise a high degree of caution (with regional advisories)<!-- END adv-congo-brazzaville --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-11-02 16:40:35</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-02 16:40:35</td>
      </tr>
 
 
@@ -2831,7 +2841,7 @@
      <td><a href='https://travel.gc.ca/destinations/reunion'>R&#233;union</a></td>
      <td><!-- START adv-reunion -->Exercise a high degree of caution<!-- END adv-reunion --></td>
      <!-- <td>Safety and security - Demonstrations.</td> -->
-     <td style="width: 200px;">2018-12-21 10:45:46</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-21 10:45:46</td>
      </tr>
 
 
@@ -2845,7 +2855,7 @@
      <td><a href='https://travel.gc.ca/destinations/romania'>Romania</a></td>
      <td><!-- START adv-romania -->Exercise normal security precautions<!-- END adv-romania --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-08-29 11:46:37</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-08-29 11:46:37</td>
      </tr>
 
 
@@ -2859,7 +2869,7 @@
      <td><a href='https://travel.gc.ca/destinations/russia'>Russia</a></td>
      <td><!-- START adv-russia -->Exercise a high degree of caution (with regional advisories)<!-- END adv-russia --></td>
      <!-- <td>Entry/exit requirements - visa exceptions for international cruise passengers</td> -->
-     <td style="width: 200px;">2019-01-24 14:37:24</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-24 14:37:24</td>
      </tr>
 
 
@@ -2873,7 +2883,7 @@
      <td><a href='https://travel.gc.ca/destinations/rwanda'>Rwanda</a></td>
      <td><!-- START adv-rwanda -->Exercise a high degree of caution<!-- END adv-rwanda --></td>
      <!-- <td>Entry/exit requirements - Travellers from the Democratic Republic of the Congo.</td> -->
-     <td style="width: 200px;">2019-01-11 10:57:46</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-11 10:57:46</td>
      </tr>
 
 
@@ -2887,7 +2897,7 @@
      <td><a href='https://travel.gc.ca/destinations/saint-kitts-and-nevis'>Saint Kitts and Nevis</a></td>
      <td><!-- START adv-saint-kitts-and-nevis -->Exercise normal security precautions<!-- END adv-saint-kitts-and-nevis --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:31:15</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:31:15</td>
      </tr>
 
 
@@ -2901,7 +2911,7 @@
      <td><a href='https://travel.gc.ca/destinations/saint-lucia'>Saint Lucia</a></td>
      <td><!-- START adv-saint-lucia -->Exercise normal security precautions<!-- END adv-saint-lucia --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:31:15</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:31:15</td>
      </tr>
 
 
@@ -2915,7 +2925,7 @@
      <td><a href='https://travel.gc.ca/destinations/saint-martin'>Saint Martin</a></td>
      <td><!-- START adv-saint-martin -->Exercise normal security precautions<!-- END adv-saint-martin --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:31:15</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:31:15</td>
      </tr>
 
 
@@ -2929,7 +2939,7 @@
      <td><a href='https://travel.gc.ca/destinations/saint-vincent-the-grenadines'>Saint Vincent &amp; the Grenadines</a></td>
      <td><!-- START adv-saint-vincent-the-grenadines -->Exercise normal security precautions<!-- END adv-saint-vincent-the-grenadines --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:31:15</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:31:15</td>
      </tr>
 
 
@@ -2943,7 +2953,7 @@
      <td><a href='https://travel.gc.ca/destinations/saint-barthelemy'>Saint-Barth&#233;lemy</a></td>
      <td><!-- START adv-saint-barthelemy -->Exercise normal security precautions<!-- END adv-saint-barthelemy --></td>
      <!-- <td>Natural disasters and climate - removal of information on hurricanes Irma and Maria</td> -->
-     <td style="width: 200px;">2019-01-07 15:39:19</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-07 15:39:19</td>
      </tr>
 
 
@@ -2957,7 +2967,7 @@
      <td><a href='https://travel.gc.ca/destinations/saint-pierre-et-miquelon'>Saint-Pierre-et-Miquelon</a></td>
      <td><!-- START adv-saint-pierre-et-miquelon -->Exercise normal security precautions<!-- END adv-saint-pierre-et-miquelon --></td>
      <!-- <td>Assistance - opening of Consulate of Canada in Saint-Pierre-et-Miquelon</td> -->
-     <td style="width: 200px;">2019-01-09 09:53:59</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-09 09:53:59</td>
      </tr>
 
 
@@ -2971,7 +2981,7 @@
      <td><a href='https://travel.gc.ca/destinations/samoa'>Samoa</a></td>
      <td><!-- START adv-samoa -->Exercise normal security precautions<!-- END adv-samoa --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:42:11</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:42:11</td>
      </tr>
 
 
@@ -2985,7 +2995,7 @@
      <td><a href='https://travel.gc.ca/destinations/san-marino'>San Marino</a></td>
      <td><!-- START adv-san-marino -->Exercise normal security precautions<!-- END adv-san-marino --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-12-14 11:58:40</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
 
 
@@ -2999,7 +3009,7 @@
      <td><a href='https://travel.gc.ca/destinations/sao-tome-and-principe'>Sao Tome and Principe</a></td>
      <td><!-- START adv-sao-tome-and-principe -->Exercise normal security precautions<!-- END adv-sao-tome-and-principe --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-11-28 15:30:29</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-28 15:30:29</td>
      </tr>
 
 
@@ -3013,7 +3023,7 @@
      <td><a href='https://travel.gc.ca/destinations/saudi-arabia'>Saudi Arabia</a></td>
      <td><!-- START adv-saudi-arabia -->Exercise a high degree of caution (with regional advisories)<!-- END adv-saudi-arabia --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-10-31 10:00:50</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-10-31 10:00:50</td>
      </tr>
 
 
@@ -3027,7 +3037,7 @@
      <td><a href='https://travel.gc.ca/destinations/senegal'>Senegal</a></td>
      <td><!-- START adv-senegal -->Exercise a high degree of caution<!-- END adv-senegal --></td>
      <!-- <td>Editorial Change</td> -->
-     <td style="width: 200px;">2019-01-29 12:21:14</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-29 12:21:14</td>
      </tr>
 
 
@@ -3041,7 +3051,7 @@
      <td><a href='https://travel.gc.ca/destinations/serbia'>Serbia</a></td>
      <td><!-- START adv-serbia -->Exercise normal security precautions<!-- END adv-serbia --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-12-14 11:58:40</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
 
 
@@ -3055,7 +3065,7 @@
      <td><a href='https://travel.gc.ca/destinations/seychelles'>Seychelles</a></td>
      <td><!-- START adv-seychelles -->Exercise normal security precautions<!-- END adv-seychelles --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2018-12-27 10:38:25</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-27 10:38:25</td>
      </tr>
 
 
@@ -3069,7 +3079,7 @@
      <td><a href='https://travel.gc.ca/destinations/sierra-leone'>Sierra Leone</a></td>
      <td><!-- START adv-sierra-leone -->Exercise a high degree of caution<!-- END adv-sierra-leone --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
-     <td style="width: 200px;">2018-11-15 11:40:54</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-15 11:40:54</td>
      </tr>
 
 
@@ -3083,7 +3093,7 @@
      <td><a href='https://travel.gc.ca/destinations/singapore'>Singapore</a></td>
      <td><!-- START adv-singapore -->Exercise normal security precautions<!-- END adv-singapore --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:53:18</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:53:18</td>
      </tr>
 
 
@@ -3097,7 +3107,7 @@
      <td><a href='https://travel.gc.ca/destinations/sint-maarten'>Sint Maarten</a></td>
      <td><!-- START adv-sint-maarten -->Exercise normal security precautions<!-- END adv-sint-maarten --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:31:15</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:31:15</td>
      </tr>
 
 
@@ -3111,7 +3121,7 @@
      <td><a href='https://travel.gc.ca/destinations/slovakia'>Slovakia</a></td>
      <td><!-- START adv-slovakia -->Exercise normal security precautions<!-- END adv-slovakia --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-12-14 11:58:40</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
 
 
@@ -3125,7 +3135,7 @@
      <td><a href='https://travel.gc.ca/destinations/slovenia'>Slovenia</a></td>
      <td><!-- START adv-slovenia -->Exercise normal security precautions<!-- END adv-slovenia --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-12-14 11:58:40</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
 
 
@@ -3139,7 +3149,7 @@
      <td><a href='https://travel.gc.ca/destinations/solomon-islands'>Solomon Islands</a></td>
      <td><!-- START adv-solomon-islands -->Exercise normal security precautions<!-- END adv-solomon-islands --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:42:11</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:42:11</td>
      </tr>
 
 
@@ -3153,7 +3163,7 @@
      <td><a href='https://travel.gc.ca/destinations/somalia'>Somalia</a></td>
      <td><!-- START adv-somalia -->Avoid all travel<!-- END adv-somalia --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
-     <td style="width: 200px;">2018-11-27 13:47:53</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-27 13:47:53</td>
      </tr>
 
 
@@ -3167,7 +3177,7 @@
      <td><a href='https://travel.gc.ca/destinations/south-africa'>South Africa</a></td>
      <td><!-- START adv-south-africa -->Exercise a high degree of caution<!-- END adv-south-africa --></td>
      <!-- <td>Editorial change</td> -->
-     <td style="width: 200px;">2018-11-22 15:17:32</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-22 15:17:32</td>
      </tr>
 
 
@@ -3181,7 +3191,7 @@
      <td><a href='https://travel.gc.ca/destinations/south-sudan'>South Sudan</a></td>
      <td><!-- START adv-south-sudan -->Avoid all travel<!-- END adv-south-sudan --></td>
      <!-- <td>Editorial change</td> -->
-     <td style="width: 200px;">2018-07-13 11:05:12</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-07-13 11:05:12</td>
      </tr>
 
 
@@ -3195,7 +3205,7 @@
      <td><a href='./destinations/spain.html'>Spain</a></td>
      <td><!-- START adv-spain -->Exercise normal security precautions<!-- END adv-spain --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
-     <td style="width: 200px;">2018-05-03 09:36:16</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-05-03 09:36:16</td>
      </tr>
 
 
@@ -3209,7 +3219,7 @@
      <td><a href='https://travel.gc.ca/destinations/sri-lanka'>Sri Lanka</a></td>
      <td><!-- START adv-sri-lanka -->Exercise a high degree of caution<!-- END adv-sri-lanka --></td>
      <!-- <td>Natural disasters and climate - removal of information on floods</td> -->
-     <td style="width: 200px;">2018-12-31 10:17:52</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-31 10:17:52</td>
      </tr>
 
 
@@ -3223,7 +3233,7 @@
      <td><a href='https://travel.gc.ca/destinations/sudan'>Sudan</a></td>
      <td><!-- START adv-sudan -->Exercise a high degree of caution (with regional advisories)<!-- END adv-sudan --></td>
      <!-- <td>Safety and security - Demonstrations and civil unrest.</td> -->
-     <td style="width: 200px;">2019-01-23 11:02:48</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-23 11:02:48</td>
      </tr>
 
 
@@ -3237,7 +3247,7 @@
      <td><a href='https://travel.gc.ca/destinations/suriname'>Suriname</a></td>
      <td><!-- START adv-suriname -->Exercise a high degree of caution<!-- END adv-suriname --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:46:59</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:46:59</td>
      </tr>
 
 
@@ -3251,7 +3261,7 @@
      <td><a href='https://travel.gc.ca/destinations/sweden'>Sweden</a></td>
      <td><!-- START adv-sweden -->Exercise normal security precautions<!-- END adv-sweden --></td>
      <!-- <td>Natural disasters and climate - removed information about forest fires</td> -->
-     <td style="width: 200px;">2018-08-21 13:23:32</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-08-21 13:23:32</td>
      </tr>
 
 
@@ -3265,7 +3275,7 @@
      <td><a href='https://travel.gc.ca/destinations/switzerland'>Switzerland</a></td>
      <td><!-- START adv-switzerland -->Exercise normal security precautions<!-- END adv-switzerland --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-12-14 11:58:40</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
 
 
@@ -3279,7 +3289,7 @@
      <td><a href='https://travel.gc.ca/destinations/syria'>Syria</a></td>
      <td><!-- START adv-syria -->Avoid all travel<!-- END adv-syria --></td>
      <!-- <td>Laws and culture - Ramadan 2019.</td> -->
-     <td style="width: 200px;">2018-06-20 12:54:38</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-06-20 12:54:38</td>
      </tr>
 
 
@@ -3293,7 +3303,7 @@
      <td><a href='https://travel.gc.ca/destinations/taiwan'>Taiwan</a></td>
      <td><!-- START adv-taiwan -->Exercise normal security precautions<!-- END adv-taiwan --></td>
      <!-- <td>Natural disasters and climate - removal of information about Typhoon Yutu</td> -->
-     <td style="width: 200px;">2018-10-29 10:06:36</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-10-29 10:06:36</td>
      </tr>
 
 
@@ -3307,7 +3317,7 @@
      <td><a href='https://travel.gc.ca/destinations/tajikistan'>Tajikistan</a></td>
      <td><!-- START adv-tajikistan -->Exercise a high degree of caution (with regional advisories)<!-- END adv-tajikistan --></td>
      <!-- <td>Safety and security - terrorism</td> -->
-     <td style="width: 200px;">2019-01-10 17:02:39</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-10 17:02:39</td>
      </tr>
 
 
@@ -3321,7 +3331,7 @@
      <td><a href='https://travel.gc.ca/destinations/tanzania'>Tanzania</a></td>
      <td><!-- START adv-tanzania -->Exercise a high degree of caution<!-- END adv-tanzania --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 16:34:53</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 16:34:53</td>
      </tr>
 
 
@@ -3335,7 +3345,7 @@
      <td><a href='https://travel.gc.ca/destinations/thailand'>Thailand</a></td>
      <td><!-- START adv-thailand -->Exercise a high degree of caution (with regional advisories)<!-- END adv-thailand --></td>
      <!-- <td>Safety and security - demonstrations (general elections)</td> -->
-     <td style="width: 200px;">2019-01-25 17:46:50</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-25 17:46:50</td>
      </tr>
 
 
@@ -3349,7 +3359,7 @@
      <td><a href='https://travel.gc.ca/destinations/timor-leste-east-timor'>Timor-Leste (East Timor)</a></td>
      <td><!-- START adv-timor-leste-east-timor -->Exercise a high degree of caution<!-- END adv-timor-leste-east-timor --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-10-31 09:43:41</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-10-31 09:43:41</td>
      </tr>
 
 
@@ -3363,7 +3373,7 @@
      <td><a href='https://travel.gc.ca/destinations/togo'>Togo</a></td>
      <td><!-- START adv-togo -->Exercise a high degree of caution<!-- END adv-togo --></td>
      <!-- <td>Safety and security - Demonstrations.</td> -->
-     <td style="width: 200px;">2018-12-21 09:53:06</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-21 09:53:06</td>
      </tr>
 
 
@@ -3377,7 +3387,7 @@
      <td><a href='https://travel.gc.ca/destinations/tokelau'>Tokelau</a></td>
      <td><!-- START adv-tokelau -->Exercise normal security precautions<!-- END adv-tokelau --></td>
      <!-- <td>Editorial.</td> -->
-     <td style="width: 200px;">2018-05-01 10:55:56</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-05-01 10:55:56</td>
      </tr>
 
 
@@ -3391,7 +3401,7 @@
      <td><a href='https://travel.gc.ca/destinations/tonga'>Tonga</a></td>
      <td><!-- START adv-tonga -->Exercise normal security precautions<!-- END adv-tonga --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:42:11</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:42:11</td>
      </tr>
 
 
@@ -3405,7 +3415,7 @@
      <td><a href='https://travel.gc.ca/destinations/trinidad-and-tobago'>Trinidad and Tobago</a></td>
      <td><!-- START adv-trinidad-and-tobago -->Exercise a high degree of caution<!-- END adv-trinidad-and-tobago --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:31:15</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:31:15</td>
      </tr>
 
 
@@ -3419,7 +3429,7 @@
      <td><a href='https://travel.gc.ca/destinations/tunisia'>Tunisia</a></td>
      <td><!-- START adv-tunisia -->Exercise a high degree of caution (with regional advisories)<!-- END adv-tunisia --></td>
      <!-- <td>Safety and security - Removal of information about the January 17 strike.</td> -->
-     <td style="width: 200px;">2019-01-18 10:30:37</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 10:30:37</td>
      </tr>
 
 
@@ -3433,7 +3443,7 @@
      <td><a href='https://travel.gc.ca/destinations/turkey'>Turkey</a></td>
      <td><!-- START adv-turkey -->Exercise a high degree of caution (with regional advisories)<!-- END adv-turkey --></td>
      <!-- <td>Safety and security - Istanbul airports</td> -->
-     <td style="width: 200px;">2018-11-05 18:03:29</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-05 18:03:29</td>
      </tr>
 
 
@@ -3447,7 +3457,7 @@
      <td><a href='https://travel.gc.ca/destinations/turkmenistan'>Turkmenistan</a></td>
      <td><!-- START adv-turkmenistan -->Exercise a high degree of caution<!-- END adv-turkmenistan --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
-     <td style="width: 200px;">2018-11-08 15:37:24</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-11-08 15:37:24</td>
      </tr>
 
 
@@ -3461,7 +3471,7 @@
      <td><a href='https://travel.gc.ca/destinations/turks-and-caicos-islands'>Turks and Caicos Islands</a></td>
      <td><!-- START adv-turks-and-caicos-islands -->Exercise normal security precautions<!-- END adv-turks-and-caicos-islands --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:31:15</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:31:15</td>
      </tr>
 
 
@@ -3475,7 +3485,7 @@
      <td><a href='https://travel.gc.ca/destinations/tuvalu'>Tuvalu</a></td>
      <td><!-- START adv-tuvalu -->Exercise normal security precautions<!-- END adv-tuvalu --></td>
      <!-- <td>Editorial.</td> -->
-     <td style="width: 200px;">2018-05-01 10:55:56</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-05-01 10:55:56</td>
      </tr>
 
 
@@ -3489,7 +3499,7 @@
      <td><a href='https://travel.gc.ca/destinations/uganda'>Uganda</a></td>
      <td><!-- START adv-uganda -->Exercise a high degree of caution<!-- END adv-uganda --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:38:40</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:38:40</td>
      </tr>
 
 
@@ -3503,7 +3513,7 @@
      <td><a href='https://travel.gc.ca/destinations/ukraine'>Ukraine</a></td>
      <td><!-- START adv-ukraine -->Exercise a high degree of caution (with regional advisories)<!-- END adv-ukraine --></td>
      <!-- <td>Safety and security; Entry and exit requirements - removal of information on the martial law</td> -->
-     <td style="width: 200px;">2018-12-27 10:19:08</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-27 10:19:08</td>
      </tr>
 
 
@@ -3517,7 +3527,7 @@
      <td><a href='https://travel.gc.ca/destinations/united-arab-emirates'>United Arab Emirates</a></td>
      <td><!-- START adv-united-arab-emirates -->Exercise a high degree of caution<!-- END adv-united-arab-emirates --></td>
      <!-- <td>Laws and culture - medication</td> -->
-     <td style="width: 200px;">2018-10-31 15:12:49</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-10-31 15:12:49</td>
      </tr>
 
 
@@ -3531,6 +3541,7 @@
      <td><a href='./destinations/united-kingdom.html'>United Kingdom</a></td>
      <td><!-- START adv-united-kingdom -->Exercise a high degree of caution<!-- END adv-united-kingdom --></td>
      <!-- <td>Safety and security - terrorism</td> -->
+     <td class="dest-keywords">england, wales, scotland, london, uk</td>
      <td style="width: 200px;">2019-01-08 09:21:40</td>
      </tr>
 
@@ -3545,7 +3556,7 @@
      <td><a href='https://travel.gc.ca/destinations/united-states'>United States</a></td>
      <td><!-- START adv-united-states -->Exercise normal security precautions<!-- END adv-united-states --></td>
      <!-- <td>Assistance - removal of the mission closure notice</td> -->
-     <td style="width: 200px;">2019-01-30 16:28:54</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-30 16:28:54</td>
      </tr>
 
 
@@ -3559,7 +3570,7 @@
      <td><a href='https://travel.gc.ca/destinations/uruguay'>Uruguay</a></td>
      <td><!-- START adv-uruguay -->Exercise normal security precautions<!-- END adv-uruguay --></td>
      <!-- <td>Safety and security - ATMs explosions</td> -->
-     <td style="width: 200px;">2019-01-10 11:03:29</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-10 11:03:29</td>
      </tr>
 
 
@@ -3573,7 +3584,7 @@
      <td><a href='https://travel.gc.ca/destinations/uzbekistan'>Uzbekistan</a></td>
      <td><!-- START adv-uzbekistan -->Exercise a high degree of caution (with regional advisories)<!-- END adv-uzbekistan --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-10-31 09:28:07</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-10-31 09:28:07</td>
      </tr>
 
 
@@ -3587,7 +3598,7 @@
      <td><a href='https://travel.gc.ca/destinations/vanuatu'>Vanuatu</a></td>
      <td><!-- START adv-vanuatu -->Exercise normal security precautions<!-- END adv-vanuatu --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
-     <td style="width: 200px;">2019-01-03 14:15:50</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-03 14:15:50</td>
      </tr>
 
 
@@ -3601,7 +3612,7 @@
      <td><a href='https://travel.gc.ca/destinations/venezuela'>Venezuela</a></td>
      <td><!-- START adv-venezuela -->Avoid non-essential travel<!-- END adv-venezuela --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2019-01-31 16:20:04</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-31 16:20:04</td>
      </tr>
 
 
@@ -3615,7 +3626,7 @@
      <td><a href='https://travel.gc.ca/destinations/vietnam'>Vietnam</a></td>
      <td><!-- START adv-vietnam -->Exercise a high degree of caution<!-- END adv-vietnam --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:53:18</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:53:18</td>
      </tr>
 
 
@@ -3629,7 +3640,7 @@
      <td><a href='https://travel.gc.ca/destinations/virgin-islands-u-s'>Virgin Islands (U.S.)</a></td>
      <td><!-- START adv-virgin-islands-u-s -->Exercise normal security precautions<!-- END adv-virgin-islands-u-s --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
-     <td style="width: 200px;">2019-01-18 15:31:15</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:31:15</td>
      </tr>
 
 
@@ -3643,7 +3654,7 @@
      <td><a href='https://travel.gc.ca/destinations/yemen'>Yemen</a></td>
      <td><!-- START adv-yemen -->Avoid all travel<!-- END adv-yemen --></td>
      <!-- <td>Natural disasters & climate - removal of information about severe cyclonic storm Luban</td> -->
-     <td style="width: 200px;">2018-10-18 21:12:21</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-10-18 21:12:21</td>
      </tr>
 
 
@@ -3657,7 +3668,7 @@
      <td><a href='https://travel.gc.ca/destinations/zambia'>Zambia</a></td>
      <td><!-- START adv-zambia -->Exercise a high degree of caution<!-- END adv-zambia --></td>
      <!-- <td>Editorial change.</td> -->
-     <td style="width: 200px;">2018-12-10 12:01:19</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2018-12-10 12:01:19</td>
      </tr>
 
 
@@ -3671,7 +3682,7 @@
      <td><a href='https://travel.gc.ca/destinations/zimbabwe'>Zimbabwe</a></td>
      <td><!-- START adv-zimbabwe -->Exercise a high degree of caution<!-- END adv-zimbabwe --></td>
      <!-- <td>Safety and security - Demonstrations and civil unrest.</td> -->
-     <td style="width: 200px;">2019-01-22 09:41:03</td>
+     <td class="dest-keywords"></td><td style="width: 200px;">2019-01-22 09:41:03</td>
      </tr>
 
 
@@ -3682,7 +3693,7 @@
          <th>English</th>
          <th>Destination</th>
          <th>Advisory</th>
-         <!-- <th>Latest Updates</th> -->
+         <th>Keywords</th>
          <th>Last updated</th>
        </tr>
      </tfoot>
