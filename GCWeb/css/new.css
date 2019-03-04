@@ -70,8 +70,8 @@
 	font-weight: 400;
 }
 .followus {
-	float: right;
-	margin: 10px 0 0 40px;
+	/* float: left; */
+	margin: 10px 0 0 0px;
 	background: none;
 	padding: 0;
 }
