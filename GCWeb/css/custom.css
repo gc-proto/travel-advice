@@ -48,3 +48,11 @@ h1.tr-title {
 table tr.risk4 {
   background-color:"red";
 }
+
+.callout {
+	min-height: 20px;
+	padding: 19px;
+	margin-bottom: 20px;
+	border: 1px solid #e3e3e3;
+	box-shadow: 0px 0px 10px #ddd;
+}
