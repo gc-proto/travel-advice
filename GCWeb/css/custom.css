@@ -9,6 +9,7 @@
 
 
 
+
 element.style {
     background-image: url(http://travel.gc.ca/vt/custom/images/flags/48/PA.png);
 }
@@ -40,4 +41,10 @@ h1.tr-title {
 }
 
 
+}
+
+/* Travel advice index page */
+
+table tr.risk4 {
+  background-color:"red";
 }
