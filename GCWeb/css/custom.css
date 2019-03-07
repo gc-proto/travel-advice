@@ -1,3 +1,75 @@
+
+/* custom checkboxes */
+
+/* for checks, container */
+.container-checks {
+  display: block;
+  position: relative;
+  padding-left: 55px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  font-size: 19px;
+  font-weight: normal;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* hide default checkbox */
+.container-checks input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/*  custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  background-color: #eee;
+  border: 1px solid #333;
+}
+
+/* mouse-over, grey */
+.container-checks:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+
+.container-checks input:checked ~ .checkmark {
+  background-color: #318000;
+}
+
+/* create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* show the checkmark when checked */
+.container-checks input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* style the checkmark/indicator */
+.container-checks .checkmark:after {
+  left: 14px;
+  top: 5px;
+  width: 10px;
+  height: 22px;
+  border: solid white;
+  border-width: 0 4px 4px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
 .home h2 {
   font-size: 1.2em;
 }
