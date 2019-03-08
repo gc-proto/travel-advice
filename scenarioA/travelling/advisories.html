@@ -14,6 +14,7 @@
 <link href="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon">
 <link rel="stylesheet" href="../../GCWeb/css/theme.css">
 <link rel="stylesheet" href="../../GCWeb/css/custom.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 <!--<![endif]-->
 <!--[if lt IE 9]>
 		<link href="./GCWeb/assets/favicon.ico" rel="shortcut icon" />
@@ -66,16 +67,38 @@
   button#wb-srch-sub a {
 
   color: white !important;
-
-
   }
-
-table#reportlist {
-    border-collapse: collapse;
-}
 
 #reportlist tr:hover {
     background-color: #eee;
+}
+
+#reportlist tr.avoid-travel {
+    background: #fff9a2;
+    font-weight:bold;
+}
+
+#reportlist tr.avoid-travel a {
+    color:black;
+}
+
+#reportlist tr.avoid-travel:hover {
+    background-color: #ffdf09;
+}
+
+#reportlist tr.no-travel {
+    background: #b8181e;
+    font-weight:bold;
+    color:white;
+}
+
+#reportlist tr.no-travel a {
+    color:white;
+}
+
+
+#reportlist tr.no-travel:hover {
+    background-color: #7f1115;
 }
 
 #reportlist td:hover {
@@ -145,7 +168,7 @@ table#reportlist {
 
                       <p><a href="planning-your-trip.html">Tips to help you prepare for travel</a>.</p>
                       <p>You should buy the best travel health insurance you can afford before you leave. Your insurance may be affected if you book travel when an avoid-travel advisory is in place for a destination.</p>
-                      <p><a href="health-safety/travel-insurance.html">Travel insurance</a> has details of what your policy should include.</p>
+                      <p><a href="health-safety/travel-insurance.html">What your travel insurance policy should include.</a></p>
 
                        </div>
                    </div>
@@ -174,14 +197,14 @@ table#reportlist {
 
          <th>English</th> <!-- hidden column -->
          <th>Destination</th>
-         <th>Risk level</th>
+         <th>Level</th>
          <th>Keywords</th> <!-- hidden column -->
          <th>Last updated</th>
        </tr>
      </thead>
      <tbody>
 
-   <tr class="gradeX grade4" style="background:#93161a; color:white;">
+   <tr class="gradeX grade4 no-travel">
 
      <!-- <span class="wb-invisible"><td data-coutry_name1=/"+ Afghanistan +/"><a href='https://travel.gc.ca/destinations/afghanistan'>Afghanistan</a></td></span> -->
      <!-- <span class="wb-invisible"><td data-coutry_name=/"+ Afghanistan +/"><a href='https://travel.gc.ca/destinations/afghanistan'>Afghanistan</a></td></span>  -->
@@ -189,7 +212,7 @@ table#reportlist {
 
       <td>afghanistan</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/afghanistan' style="color:white">Afghanistan</a></td>
-     <td class="risk4"><!-- START adv-afghanistan --><strong>Do not travel</strong><!-- END adv-afghanistan --></td>
+     <td><!-- START adv-afghanistan --><span class="fas fa-ban"></span> Do not travel<!-- END adv-afghanistan --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-11-26 13:08:10</td>
      </tr>
@@ -203,7 +226,7 @@ table#reportlist {
 
       <td>albania</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/albania'>Albania</a></td>
-     <td><!-- START adv-albania -->Normal precautions (regional risks are present)<!-- END adv-albania --></td>
+     <td><!-- START adv-albania -->Take normal precautions (regional risks are present)<!-- END adv-albania --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-11-26 10:48:04</td>
      </tr>
@@ -231,7 +254,7 @@ table#reportlist {
 
       <td>american-samoa</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/american-samoa'>American Samoa</a></td>
-     <td><!-- START adv-american-samoa -->Normal precautions<!-- END adv-american-samoa --></td>
+     <td><!-- START adv-american-samoa -->Take normal precautions<!-- END adv-american-samoa --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-03-09 12:01:07</td>
      </tr>
@@ -245,7 +268,7 @@ table#reportlist {
 
       <td>andorra</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/andorra'>Andorra</a></td>
-     <td><!-- START adv-andorra -->Normal precautions<!-- END adv-andorra --></td>
+     <td><!-- START adv-andorra -->Take normal precautions<!-- END adv-andorra --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-06-25 12:17:05</td>
      </tr>
@@ -273,7 +296,7 @@ table#reportlist {
 
       <td>anguilla</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/anguilla'>Anguilla</a></td>
-     <td><!-- START adv-anguilla -->Normal precautions<!-- END adv-anguilla --></td>
+     <td><!-- START adv-anguilla -->Take normal precautions<!-- END adv-anguilla --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:28:58</td>
      </tr>
@@ -287,7 +310,7 @@ table#reportlist {
 
       <td>antarctica</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/antarctica'>Antarctica</a></td>
-     <td><!-- START adv-antarctica -->Normal precautions<!-- END adv-antarctica --></td>
+     <td><!-- START adv-antarctica -->Take normal precautions<!-- END adv-antarctica --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-07-24 15:13:58</td>
      </tr>
@@ -301,7 +324,7 @@ table#reportlist {
 
       <td>antigua-and-barbuda</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/antigua-and-barbuda'>Antigua and Barbuda</a></td>
-     <td><!-- START adv-antigua-and-barbuda -->Normal precautions<!-- END adv-antigua-and-barbuda --></td>
+     <td><!-- START adv-antigua-and-barbuda -->Take normal precautions<!-- END adv-antigua-and-barbuda --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:28:58</td>
      </tr>
@@ -315,7 +338,7 @@ table#reportlist {
 
       <td>argentina</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/argentina'>Argentina</a></td>
-     <td><!-- START adv-argentina -->Normal precautions<!-- END adv-argentina --></td>
+     <td><!-- START adv-argentina -->Take normal precautions<!-- END adv-argentina --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:46:23</td>
      </tr>
@@ -343,7 +366,7 @@ table#reportlist {
 
       <td>aruba</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/aruba'>Aruba</a></td>
-     <td><!-- START adv-aruba -->Normal precautions<!-- END adv-aruba --></td>
+     <td><!-- START adv-aruba -->Take normal precautions<!-- END adv-aruba --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:28:58</td>
      </tr>
@@ -357,7 +380,7 @@ table#reportlist {
 
       <td>australia</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/australia'>Australia</a></td>
-     <td><!-- START adv-australia -->Normal precautions<!-- END adv-australia --></td>
+     <td><!-- START adv-australia -->Take normal precautions<!-- END adv-australia --></td>
      <!-- <td>Natural disasters and climate - removal of information on tropical cyclone Owen</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-17 11:39:52</td>
      </tr>
@@ -371,7 +394,7 @@ table#reportlist {
 
       <td>austria</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/austria'>Austria</a></td>
-     <td><!-- START adv-austria -->Normal precautions<!-- END adv-austria --></td>
+     <td><!-- START adv-austria -->Take normal precautions<!-- END adv-austria --></td>
      <!-- <td>Editorial.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-05-01 10:55:56</td>
      </tr>
@@ -399,7 +422,7 @@ table#reportlist {
 
       <td>azores</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/azores'>Azores</a></td>
-     <td><!-- START adv-azores -->Normal precautions<!-- END adv-azores --></td>
+     <td><!-- START adv-azores -->Take normal precautions<!-- END adv-azores --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-31 15:01:06</td>
      </tr>
@@ -455,7 +478,7 @@ table#reportlist {
 
       <td>barbados</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/barbados'>Barbados</a></td>
-     <td><!-- START adv-barbados -->Normal precautions<!-- END adv-barbados --></td>
+     <td><!-- START adv-barbados -->Take normal precautions<!-- END adv-barbados --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:28:58</td>
      </tr>
@@ -469,7 +492,7 @@ table#reportlist {
 
       <td>belarus</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/belarus'>Belarus</a></td>
-     <td><!-- START adv-belarus -->Normal precautions<!-- END adv-belarus --></td>
+     <td><!-- START adv-belarus -->Take normal precautions<!-- END adv-belarus --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
@@ -525,7 +548,7 @@ table#reportlist {
 
       <td>bermuda</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/bermuda'>Bermuda</a></td>
-     <td><!-- START adv-bermuda -->Normal precautions<!-- END adv-bermuda --></td>
+     <td><!-- START adv-bermuda -->Take normal precautions<!-- END adv-bermuda --></td>
      <!-- <td>Assistance - Consulate of Canada in Bermuda</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-11 12:01:35</td>
      </tr>
@@ -539,7 +562,7 @@ table#reportlist {
 
       <td>bhutan</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/bhutan'>Bhutan</a></td>
-     <td><!-- START adv-bhutan -->Normal precautions<!-- END adv-bhutan --></td>
+     <td><!-- START adv-bhutan -->Take normal precautions<!-- END adv-bhutan --></td>
      <!-- <td>Editorial change</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-08-31 16:28:27</td>
      </tr>
@@ -567,7 +590,7 @@ table#reportlist {
 
       <td>bonaire</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/bonaire'>Bonaire</a></td>
-     <td><!-- START adv-bonaire -->Normal precautions<!-- END adv-bonaire --></td>
+     <td><!-- START adv-bonaire -->Take normal precautions<!-- END adv-bonaire --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:28:58</td>
      </tr>
@@ -595,7 +618,7 @@ table#reportlist {
 
       <td>botswana</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/botswana'>Botswana</a></td>
-     <td><!-- START adv-botswana -->Normal precautions<!-- END adv-botswana --></td>
+     <td><!-- START adv-botswana -->Take normal precautions<!-- END adv-botswana --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-18 10:16:59</td>
      </tr>
@@ -623,7 +646,7 @@ table#reportlist {
 
       <td>british-virgin-islands</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/british-virgin-islands'>British Virgin Islands</a></td>
-     <td><!-- START adv-british-virgin-islands -->Normal precautions<!-- END adv-british-virgin-islands --></td>
+     <td><!-- START adv-british-virgin-islands -->Take normal precautions<!-- END adv-british-virgin-islands --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:29:58</td>
      </tr>
@@ -637,7 +660,7 @@ table#reportlist {
 
       <td>brunei-darussalam</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/brunei-darussalam'>Brunei Darussalam</a></td>
-     <td><!-- START adv-brunei-darussalam -->Normal precautions<!-- END adv-brunei-darussalam --></td>
+     <td><!-- START adv-brunei-darussalam -->Take normal precautions<!-- END adv-brunei-darussalam --></td>
      <!-- <td>Laws and culture - Ramadan 2019.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-06-20 12:54:38</td>
      </tr>
@@ -651,35 +674,35 @@ table#reportlist {
 
       <td>bulgaria</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/bulgaria'>Bulgaria</a></td>
-     <td><!-- START adv-bulgaria -->Normal precautions<!-- END adv-bulgaria --></td>
+     <td><!-- START adv-bulgaria -->Take normal precautions<!-- END adv-bulgaria --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-17 09:10:10</td>
      </tr>
 
 
-   <tr class="gradeX grade4" style="background:#ffdf09; ">
+   <tr class="gradeX grade4 avoid-travel">
 
      <!-- <span class="wb-invisible"><td data-coutry_name1=/"+ Burkina Faso +/"><a href='https://travel.gc.ca/destinations/burkina-faso'>Burkina Faso</a></td></span> -->
      <!-- <span class="wb-invisible"><td data-coutry_name=/"+ Burkina Faso +/"><a href='https://travel.gc.ca/destinations/burkina-faso'>Burkina Faso</a></td></span>  -->
 
 
       <td>burkina-faso</td> <!-- hidden column; uses slug since it has no accents -->
-     <td><a href='https://travel.gc.ca/destinations/burkina-faso' style="color:black">Burkina Faso</a></td>
-     <td><!-- START adv-burkina-faso --><strong>Avoid non-essential travel (regional risks are present)</strong><!-- END adv-burkina-faso --></td>
+     <td><a href='https://travel.gc.ca/destinations/burkina-faso'>Burkina Faso</a></td>
+     <td><!-- START adv-burkina-faso --><strong><span class="fas fa-exclamation-triangle"></span> Avoid non-essential travel (regional risks are present)</strong><!-- END adv-burkina-faso --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:57:12</td>
      </tr>
 
 
-   <tr class="gradeX grade4" style="background:#93161a; color:white;">
+   <tr class="gradeX grade4 no-travel">
 
      <!-- <span class="wb-invisible"><td data-coutry_name1=/"+ Burundi +/"><a href='https://travel.gc.ca/destinations/burundi'>Burundi</a></td></span> -->
      <!-- <span class="wb-invisible"><td data-coutry_name=/"+ Burundi +/"><a href='https://travel.gc.ca/destinations/burundi'>Burundi</a></td></span>  -->
 
 
       <td>burundi</td> <!-- hidden column; uses slug since it has no accents -->
-     <td><a href='https://travel.gc.ca/destinations/burundi' style="color:white">Burundi</a></td>
-     <td class="risk4"><!-- START adv-burundi --><strong>Do not travel</strong><!-- END adv-burundi --></td>
+     <td><a href='https://travel.gc.ca/destinations/burundi'>Burundi</a></td>
+     <td class="risk4"><!-- START adv-burundi --><span class="fas fa-ban"></span> Do not travel<!-- END adv-burundi --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:38:40</td>
      </tr>
@@ -735,7 +758,7 @@ table#reportlist {
 
       <td>canary-islands</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/canary-islands'>Canary Islands</a></td>
-     <td><!-- START adv-canary-islands -->Normal precautions<!-- END adv-canary-islands --></td>
+     <td><!-- START adv-canary-islands -->Take normal precautions<!-- END adv-canary-islands --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-11-26 10:49:48</td>
      </tr>
@@ -749,27 +772,27 @@ table#reportlist {
 
       <td>cayman-islands</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='./destinations/cayman-islands.html'>Cayman Islands</a></td>
-     <td><!-- START adv-cayman-islands -->Normal precautions<!-- END adv-cayman-islands --></td>
+     <td><!-- START adv-cayman-islands -->Take normal precautions<!-- END adv-cayman-islands --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-11-27 13:40:58</td>
      </tr>
 
 
-   <tr class="gradeX grade4" style="background:#93161a; color:white;">
+   <tr class="gradeX grade4 no-travel">
 
      <!-- <span class="wb-invisible"><td data-coutry_name1=/"+ Central African Republic +/"><a href='https://travel.gc.ca/destinations/central-african-republic'>Central African Republic</a></td></span> -->
      <!-- <span class="wb-invisible"><td data-coutry_name=/"+ Central African Republic +/"><a href='https://travel.gc.ca/destinations/central-african-republic'>Central African Republic</a></td></span>  -->
 
 
       <td>central-african-republic</td> <!-- hidden column; uses slug since it has no accents -->
-     <td><a href='https://travel.gc.ca/destinations/central-african-republic' style="color:white">Central African Republic</a></td>
-     <td class="risk4"><!-- START adv-central-african-republic --><strong>Do not travel</strong><!-- END adv-central-african-republic --></td>
+     <td><a href='https://travel.gc.ca/destinations/central-african-republic'>Central African Republic</a></td>
+     <td class="risk4"><!-- START adv-central-african-republic --><strong><span class="fas fa-ban"></span> Do not travel</strong><!-- END adv-central-african-republic --></td>
      <!-- <td>Editorial Change</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-29 12:05:15</td>
      </tr>
 
 
-<tr class="gradeX grade4" style="background:#ffdf09; ">
+<tr class="gradeX grade4 avoid-travel">
 
      <!-- <span class="wb-invisible"><td data-coutry_name1=/"+ Chad +/"><a href='https://travel.gc.ca/destinations/chad'>Chad</a></td></span> -->
      <!-- <span class="wb-invisible"><td data-coutry_name=/"+ Chad +/"><a href='https://travel.gc.ca/destinations/chad'>Chad</a></td></span>  -->
@@ -777,7 +800,7 @@ table#reportlist {
 
       <td>chad</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/chad' style="color:black">Chad</a></td>
-     <td><!-- START adv-chad --><strong>Avoid non-essential travel (regional risks are present)</strong><!-- END adv-chad --></td>
+     <td><!-- START adv-chad --><strong><span class="fas fa-exclamation-triangle"></span> Avoid non-essential travel (regional risks are present)</strong><!-- END adv-chad --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-07 13:39:43</td>
      </tr>
@@ -790,7 +813,7 @@ table#reportlist {
 
       <td>chile</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/chile'>Chile</a></td>
-     <td><!-- START adv-chile -->Normal precautions<!-- END adv-chile --></td>
+     <td><!-- START adv-chile -->Take normal precautions<!-- END adv-chile --></td>
      <!-- <td>Safety and security - removal of information on the explosion in Santiago</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-17 14:27:05</td>
      </tr>
@@ -846,7 +869,7 @@ table#reportlist {
 
       <td>cook-islands</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/cook-islands'>Cook Islands</a></td>
-     <td><!-- START adv-cook-islands -->Normal precautions<!-- END adv-cook-islands --></td>
+     <td><!-- START adv-cook-islands -->Take normal precautions<!-- END adv-cook-islands --></td>
      <!-- <td>Editorial.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-05-01 10:55:56</td>
      </tr>
@@ -888,7 +911,7 @@ table#reportlist {
 
       <td>croatia</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/croatia'>Croatia</a></td>
-     <td><!-- START adv-croatia -->Normal precautions<!-- END adv-croatia --></td>
+     <td><!-- START adv-croatia -->Take normal precautions<!-- END adv-croatia --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
@@ -902,7 +925,7 @@ table#reportlist {
 
       <td>cuba</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='./destinations/cuba-4.html'>Cuba</a></td>
-     <td><!-- START adv-cuba -->Normal precautions<!-- END adv-cuba --></td>
+     <td><!-- START adv-cuba -->Take normal precautions<!-- END adv-cuba --></td>
      <!-- <td>Natural disasters and climate - tornado in Havana</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-31 12:10:55</td>
      </tr>
@@ -916,7 +939,7 @@ table#reportlist {
 
       <td>curacao</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/curacao'>Cura&#231;ao</a></td>
-     <td><!-- START adv-curacao -->Normal precautions<!-- END adv-curacao --></td>
+     <td><!-- START adv-curacao -->Take normal precautions<!-- END adv-curacao --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:29:58</td>
      </tr>
@@ -930,7 +953,7 @@ table#reportlist {
 
       <td>cyprus</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/cyprus'>Cyprus</a></td>
-     <td><!-- START adv-cyprus -->Normal precautions<!-- END adv-cyprus --></td>
+     <td><!-- START adv-cyprus -->Take normal precautions<!-- END adv-cyprus --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-08-08 14:12:17</td>
      </tr>
@@ -944,13 +967,13 @@ table#reportlist {
 
       <td>czech-republic</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/czech-republic'>Czech Republic</a></td>
-     <td><!-- START adv-czech-republic -->Normal precautions<!-- END adv-czech-republic --></td>
+     <td><!-- START adv-czech-republic -->Take normal precautions<!-- END adv-czech-republic --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
 
 
-   <tr class="gradeX">
+   <tr class="gradeX grade4 avoid-travel">
 
      <!-- <span class="wb-invisible"><td data-coutry_name1=/"+ Democratic Republic of Congo (Kinshasa) +/"><a href='https://travel.gc.ca/destinations/congo-kinshasa'>Democratic Republic of Congo (Kinshasa)</a></td></span> -->
      <!-- <span class="wb-invisible"><td data-coutry_name=/"+ Democratic Republic of Congo (Kinshasa) +/"><a href='https://travel.gc.ca/destinations/congo-kinshasa'>Democratic Republic of Congo (Kinshasa)</a></td></span>  -->
@@ -958,7 +981,7 @@ table#reportlist {
 
       <td>congo-kinshasa</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/congo-kinshasa'>Democratic Republic of Congo (Kinshasa)</a></td>
-     <td><!-- START adv-congo-kinshasa -->Avoid non-essential travel (regional risks are present)<!-- END adv-congo-kinshasa --></td>
+     <td><!-- START adv-congo-kinshasa --><span class="fas fa-exclamation-triangle"></span> Avoid non-essential travel (regional risks are present)<!-- END adv-congo-kinshasa --></td>
      <!-- <td>Safety and security - Elections.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-25 15:05:01</td>
      </tr>
@@ -972,7 +995,7 @@ table#reportlist {
 
       <td>denmark</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/denmark'>Denmark</a></td>
-     <td><!-- START adv-denmark -->Normal precautions<!-- END adv-denmark --></td>
+     <td><!-- START adv-denmark -->Take normal precautions<!-- END adv-denmark --></td>
      <!-- <td>Laws and culture - Identification</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-07-13 14:23:43</td>
      </tr>
@@ -1000,7 +1023,7 @@ table#reportlist {
 
       <td>dominica</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/dominica'>Dominica</a></td>
-     <td><!-- START adv-dominica -->Normal precautions<!-- END adv-dominica --></td>
+     <td><!-- START adv-dominica -->Take normal precautions<!-- END adv-dominica --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:29:58</td>
      </tr>
@@ -1034,7 +1057,7 @@ table#reportlist {
      </tr>
 
 
-   <tr class="gradeX">
+   <tr class="gradeX grade4 avoid-travel">
 
      <!-- <span class="wb-invisible"><td data-coutry_name1=/"+ Egypt +/"><a href='https://travel.gc.ca/destinations/egypt'>Egypt</a></td></span> -->
      <!-- <span class="wb-invisible"><td data-coutry_name=/"+ Egypt +/"><a href='https://travel.gc.ca/destinations/egypt'>Egypt</a></td></span>  -->
@@ -1042,7 +1065,7 @@ table#reportlist {
 
       <td>egypt</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/egypt'>Egypt</a></td>
-     <td><!-- START adv-egypt -->Avoid non-essential travel (regional risks are present)<!-- END adv-egypt --></td>
+     <td><!-- START adv-egypt --><span class="fas fa-exclamation-triangle"></span> Avoid non-essential travel (regional risks are present)<!-- END adv-egypt --></td>
      <!-- <td>Safety and security - attack on tourist bus near Giza</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-28 16:01:09</td>
      </tr>
@@ -1076,7 +1099,7 @@ table#reportlist {
      </tr>
 
 
-   <tr class="gradeX">
+   <tr class="gradeX grade4 avoid-travel">
 
      <!-- <span class="wb-invisible"><td data-coutry_name1=/"+ Eritrea +/"><a href='https://travel.gc.ca/destinations/eritrea'>Eritrea</a></td></span> -->
      <!-- <span class="wb-invisible"><td data-coutry_name=/"+ Eritrea +/"><a href='https://travel.gc.ca/destinations/eritrea'>Eritrea</a></td></span>  -->
@@ -1084,7 +1107,7 @@ table#reportlist {
 
       <td>eritrea</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/eritrea'>Eritrea</a></td>
-     <td><!-- START adv-eritrea -->Avoid non-essential travel (regional risks are present)<!-- END adv-eritrea --></td>
+     <td><!-- START adv-eritrea --><span class="fas fa-exclamation-triangle"></span> Avoid non-essential travel (regional risks are present)<!-- END adv-eritrea --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-11-27 16:33:35</td>
      </tr>
@@ -1098,7 +1121,7 @@ table#reportlist {
 
       <td>estonia</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/estonia'>Estonia</a></td>
-     <td><!-- START adv-estonia -->Normal precautions<!-- END adv-estonia --></td>
+     <td><!-- START adv-estonia -->Take normal precautions<!-- END adv-estonia --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
@@ -1112,7 +1135,7 @@ table#reportlist {
 
       <td>eswatini</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/eswatini'>Eswatini</a></td>
-     <td><!-- START adv-eswatini -->Normal precautions<!-- END adv-eswatini --></td>
+     <td><!-- START adv-eswatini -->Take normal precautions<!-- END adv-eswatini --></td>
      <!-- <td>Safety and security - removal of elections information</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-10-05 10:47:33</td>
      </tr>
@@ -1140,7 +1163,7 @@ table#reportlist {
 
       <td>falkland-islands</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/falkland-islands'>Falkland Islands</a></td>
-     <td><!-- START adv-falkland-islands -->Normal precautions<!-- END adv-falkland-islands --></td>
+     <td><!-- START adv-falkland-islands -->Take normal precautions<!-- END adv-falkland-islands --></td>
      <!-- <td>Editorial.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-05-01 10:55:56</td>
      </tr>
@@ -1154,7 +1177,7 @@ table#reportlist {
 
       <td>fiji</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/fiji'>Fiji</a></td>
-     <td><!-- START adv-fiji -->Normal precautions<!-- END adv-fiji --></td>
+     <td><!-- START adv-fiji -->Take normal precautions<!-- END adv-fiji --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:42:11</td>
      </tr>
@@ -1168,7 +1191,7 @@ table#reportlist {
 
       <td>finland</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/finland'>Finland</a></td>
-     <td><!-- START adv-finland -->Normal precautions<!-- END adv-finland --></td>
+     <td><!-- START adv-finland -->Take normal precautions<!-- END adv-finland --></td>
      <!-- <td>Safety and security - demonstrations</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-08-20 16:21:44</td>
      </tr>
@@ -1196,7 +1219,7 @@ table#reportlist {
 
       <td>french-guiana</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/french-guiana'>French Guiana</a></td>
-     <td><!-- START adv-french-guiana -->Normal precautions<!-- END adv-french-guiana --></td>
+     <td><!-- START adv-french-guiana -->Take normal precautions<!-- END adv-french-guiana --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:46:59</td>
      </tr>
@@ -1210,7 +1233,7 @@ table#reportlist {
 
       <td>french-polynesia</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/french-polynesia'>French Polynesia</a></td>
-     <td><!-- START adv-french-polynesia -->Normal precautions<!-- END adv-french-polynesia --></td>
+     <td><!-- START adv-french-polynesia -->Take normal precautions<!-- END adv-french-polynesia --></td>
      <!-- <td>Editorial.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-05-01 10:55:56</td>
      </tr>
@@ -1252,7 +1275,7 @@ table#reportlist {
 
       <td>georgia</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/georgia'>Georgia</a></td>
-     <td><!-- START adv-georgia -->Normal precautions (regional risks are present)<!-- END adv-georgia --></td>
+     <td><!-- START adv-georgia -->Take normal precautions (regional risks are present)<!-- END adv-georgia --></td>
      <!-- <td>Assistance - Consulate of Canada in Tbilisi reopens</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-27 15:48:04</td>
      </tr>
@@ -1266,7 +1289,7 @@ table#reportlist {
 
       <td>germany</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/germany'>Germany</a></td>
-     <td><!-- START adv-germany -->Normal precautions<!-- END adv-germany --></td>
+     <td><!-- START adv-germany -->Take normal precautions<!-- END adv-germany --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-11 09:00:26</td>
      </tr>
@@ -1294,7 +1317,7 @@ table#reportlist {
 
       <td>gibraltar</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/gibraltar'>Gibraltar</a></td>
-     <td><!-- START adv-gibraltar -->Normal precautions<!-- END adv-gibraltar --></td>
+     <td><!-- START adv-gibraltar -->Take normal precautions<!-- END adv-gibraltar --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-07-24 15:48:32</td>
      </tr>
@@ -1308,7 +1331,7 @@ table#reportlist {
 
       <td>greece</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/greece'>Greece</a></td>
-     <td><!-- START adv-greece -->Normal precautions<!-- END adv-greece --></td>
+     <td><!-- START adv-greece -->Take normal precautions<!-- END adv-greece --></td>
      <!-- <td>Safety and security - demonstrations and strikes</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-22 16:01:47</td>
      </tr>
@@ -1322,7 +1345,7 @@ table#reportlist {
 
       <td>greenland</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/greenland'>Greenland</a></td>
-     <td><!-- START adv-greenland -->Normal precautions<!-- END adv-greenland --></td>
+     <td><!-- START adv-greenland -->Take normal precautions<!-- END adv-greenland --></td>
      <!-- <td>Editorial.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-05-01 10:55:56</td>
      </tr>
@@ -1336,7 +1359,7 @@ table#reportlist {
 
       <td>grenada</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/grenada'>Grenada</a></td>
-     <td><!-- START adv-grenada -->Normal precautions<!-- END adv-grenada --></td>
+     <td><!-- START adv-grenada -->Take normal precautions<!-- END adv-grenada --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:30:28</td>
      </tr>
@@ -1350,7 +1373,7 @@ table#reportlist {
 
       <td>guadeloupe</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/guadeloupe'>Guadeloupe</a></td>
-     <td><!-- START adv-guadeloupe -->Normal precautions<!-- END adv-guadeloupe --></td>
+     <td><!-- START adv-guadeloupe -->Take normal precautions<!-- END adv-guadeloupe --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-11-27 13:40:58</td>
      </tr>
@@ -1364,7 +1387,7 @@ table#reportlist {
 
       <td>guam</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/guam'>Guam</a></td>
-     <td><!-- START adv-guam -->Normal precautions<!-- END adv-guam --></td>
+     <td><!-- START adv-guam -->Take normal precautions<!-- END adv-guam --></td>
      <!-- <td>Natural disasters and climate - typhoon Manghkut</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-09-21 11:54:53</td>
      </tr>
@@ -1462,7 +1485,7 @@ table#reportlist {
 
       <td>hong-kong</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/hong-kong'>Hong Kong</a></td>
-     <td><!-- START adv-hong-kong -->Normal precautions<!-- END adv-hong-kong --></td>
+     <td><!-- START adv-hong-kong -->Take normal precautions<!-- END adv-hong-kong --></td>
      <!-- <td>Natural disasters and climate - removal of text on Typhoon Mangkhut</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-10-03 11:57:10</td>
      </tr>
@@ -1476,7 +1499,7 @@ table#reportlist {
 
       <td>hungary</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/hungary'>Hungary</a></td>
-     <td><!-- START adv-hungary -->Normal precautions<!-- END adv-hungary --></td>
+     <td><!-- START adv-hungary -->Take normal precautions<!-- END adv-hungary --></td>
      <!-- <td>Safety and security - update on demonstrations</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-21 10:24:29</td>
      </tr>
@@ -1490,7 +1513,7 @@ table#reportlist {
 
       <td>iceland</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/iceland'>Iceland</a></td>
-     <td><!-- START adv-iceland -->Normal precautions<!-- END adv-iceland --></td>
+     <td><!-- START adv-iceland -->Take normal precautions<!-- END adv-iceland --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-06-19 08:02:00</td>
      </tr>
@@ -1538,7 +1561,7 @@ table#reportlist {
      </tr>
 
 
-   <tr class="gradeX">
+<tr class="gradeX grade4 no-travel">
 
      <!-- <span class="wb-invisible"><td data-coutry_name1=/"+ Iraq +/"><a href='https://travel.gc.ca/destinations/iraq'>Iraq</a></td></span> -->
      <!-- <span class="wb-invisible"><td data-coutry_name=/"+ Iraq +/"><a href='https://travel.gc.ca/destinations/iraq'>Iraq</a></td></span>  -->
@@ -1546,7 +1569,7 @@ table#reportlist {
 
       <td>iraq</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/iraq'>Iraq</a></td>
-     <td class="risk4"><!-- START adv-iraq --><strong>Do not travel</strong><!-- END adv-iraq --></td>
+     <td class="risk4"><!-- START adv-iraq --><strong><span class="fas fa-ban"></span> Do not travel</strong><!-- END adv-iraq --></td>
      <!-- <td>Safety and security - removal of information on demonstrations</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-08-21 10:28:49</td>
      </tr>
@@ -1560,7 +1583,7 @@ table#reportlist {
 
       <td>ireland</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/ireland'>Ireland</a></td>
-     <td><!-- START adv-ireland -->Normal precautions<!-- END adv-ireland --></td>
+     <td><!-- START adv-ireland -->Take normal precautions<!-- END adv-ireland --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
@@ -1588,7 +1611,7 @@ table#reportlist {
 
       <td>italy</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/italy'>Italy</a></td>
-     <td><!-- START adv-italy -->Normal precautions<!-- END adv-italy --></td>
+     <td><!-- START adv-italy -->Take normal precautions<!-- END adv-italy --></td>
      <!-- <td>Natural disasters and climate - removal of information on recent floods</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-11-15 10:58:57</td>
      </tr>
@@ -1616,7 +1639,7 @@ table#reportlist {
 
       <td>japan</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/japan'>Japan</a></td>
-     <td><!-- START adv-japan -->Normal precautions (regional risks are present)<!-- END adv-japan --></td>
+     <td><!-- START adv-japan -->Take normal precautions (regional risks are present)<!-- END adv-japan --></td>
      <!-- <td>Natural disasters and climate - removal of text on Kong-Rey</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-10-05 11:37:29</td>
      </tr>
@@ -1672,13 +1695,13 @@ table#reportlist {
 
       <td>kiribati</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/kiribati'>Kiribati</a></td>
-     <td><!-- START adv-kiribati -->Normal precautions<!-- END adv-kiribati --></td>
+     <td><!-- START adv-kiribati -->Take normal precautions<!-- END adv-kiribati --></td>
      <!-- <td>Editorial.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-05-01 10:55:56</td>
      </tr>
 
 
-   <tr class="gradeX">
+   <tr class="gradeX grade4 no-travel">
 
      <!-- <span class="wb-invisible"><td data-coutry_name1=/"+ Korea, North (DPRK) +/"><a href='https://travel.gc.ca/destinations/korea-north-dprk'>Korea, North (DPRK)</a></td></span> -->
      <!-- <span class="wb-invisible"><td data-coutry_name=/"+ Korea, North (DPRK) +/"><a href='https://travel.gc.ca/destinations/korea-north-dprk'>Korea, North (DPRK)</a></td></span>  -->
@@ -1686,7 +1709,7 @@ table#reportlist {
 
       <td>korea-north-dprk</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/korea-north-dprk'>Korea, North (DPRK)</a></td>
-     <td class="risk4"><!-- START adv-korea-north-dprk --><strong>Do not travel</strong><!-- END adv-korea-north-dprk --></td>
+     <td class="risk4"><!-- START adv-korea-north-dprk --><strong><span class="fas fa-ban"></span> Do not travel</strong><!-- END adv-korea-north-dprk --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-06-18 10:34:38</td>
      </tr>
@@ -1700,7 +1723,7 @@ table#reportlist {
 
       <td>korea-south</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/korea-south'>Korea, South</a></td>
-     <td><!-- START adv-korea-south -->Normal precautions<!-- END adv-korea-south --></td>
+     <td><!-- START adv-korea-south -->Take normal precautions<!-- END adv-korea-south --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-12 16:21:08</td>
      </tr>
@@ -1714,7 +1737,7 @@ table#reportlist {
 
       <td>kosovo</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/kosovo'>Kosovo</a></td>
-     <td><!-- START adv-kosovo -->Normal precautions (regional risks are present)<!-- END adv-kosovo --></td>
+     <td><!-- START adv-kosovo -->Take normal precautions (regional risks are present)<!-- END adv-kosovo --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
@@ -1770,7 +1793,7 @@ table#reportlist {
 
       <td>latvia</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/latvia'>Latvia</a></td>
-     <td><!-- START adv-latvia -->Normal precautions<!-- END adv-latvia --></td>
+     <td><!-- START adv-latvia -->Take normal precautions<!-- END adv-latvia --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
@@ -1818,7 +1841,7 @@ table#reportlist {
      </tr>
 
 
-   <tr class="gradeX">
+   <tr class="gradeX grade4 no-travel">
 
      <!-- <span class="wb-invisible"><td data-coutry_name1=/"+ Libya +/"><a href='https://travel.gc.ca/destinations/libya'>Libya</a></td></span> -->
      <!-- <span class="wb-invisible"><td data-coutry_name=/"+ Libya +/"><a href='https://travel.gc.ca/destinations/libya'>Libya</a></td></span>  -->
@@ -1826,7 +1849,7 @@ table#reportlist {
 
       <td>libya</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/libya'>Libya</a></td>
-     <td class="risk4"><!-- START adv-libya --><strong>Do not travel</strong><!-- END adv-libya --></td>
+     <td class="risk4"><!-- START adv-libya --><strong><span class="fas fa-ban"></span> Do not travel</strong><!-- END adv-libya --></td>
      <!-- <td>Safety and security - Mitiga airport reopened.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-09-07 13:33:11</td>
      </tr>
@@ -1840,7 +1863,7 @@ table#reportlist {
 
       <td>liechtenstein</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/liechtenstein'>Liechtenstein</a></td>
-     <td><!-- START adv-liechtenstein -->Normal precautions<!-- END adv-liechtenstein --></td>
+     <td><!-- START adv-liechtenstein -->Take normal precautions<!-- END adv-liechtenstein --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-03 16:11:45</td>
      </tr>
@@ -1854,7 +1877,7 @@ table#reportlist {
 
       <td>lithuania</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/lithuania'>Lithuania</a></td>
-     <td><!-- START adv-lithuania -->Normal precautions<!-- END adv-lithuania --></td>
+     <td><!-- START adv-lithuania -->Take normal precautions<!-- END adv-lithuania --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
@@ -1868,7 +1891,7 @@ table#reportlist {
 
       <td>luxembourg</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/luxembourg'>Luxembourg</a></td>
-     <td><!-- START adv-luxembourg -->Normal precautions<!-- END adv-luxembourg --></td>
+     <td><!-- START adv-luxembourg -->Take normal precautions<!-- END adv-luxembourg --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
@@ -1882,7 +1905,7 @@ table#reportlist {
 
       <td>macao</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/macao'>Macao</a></td>
-     <td><!-- START adv-macao -->Normal precautions<!-- END adv-macao --></td>
+     <td><!-- START adv-macao -->Take normal precautions<!-- END adv-macao --></td>
      <!-- <td>Natural disasters and climate - removal of text on Typhoon Mangkhut</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-10-03 11:57:59</td>
      </tr>
@@ -1896,7 +1919,7 @@ table#reportlist {
 
       <td>macedonia</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/macedonia'>Macedonia</a></td>
-     <td><!-- START adv-macedonia -->Normal precautions<!-- END adv-macedonia --></td>
+     <td><!-- START adv-macedonia -->Take normal precautions<!-- END adv-macedonia --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
@@ -1958,7 +1981,7 @@ table#reportlist {
      </tr>
 
 
-   <tr class="gradeX">
+   <tr class="gradeX grade4 no-travel">
 
      <!-- <span class="wb-invisible"><td data-coutry_name1=/"+ Mali +/"><a href='https://travel.gc.ca/destinations/mali'>Mali</a></td></span> -->
      <!-- <span class="wb-invisible"><td data-coutry_name=/"+ Mali +/"><a href='https://travel.gc.ca/destinations/mali'>Mali</a></td></span>  -->
@@ -1966,7 +1989,7 @@ table#reportlist {
 
       <td>mali</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/mali'>Mali</a></td>
-     <td class="risk4"><!-- START adv-mali --><strong>Do not travel</strong><!-- END adv-mali --></td>
+     <td class="risk4"><!-- START adv-mali --><strong><span class="fas fa-ban"></span> Do not travel</strong><!-- END adv-mali --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-11-29 15:07:50</td>
      </tr>
@@ -1980,7 +2003,7 @@ table#reportlist {
 
       <td>malta</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/malta'>Malta</a></td>
-     <td><!-- START adv-malta -->Normal precautions<!-- END adv-malta --></td>
+     <td><!-- START adv-malta -->Take normal precautions<!-- END adv-malta --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
@@ -1994,7 +2017,7 @@ table#reportlist {
 
       <td>marshall-islands</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/marshall-islands'>Marshall Islands</a></td>
-     <td><!-- START adv-marshall-islands -->Normal precautions<!-- END adv-marshall-islands --></td>
+     <td><!-- START adv-marshall-islands -->Take normal precautions<!-- END adv-marshall-islands --></td>
      <!-- <td>Editorial.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-05-01 10:55:56</td>
      </tr>
@@ -2008,13 +2031,13 @@ table#reportlist {
 
       <td>martinique</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/martinique'>Martinique</a></td>
-     <td><!-- START adv-martinique -->Normal precautions<!-- END adv-martinique --></td>
+     <td><!-- START adv-martinique -->Take normal precautions<!-- END adv-martinique --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-11-27 13:40:58</td>
      </tr>
 
 
-   <tr class="gradeX">
+   <tr class="gradeX grade4 avoid-travel">
 
      <!-- <span class="wb-invisible"><td data-coutry_name1=/"+ Mauritania +/"><a href='https://travel.gc.ca/destinations/mauritania'>Mauritania</a></td></span> -->
      <!-- <span class="wb-invisible"><td data-coutry_name=/"+ Mauritania +/"><a href='https://travel.gc.ca/destinations/mauritania'>Mauritania</a></td></span>  -->
@@ -2022,7 +2045,7 @@ table#reportlist {
 
       <td>mauritania</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/mauritania'>Mauritania</a></td>
-     <td><!-- START adv-mauritania -->Avoid non-essential travel (regional risks are present)<!-- END adv-mauritania --></td>
+     <td><!-- START adv-mauritania --><span class="fas fa-exclamation-triangle"></span> Avoid non-essential travel (regional risks are present)<!-- END adv-mauritania --></td>
      <!-- <td>Safety and security - removal of legislative elections information</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-09-27 15:45:41</td>
      </tr>
@@ -2036,7 +2059,7 @@ table#reportlist {
 
       <td>mauritius</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/mauritius'>Mauritius</a></td>
-     <td><!-- START adv-mauritius -->Normal precautions<!-- END adv-mauritius --></td>
+     <td><!-- START adv-mauritius -->Take normal precautions<!-- END adv-mauritius --></td>
      <!-- <td>Natural disasters & climate -  removal of information on tropical cyclone Cilida</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-24 08:58:16</td>
      </tr>
@@ -2050,7 +2073,7 @@ table#reportlist {
 
       <td>mayotte</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/mayotte'>Mayotte</a></td>
-     <td><!-- START adv-mayotte -->Normal precautions<!-- END adv-mayotte --></td>
+     <td><!-- START adv-mayotte -->Take normal precautions<!-- END adv-mayotte --></td>
      <!-- <td>Thorough review and update of the entire travel advice content</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-07-19 14:09:00</td>
      </tr>
@@ -2078,7 +2101,7 @@ table#reportlist {
 
       <td>micronesia-fsm</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/micronesia-fsm'>Micronesia (FSM)</a></td>
-     <td><!-- START adv-micronesia-fsm -->Normal precautions<!-- END adv-micronesia-fsm --></td>
+     <td><!-- START adv-micronesia-fsm -->Take normal precautions<!-- END adv-micronesia-fsm --></td>
      <!-- <td>Editorial.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-05-01 10:55:56</td>
      </tr>
@@ -2092,7 +2115,7 @@ table#reportlist {
 
       <td>moldova</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/moldova'>Moldova</a></td>
-     <td><!-- START adv-moldova -->Normal precautions (regional risks are present)<!-- END adv-moldova --></td>
+     <td><!-- START adv-moldova -->Take normal precautions (regional risks are present)<!-- END adv-moldova --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
@@ -2106,7 +2129,7 @@ table#reportlist {
 
       <td>monaco</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/monaco'>Monaco</a></td>
-     <td><!-- START adv-monaco -->Normal precautions<!-- END adv-monaco --></td>
+     <td><!-- START adv-monaco -->Take normal precautions<!-- END adv-monaco --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
@@ -2120,7 +2143,7 @@ table#reportlist {
 
       <td>mongolia</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/mongolia'>Mongolia</a></td>
-     <td><!-- START adv-mongolia -->Normal precautions<!-- END adv-mongolia --></td>
+     <td><!-- START adv-mongolia -->Take normal precautions<!-- END adv-mongolia --></td>
      <!-- <td>Safety and security - removal of information on demonstrations in Suhkbaatar Square</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-24 10:53:06</td>
      </tr>
@@ -2134,7 +2157,7 @@ table#reportlist {
 
       <td>montenegro</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/montenegro'>Montenegro</a></td>
-     <td><!-- START adv-montenegro -->Normal precautions<!-- END adv-montenegro --></td>
+     <td><!-- START adv-montenegro -->Take normal precautions<!-- END adv-montenegro --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
@@ -2148,7 +2171,7 @@ table#reportlist {
 
       <td>montserrat</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/montserrat'>Montserrat</a></td>
-     <td><!-- START adv-montserrat -->Normal precautions<!-- END adv-montserrat --></td>
+     <td><!-- START adv-montserrat -->Take normal precautions<!-- END adv-montserrat --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:30:28</td>
      </tr>
@@ -2218,7 +2241,7 @@ table#reportlist {
 
       <td>nauru</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/nauru'>Nauru</a></td>
-     <td><!-- START adv-nauru -->Normal precautions<!-- END adv-nauru --></td>
+     <td><!-- START adv-nauru -->Take normal precautions<!-- END adv-nauru --></td>
      <!-- <td>Editorial.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-05-01 10:55:56</td>
      </tr>
@@ -2260,7 +2283,7 @@ table#reportlist {
 
       <td>new-caledonia</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/new-caledonia'>New Caledonia</a></td>
-     <td><!-- START adv-new-caledonia -->Normal precautions<!-- END adv-new-caledonia --></td>
+     <td><!-- START adv-new-caledonia -->Take normal precautions<!-- END adv-new-caledonia --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-17 14:16:45</td>
      </tr>
@@ -2274,7 +2297,7 @@ table#reportlist {
 
       <td>new-zealand</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/new-zealand'>New Zealand</a></td>
-     <td><!-- START adv-new-zealand -->Normal precautions<!-- END adv-new-zealand --></td>
+     <td><!-- START adv-new-zealand -->Take normal precautions<!-- END adv-new-zealand --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-05-28 11:07:25</td>
      </tr>
@@ -2294,7 +2317,7 @@ table#reportlist {
      </tr>
 
 
-   <tr class="gradeX">
+   <tr class="gradeX grade4 avoid-travel">
 
      <!-- <span class="wb-invisible"><td data-coutry_name1=/"+ Niger +/"><a href='https://travel.gc.ca/destinations/niger'>Niger</a></td></span> -->
      <!-- <span class="wb-invisible"><td data-coutry_name=/"+ Niger +/"><a href='https://travel.gc.ca/destinations/niger'>Niger</a></td></span>  -->
@@ -2302,13 +2325,13 @@ table#reportlist {
 
       <td>niger</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/niger'>Niger</a></td>
-     <td><!-- START adv-niger -->Avoid non-essential travel (regional risks are present)<!-- END adv-niger --></td>
+     <td><!-- START adv-niger --><span class="fas fa-exclamation-triangle"></span> Avoid non-essential travel (regional risks are present)<!-- END adv-niger --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-11-21 12:06:22</td>
      </tr>
 
 
-   <tr class="gradeX">
+   <tr class="gradeX grade4 avoid-travel">
 
      <!-- <span class="wb-invisible"><td data-coutry_name1=/"+ Nigeria +/"><a href='https://travel.gc.ca/destinations/nigeria'>Nigeria</a></td></span> -->
      <!-- <span class="wb-invisible"><td data-coutry_name=/"+ Nigeria +/"><a href='https://travel.gc.ca/destinations/nigeria'>Nigeria</a></td></span>  -->
@@ -2316,7 +2339,7 @@ table#reportlist {
 
       <td>nigeria</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/nigeria'>Nigeria</a></td>
-     <td><!-- START adv-nigeria -->Avoid non-essential travel (regional risks are present)<!-- END adv-nigeria --></td>
+     <td><!-- START adv-nigeria --><span class="fas fa-exclamation-triangle"></span> Avoid non-essential travel (regional risks are present)<!-- END adv-nigeria --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:57:12</td>
      </tr>
@@ -2330,7 +2353,7 @@ table#reportlist {
 
       <td>niue</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/niue'>Niue</a></td>
-     <td><!-- START adv-niue -->Normal precautions<!-- END adv-niue --></td>
+     <td><!-- START adv-niue -->Take normal precautions<!-- END adv-niue --></td>
      <!-- <td>Editorial.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-05-01 10:55:56</td>
      </tr>
@@ -2344,7 +2367,7 @@ table#reportlist {
 
       <td>northern-marianas</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/northern-marianas'>Northern Marianas</a></td>
-     <td><!-- START adv-northern-marianas -->Normal precautions<!-- END adv-northern-marianas --></td>
+     <td><!-- START adv-northern-marianas -->Take normal precautions<!-- END adv-northern-marianas --></td>
      <!-- <td>Risk level(s) - removal of advisory; Natural disasters and climate - recovery efforts</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-09 15:02:17</td>
      </tr>
@@ -2358,7 +2381,7 @@ table#reportlist {
 
       <td>norway</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/norway'>Norway</a></td>
-     <td><!-- START adv-norway -->Normal precautions<!-- END adv-norway --></td>
+     <td><!-- START adv-norway -->Take normal precautions<!-- END adv-norway --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-11-27 15:03:46</td>
      </tr>
@@ -2378,7 +2401,7 @@ table#reportlist {
      </tr>
 
 
-   <tr class="gradeX">
+   <tr class="gradeX grade4 avoid-travel">
 
      <!-- <span class="wb-invisible"><td data-coutry_name1=/"+ Pakistan +/"><a href='https://travel.gc.ca/destinations/pakistan'>Pakistan</a></td></span> -->
      <!-- <span class="wb-invisible"><td data-coutry_name=/"+ Pakistan +/"><a href='https://travel.gc.ca/destinations/pakistan'>Pakistan</a></td></span>  -->
@@ -2386,7 +2409,7 @@ table#reportlist {
 
       <td>pakistan</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/pakistan'>Pakistan</a></td>
-     <td><!-- START adv-pakistan -->Avoid non-essential travel<!-- END adv-pakistan --></td>
+     <td><!-- START adv-pakistan --><span class="fas fa-exclamation-triangle"></span> Avoid non-essential travel<!-- END adv-pakistan --></td>
      <!-- <td>The Health tab was updated - travel health notices (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-30 08:51:27</td>
      </tr>
@@ -2400,7 +2423,7 @@ table#reportlist {
 
       <td>palau</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/palau'>Palau</a></td>
-     <td><!-- START adv-palau -->Normal precautions<!-- END adv-palau --></td>
+     <td><!-- START adv-palau -->Take normal precautions<!-- END adv-palau --></td>
      <!-- <td>Editorial.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-05-01 10:55:56</td>
      </tr>
@@ -2414,7 +2437,7 @@ table#reportlist {
 
       <td>panama</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='./destinations/panama.html'>Panama</a></td>
-     <td><!-- START adv-panama -->Normal precautions (regional risks are present)<!-- END adv-panama --></td>
+     <td><!-- START adv-panama -->Take normal precautions (regional risks are present)<!-- END adv-panama --></td>
      <!-- <td>Safety and security - removal of information on World Youth Day</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-29 09:31:09</td>
      </tr>
@@ -2484,7 +2507,7 @@ table#reportlist {
 
       <td>poland</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/poland'>Poland</a></td>
-     <td><!-- START adv-poland -->Normal precautions<!-- END adv-poland --></td>
+     <td><!-- START adv-poland -->Take normal precautions<!-- END adv-poland --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
@@ -2498,7 +2521,7 @@ table#reportlist {
 
       <td>portugal</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/portugal'>Portugal</a></td>
-     <td><!-- START adv-portugal -->Normal precautions<!-- END adv-portugal --></td>
+     <td><!-- START adv-portugal -->Take normal precautions<!-- END adv-portugal --></td>
      <!-- <td>Natural disasters and climate - removal of information about Hurricane Leslie</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-10-15 09:25:56</td>
      </tr>
@@ -2512,7 +2535,7 @@ table#reportlist {
 
       <td>puerto-rico</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/puerto-rico'>Puerto Rico</a></td>
-     <td><!-- START adv-puerto-rico -->Normal precautions<!-- END adv-puerto-rico --></td>
+     <td><!-- START adv-puerto-rico -->Take normal precautions<!-- END adv-puerto-rico --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:30:28</td>
      </tr>
@@ -2526,7 +2549,7 @@ table#reportlist {
 
       <td>qatar</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/qatar'>Qatar</a></td>
-     <td><!-- START adv-qatar -->Normal precautions<!-- END adv-qatar --></td>
+     <td><!-- START adv-qatar -->Take normal precautions<!-- END adv-qatar --></td>
      <!-- <td>Risk level(s) - take normal security precautions; Safety and security - terrorism</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-28 17:17:27</td>
      </tr>
@@ -2568,7 +2591,7 @@ table#reportlist {
 
       <td>romania</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/romania'>Romania</a></td>
-     <td><!-- START adv-romania -->Normal precautions<!-- END adv-romania --></td>
+     <td><!-- START adv-romania -->Take normal precautions<!-- END adv-romania --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-08-29 11:46:37</td>
      </tr>
@@ -2610,7 +2633,7 @@ table#reportlist {
 
       <td>saint-kitts-and-nevis</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/saint-kitts-and-nevis'>Saint Kitts and Nevis</a></td>
-     <td><!-- START adv-saint-kitts-and-nevis -->Normal precautions<!-- END adv-saint-kitts-and-nevis --></td>
+     <td><!-- START adv-saint-kitts-and-nevis -->Take normal precautions<!-- END adv-saint-kitts-and-nevis --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:31:15</td>
      </tr>
@@ -2624,7 +2647,7 @@ table#reportlist {
 
       <td>saint-lucia</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/saint-lucia'>Saint Lucia</a></td>
-     <td><!-- START adv-saint-lucia -->Normal precautions<!-- END adv-saint-lucia --></td>
+     <td><!-- START adv-saint-lucia -->Take normal precautions<!-- END adv-saint-lucia --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:31:15</td>
      </tr>
@@ -2638,7 +2661,7 @@ table#reportlist {
 
       <td>saint-martin</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/saint-martin'>Saint Martin</a></td>
-     <td><!-- START adv-saint-martin -->Normal precautions<!-- END adv-saint-martin --></td>
+     <td><!-- START adv-saint-martin -->Take normal precautions<!-- END adv-saint-martin --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:31:15</td>
      </tr>
@@ -2652,7 +2675,7 @@ table#reportlist {
 
       <td>saint-vincent-the-grenadines</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/saint-vincent-the-grenadines'>Saint Vincent &amp; the Grenadines</a></td>
-     <td><!-- START adv-saint-vincent-the-grenadines -->Normal precautions<!-- END adv-saint-vincent-the-grenadines --></td>
+     <td><!-- START adv-saint-vincent-the-grenadines -->Take normal precautions<!-- END adv-saint-vincent-the-grenadines --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:31:15</td>
      </tr>
@@ -2666,7 +2689,7 @@ table#reportlist {
 
       <td>saint-barthelemy</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/saint-barthelemy'>Saint-Barth&#233;lemy</a></td>
-     <td><!-- START adv-saint-barthelemy -->Normal precautions<!-- END adv-saint-barthelemy --></td>
+     <td><!-- START adv-saint-barthelemy -->Take normal precautions<!-- END adv-saint-barthelemy --></td>
      <!-- <td>Natural disasters and climate - removal of information on hurricanes Irma and Maria</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-07 15:39:19</td>
      </tr>
@@ -2680,7 +2703,7 @@ table#reportlist {
 
       <td>saint-pierre-et-miquelon</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/saint-pierre-et-miquelon'>Saint-Pierre-et-Miquelon</a></td>
-     <td><!-- START adv-saint-pierre-et-miquelon -->Normal precautions<!-- END adv-saint-pierre-et-miquelon --></td>
+     <td><!-- START adv-saint-pierre-et-miquelon -->Take normal precautions<!-- END adv-saint-pierre-et-miquelon --></td>
      <!-- <td>Assistance - opening of Consulate of Canada in Saint-Pierre-et-Miquelon</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-09 09:53:59</td>
      </tr>
@@ -2694,7 +2717,7 @@ table#reportlist {
 
       <td>samoa</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/samoa'>Samoa</a></td>
-     <td><!-- START adv-samoa -->Normal precautions<!-- END adv-samoa --></td>
+     <td><!-- START adv-samoa -->Take normal precautions<!-- END adv-samoa --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:42:11</td>
      </tr>
@@ -2708,7 +2731,7 @@ table#reportlist {
 
       <td>san-marino</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/san-marino'>San Marino</a></td>
-     <td><!-- START adv-san-marino -->Normal precautions<!-- END adv-san-marino --></td>
+     <td><!-- START adv-san-marino -->Take normal precautions<!-- END adv-san-marino --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
@@ -2722,7 +2745,7 @@ table#reportlist {
 
       <td>sao-tome-and-principe</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/sao-tome-and-principe'>Sao Tome and Principe</a></td>
-     <td><!-- START adv-sao-tome-and-principe -->Normal precautions<!-- END adv-sao-tome-and-principe --></td>
+     <td><!-- START adv-sao-tome-and-principe -->Take normal precautions<!-- END adv-sao-tome-and-principe --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-11-28 15:30:29</td>
      </tr>
@@ -2764,7 +2787,7 @@ table#reportlist {
 
       <td>serbia</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/serbia'>Serbia</a></td>
-     <td><!-- START adv-serbia -->Normal precautions<!-- END adv-serbia --></td>
+     <td><!-- START adv-serbia -->Take normal precautions<!-- END adv-serbia --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
@@ -2778,7 +2801,7 @@ table#reportlist {
 
       <td>seychelles</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/seychelles'>Seychelles</a></td>
-     <td><!-- START adv-seychelles -->Normal precautions<!-- END adv-seychelles --></td>
+     <td><!-- START adv-seychelles -->Take normal precautions<!-- END adv-seychelles --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-27 10:38:25</td>
      </tr>
@@ -2806,7 +2829,7 @@ table#reportlist {
 
       <td>singapore</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/singapore'>Singapore</a></td>
-     <td><!-- START adv-singapore -->Normal precautions<!-- END adv-singapore --></td>
+     <td><!-- START adv-singapore -->Take normal precautions<!-- END adv-singapore --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:53:18</td>
      </tr>
@@ -2820,7 +2843,7 @@ table#reportlist {
 
       <td>sint-maarten</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/sint-maarten'>Sint Maarten</a></td>
-     <td><!-- START adv-sint-maarten -->Normal precautions<!-- END adv-sint-maarten --></td>
+     <td><!-- START adv-sint-maarten -->Take normal precautions<!-- END adv-sint-maarten --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:31:15</td>
      </tr>
@@ -2834,7 +2857,7 @@ table#reportlist {
 
       <td>slovakia</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/slovakia'>Slovakia</a></td>
-     <td><!-- START adv-slovakia -->Normal precautions<!-- END adv-slovakia --></td>
+     <td><!-- START adv-slovakia -->Take normal precautions<!-- END adv-slovakia --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
@@ -2848,7 +2871,7 @@ table#reportlist {
 
       <td>slovenia</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/slovenia'>Slovenia</a></td>
-     <td><!-- START adv-slovenia -->Normal precautions<!-- END adv-slovenia --></td>
+     <td><!-- START adv-slovenia -->Take normal precautions<!-- END adv-slovenia --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
@@ -2862,13 +2885,13 @@ table#reportlist {
 
       <td>solomon-islands</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/solomon-islands'>Solomon Islands</a></td>
-     <td><!-- START adv-solomon-islands -->Normal precautions<!-- END adv-solomon-islands --></td>
+     <td><!-- START adv-solomon-islands -->Take normal precautions<!-- END adv-solomon-islands --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:42:11</td>
      </tr>
 
 
-   <tr class="gradeX">
+   <tr class="gradeX grade4 no-travel">
 
      <!-- <span class="wb-invisible"><td data-coutry_name1=/"+ Somalia +/"><a href='https://travel.gc.ca/destinations/somalia'>Somalia</a></td></span> -->
      <!-- <span class="wb-invisible"><td data-coutry_name=/"+ Somalia +/"><a href='https://travel.gc.ca/destinations/somalia'>Somalia</a></td></span>  -->
@@ -2876,7 +2899,7 @@ table#reportlist {
 
       <td>somalia</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/somalia'>Somalia</a></td>
-     <td class="risk4"><!-- START adv-somalia --><strong>Do not travel</strong><!-- END adv-somalia --></td>
+     <td class="risk4"><!-- START adv-somalia --><strong><span class="fas fa-ban"></span> Do not travel</strong><!-- END adv-somalia --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-11-27 13:47:53</td>
      </tr>
@@ -2896,7 +2919,7 @@ table#reportlist {
      </tr>
 
 
-   <tr class="gradeX">
+   <tr class="gradeX grade4 no-travel">
 
      <!-- <span class="wb-invisible"><td data-coutry_name1=/"+ South Sudan +/"><a href='https://travel.gc.ca/destinations/south-sudan'>South Sudan</a></td></span> -->
      <!-- <span class="wb-invisible"><td data-coutry_name=/"+ South Sudan +/"><a href='https://travel.gc.ca/destinations/south-sudan'>South Sudan</a></td></span>  -->
@@ -2904,7 +2927,7 @@ table#reportlist {
 
       <td>south-sudan</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/south-sudan'>South Sudan</a></td>
-     <td class="risk4"><!-- START adv-south-sudan --><strong>Do not travel</strong><!-- END adv-south-sudan --></td>
+     <td class="risk4"><!-- START adv-south-sudan --><strong><span class="fas fa-ban"></span> Do not travel</strong><!-- END adv-south-sudan --></td>
      <!-- <td>Editorial change</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-07-13 11:05:12</td>
      </tr>
@@ -2918,7 +2941,7 @@ table#reportlist {
 
       <td>spain</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='./destinations/spain.html'>Spain</a></td>
-     <td><!-- START adv-spain -->Normal precautions<!-- END adv-spain --></td>
+     <td><!-- START adv-spain -->Take normal precautions<!-- END adv-spain --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-05-03 09:36:16</td>
      </tr>
@@ -2974,7 +2997,7 @@ table#reportlist {
 
       <td>sweden</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/sweden'>Sweden</a></td>
-     <td><!-- START adv-sweden -->Normal precautions<!-- END adv-sweden --></td>
+     <td><!-- START adv-sweden -->Take normal precautions<!-- END adv-sweden --></td>
      <!-- <td>Natural disasters and climate - removed information about forest fires</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-08-21 13:23:32</td>
      </tr>
@@ -2988,13 +3011,13 @@ table#reportlist {
 
       <td>switzerland</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/switzerland'>Switzerland</a></td>
-     <td><!-- START adv-switzerland -->Normal precautions<!-- END adv-switzerland --></td>
+     <td><!-- START adv-switzerland -->Take normal precautions<!-- END adv-switzerland --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-12-14 11:58:40</td>
      </tr>
 
 
-   <tr class="gradeX">
+   <tr class="gradeX grade4 no-travel">
 
      <!-- <span class="wb-invisible"><td data-coutry_name1=/"+ Syria +/"><a href='https://travel.gc.ca/destinations/syria'>Syria</a></td></span> -->
      <!-- <span class="wb-invisible"><td data-coutry_name=/"+ Syria +/"><a href='https://travel.gc.ca/destinations/syria'>Syria</a></td></span>  -->
@@ -3002,7 +3025,7 @@ table#reportlist {
 
       <td>syria</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/syria'>Syria</a></td>
-     <td class="risk4"><!-- START adv-syria --><strong>Do not travel</strong><!-- END adv-syria --></td>
+     <td class="risk4"><!-- START adv-syria --><strong><span class="fas fa-ban"></span> Do not travel</strong><!-- END adv-syria --></td>
      <!-- <td>Laws and culture - Ramadan 2019.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-06-20 12:54:38</td>
      </tr>
@@ -3016,7 +3039,7 @@ table#reportlist {
 
       <td>taiwan</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/taiwan'>Taiwan</a></td>
-     <td><!-- START adv-taiwan -->Normal precautions<!-- END adv-taiwan --></td>
+     <td><!-- START adv-taiwan -->Take normal precautions<!-- END adv-taiwan --></td>
      <!-- <td>Natural disasters and climate - removal of information about Typhoon Yutu</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-10-29 10:06:36</td>
      </tr>
@@ -3100,7 +3123,7 @@ table#reportlist {
 
       <td>tokelau</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/tokelau'>Tokelau</a></td>
-     <td><!-- START adv-tokelau -->Normal precautions<!-- END adv-tokelau --></td>
+     <td><!-- START adv-tokelau -->Take normal precautions<!-- END adv-tokelau --></td>
      <!-- <td>Editorial.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-05-01 10:55:56</td>
      </tr>
@@ -3114,7 +3137,7 @@ table#reportlist {
 
       <td>tonga</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/tonga'>Tonga</a></td>
-     <td><!-- START adv-tonga -->Normal precautions<!-- END adv-tonga --></td>
+     <td><!-- START adv-tonga -->Take normal precautions<!-- END adv-tonga --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:42:11</td>
      </tr>
@@ -3184,7 +3207,7 @@ table#reportlist {
 
       <td>turks-and-caicos-islands</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/turks-and-caicos-islands'>Turks and Caicos Islands</a></td>
-     <td><!-- START adv-turks-and-caicos-islands -->Normal precautions<!-- END adv-turks-and-caicos-islands --></td>
+     <td><!-- START adv-turks-and-caicos-islands -->Take normal precautions<!-- END adv-turks-and-caicos-islands --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:31:15</td>
      </tr>
@@ -3198,7 +3221,7 @@ table#reportlist {
 
       <td>tuvalu</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/tuvalu'>Tuvalu</a></td>
-     <td><!-- START adv-tuvalu -->Normal precautions<!-- END adv-tuvalu --></td>
+     <td><!-- START adv-tuvalu -->Take normal precautions<!-- END adv-tuvalu --></td>
      <!-- <td>Editorial.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-05-01 10:55:56</td>
      </tr>
@@ -3269,7 +3292,7 @@ table#reportlist {
 
       <td>united-states</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/united-states'>United States</a></td>
-     <td><!-- START adv-united-states -->Normal precautions<!-- END adv-united-states --></td>
+     <td><!-- START adv-united-states -->Take normal precautions<!-- END adv-united-states --></td>
      <!-- <td>Assistance - removal of the mission closure notice</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-30 16:28:54</td>
      </tr>
@@ -3283,7 +3306,7 @@ table#reportlist {
 
       <td>uruguay</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/uruguay'>Uruguay</a></td>
-     <td><!-- START adv-uruguay -->Normal precautions<!-- END adv-uruguay --></td>
+     <td><!-- START adv-uruguay -->Take normal precautions<!-- END adv-uruguay --></td>
      <!-- <td>Safety and security - ATMs explosions</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-10 11:03:29</td>
      </tr>
@@ -3311,13 +3334,13 @@ table#reportlist {
 
       <td>vanuatu</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/vanuatu'>Vanuatu</a></td>
-     <td><!-- START adv-vanuatu -->Normal precautions<!-- END adv-vanuatu --></td>
+     <td><!-- START adv-vanuatu -->Take normal precautions<!-- END adv-vanuatu --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-03 14:15:50</td>
      </tr>
 
 
-   <tr class="gradeX">
+   <tr class="gradeX grade4 avoid-travel">
 
      <!-- <span class="wb-invisible"><td data-coutry_name1=/"+ Venezuela +/"><a href='https://travel.gc.ca/destinations/venezuela'>Venezuela</a></td></span> -->
      <!-- <span class="wb-invisible"><td data-coutry_name=/"+ Venezuela +/"><a href='https://travel.gc.ca/destinations/venezuela'>Venezuela</a></td></span>  -->
@@ -3325,7 +3348,7 @@ table#reportlist {
 
       <td>venezuela</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/venezuela'>Venezuela</a></td>
-     <td><!-- START adv-venezuela -->Avoid non-essential travel<!-- END adv-venezuela --></td>
+     <td><!-- START adv-venezuela --><span class="fas fa-exclamation-triangle"></span> Avoid non-essential travel<!-- END adv-venezuela --></td>
      <!-- <td>Editorial change.</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-31 16:20:04</td>
      </tr>
@@ -3353,13 +3376,13 @@ table#reportlist {
 
       <td>virgin-islands-u-s</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/virgin-islands-u-s'>Virgin Islands (U.S.)</a></td>
-     <td><!-- START adv-virgin-islands-u-s -->Normal precautions<!-- END adv-virgin-islands-u-s --></td>
+     <td><!-- START adv-virgin-islands-u-s -->Take normal precautions<!-- END adv-virgin-islands-u-s --></td>
      <!-- <td>The Health tab was updated - travel health information (Public Health Agency of Canada).</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2019-01-18 15:31:15</td>
      </tr>
 
 
-   <tr class="gradeX">
+   <tr class="gradeX grade4 no-travel">
 
      <!-- <span class="wb-invisible"><td data-coutry_name1=/"+ Yemen +/"><a href='https://travel.gc.ca/destinations/yemen'>Yemen</a></td></span> -->
      <!-- <span class="wb-invisible"><td data-coutry_name=/"+ Yemen +/"><a href='https://travel.gc.ca/destinations/yemen'>Yemen</a></td></span>  -->
@@ -3367,7 +3390,7 @@ table#reportlist {
 
       <td>yemen</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='https://travel.gc.ca/destinations/yemen'>Yemen</a></td>
-     <td class="risk4"><!-- START adv-yemen --><strong>Do not travel</strong><!-- END adv-yemen --></td>
+     <td class="risk4"><!-- START adv-yemen --><strong><span class="fas fa-ban"></span> Do not travel</strong><!-- END adv-yemen --></td>
      <!-- <td>Natural disasters & climate - removal of information about severe cyclonic storm Luban</td> -->
      <td class="dest-keywords"></td><td style="width: 200px;">2018-10-18 21:12:21</td>
      </tr>
@@ -3482,15 +3505,7 @@ table#reportlist {
 
 <!-- Testing go button -->
 
-  <script type="text/javascript">
-                      $(document).ready(function () {
-                          $(document).on('click', '#btnGoToCountry', function () {
-                              mySelection = $(this).parent().siblings("#CountryDropDown1_ddlCountries").find(":selected").val();
-                              window.location.href = "https://gc-proto.github.io/travel-advice/scenarioA/travelling/destinations/" + mySelection + ".html";
-                              return false;
-                          });
-                      });
-                  </script>
+
 <script type="text/javascript">
   $(document).ready(function() {
 
