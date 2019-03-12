@@ -105,7 +105,14 @@
     cursor: pointer;
 }
 
-  </style>
+/* Hide the table summary for small viewpoints */
+@media screen and (max-width: 1000px) {
+  #reportlist_info {
+    display:none;
+  }
+}
+
+</style>
 <div class="form-group">
 <label for="wb-srch-q" class="wb-inv">Search Canada.ca</label>
 <input id="wb-srch-q" list="wb-srch-q-ac" class="wb-srch-q form-control" name="q" type="search" value="" size="34" maxlength="170" placeholder="Search Canada.ca">
@@ -159,7 +166,7 @@
  <h1 id="wb-cont">Destination advice and advisories</h1>
 
  <!-- <p>Destination-specific travel information from the Government of Canada.</p> -->
- <p>Conditions can change between when you book your travel and when you leave. Check the Travel advice page for your destination when planning your trip <strong>and</strong> shortly before you leave.</p>
+ <p>Conditions can change between when you book your travel and when you leave. Check the advice page for your destination when planning your trip <strong>and</strong> shortly before you leave.</p>
 <p><a href="./planning/travel-checklist.html">Before you go</a> has recommendations to help you plan a safe and memorable trip.</p>
     <!-- <p>Buy the best travel health insurance you can afford before you leave. Your insurance may be affected if you book travel when we advise against travelling to a destination.</p> -->
       <!-- <a href="health-safety/travel-insurance.html">Travel insurance</a> provides details of what policy should cover.</p> -->
@@ -189,7 +196,7 @@
          <th>Destination</th>
          <th>Level</th>
          <th>Keywords</th> <!-- hidden column -->
-         <th>Last updated</th>
+         <th>Updated</th>
        </tr>
      </thead>
      <tbody>
@@ -200,7 +207,7 @@
      <!-- <span class="wb-invisible"><td data-coutry_name=/"+ Afghanistan +/"><a href='https://travel.gc.ca/destinations/afghanistan'>Afghanistan</a></td></span>  -->
 
 
-      <td>afghanistan</td> <!-- hidden column; uses slug since it has no accents -->
+    <td>afghanistan</td> <!-- hidden column; uses slug since it has no accents -->
      <td><a href='./destinations/afghanistan.html' style="color:white">Afghanistan</a></td>
      <td><!-- START adv-afghanistan --><span class="fas fa-ban"></span> Do not travel<!-- END adv-afghanistan --></td>
      <!-- <td>Thorough review and update of the entire travel advice content.</td> -->
