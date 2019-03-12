@@ -404,14 +404,16 @@
  2. Column 2 is sorted using data from column 1
  3. Column 4 is sorted by desc first then asc
  -->
-   <table id="officeslist" class="wb-tables table" data-wb-tables='{ "bPaginate": false, "order": [ 1, "asc" ],
-   "oLanguage": { "sSearch": "Filter countries" },
-   "aoColumns": [
-     { "bVisible": false },
-     null,
-     { "asSorting": [ "desc", "asc" ] }
-   ]
-   }'>
+ <table id="reportlist" class="wb-tables table" data-wb-tables='{ "bPaginate": false, "order": [ 1, "asc" ],
+ "oLanguage": { "sSearch": "Filter destinations" },
+ "aoColumns": [
+   { "bVisible": false },
+   { "iDataSort": 0 },
+   null,
+   { "bVisible": false },
+   { "asSorting": [ "desc", "asc" ] }
+ ]
+ }'>
      <thead>
        <tr>
          <th>English</th> <!-- hidden column -->
