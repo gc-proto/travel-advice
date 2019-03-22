@@ -181,3 +181,61 @@ border: 1px solid #26374a !important;
 .alert >:first-child::before {
 	margin-right: 0.4em
 }
+
+button#wb-srch-sub a:visited {
+
+color: white !important;
+
+
+}
+
+
+button#wb-srch-sub a {
+
+color: white !important;
+
+
+}
+
+#reportlist tr:hover {
+    background-color: #eee;
+}
+
+#reportlist tr.avoid-travel {
+    background: #fff9a2;
+    font-weight:bold;
+}
+
+#reportlist tr.avoid-travel a {
+    color:black;
+}
+
+#reportlist tr.avoid-travel:hover {
+    background-color: #ffdf09;
+}
+
+#reportlist tr.no-travel {
+    background: #b8181e;
+    font-weight:bold;
+    color:white;
+}
+
+#reportlist tr.no-travel a {
+    color:white;
+}
+
+
+#reportlist tr.no-travel:hover {
+    background-color: #7f1115;
+}
+
+#reportlist td:hover {
+    cursor: pointer;
+}
+
+/* Hide the table summary for small viewpoints */
+@media screen and (max-width: 1000px) {
+  #reportlist_info {
+    display:none;
+  }
+}
