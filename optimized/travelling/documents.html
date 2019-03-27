@@ -15,200 +15,175 @@
 <link rel="stylesheet" href="../../GCWeb/css/theme.css">
 <link rel="stylesheet" href="../../GCWeb/css/custom.css">
 <!--<![endif]-->
-<!--[if lt IE 9]>
-		<link href="./GCWeb/assets/favicon.ico" rel="shortcut icon" />
-
-		<link rel="stylesheet" href="./GCWeb/css/ie8-theme.min.css" />
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<script src="./wet-boew/js/ie8-wet-boew.min.js"></script>
-		<![endif]-->
-<!--[if lte IE 9]>
-
-
-		<![endif]-->
-<noscript><link rel="stylesheet" href="./wet-boew/css/noscript.min.css" /></noscript>
+<noscript>
+  <link rel="stylesheet" href="./wet-boew/css/noscript.min.css" /></noscript>
 </head>
+
 <body class="page-type-nav" vocab="http://schema.org/" typeof="WebPage">
-<ul id="wb-tphp">
-<li class="wb-slc">
-<a class="wb-sl" href="#wb-cont">Skip to main content</a>
-</li>
-<li class="wb-slc">
-<a class="wb-sl" href="#wb-info">Skip to "About government"</a>
-</li>
-</ul>
-<header>
-<div id="wb-bnr" class="container">
-<section id="wb-lng" class="text-right">
-<h2 class="wb-inv">Language selection</h2>
-<ul class="list-inline margin-bottom-none">
-<li><a lang="fr" href="theme-fr.html">Français</a></li>
-</ul>
-</section>
-<div class="row">
-<div class="brand col-xs-5 col-md-4">
-<a href="https://www.canada.ca/en.html"><img src="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/assets/sig-blk-en.svg" alt=""><span class="wb-inv"> Government of Canada / <span lang="fr">Gouvernement du Canada</span></span></a>
-</div>
-<section id="wb-srch" class="col-lg-8 text-right">
-<h2>Search</h2>
-<form action="../../search-results.html" method="get" name="cse-search-box" role="search" class="form-inline">
+  <ul id="wb-tphp">
+    <li class="wb-slc">
+      <a class="wb-sl" href="#wb-cont">Skip to main content</a>
+    </li>
+    <li class="wb-slc">
+      <a class="wb-sl" href="#wb-info">Skip to "About government"</a>
+    </li>
+  </ul>
+  <header>
+    <div id="wb-bnr" class="container">
+      <section id="wb-lng" class="text-right">
+        <h2 class="wb-inv">Language selection</h2>
+        <ul class="list-inline margin-bottom-none">
+          <li><a lang="fr" href="theme-fr.html">Français</a></li>
+        </ul>
+      </section>
+      <div class="row">
+        <div class="brand col-xs-5 col-md-4">
+          <a href="https://www.canada.ca/en.html"><img src="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/assets/sig-blk-en.svg" alt=""><span class="wb-inv"> Government of Canada / <span lang="fr">Gouvernement du Canada</span></span></a>
+        </div>
+        <section id="wb-srch" class="col-lg-8 text-right">
+          <h2>Search</h2>
+          <form action="../../search-results.html" method="get" name="cse-search-box" role="search" class="form-inline">
 
-  <style>
+            <div class="form-group">
+              <label for="wb-srch-q" class="wb-inv">Search Canada.ca</label>
+              <input id="wb-srch-q" list="wb-srch-q-ac" class="wb-srch-q form-control" name="q" type="search" value="" size="34" maxlength="170" placeholder="Search Canada.ca">
+              <datalist id="wb-srch-q-ac">
+              </datalist>
+            </div>
+            <div class="form-group submit">
+              <button type="submit" id="wb-srch-sub" class="btn btn-primary btn-small" name="wb-srch-sub"><span class="glyphicon-search glyphicon"></span><span class="wb-inv">Search</span></button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </div>
+    <nav class="gcweb-v2" typeof="SiteNavigationElement">
+      <div class="container">
+        <h2 class="wb-inv">Menu</h2>
+        <button type="button" aria-haspopup="true" aria-expanded="false"><span class="wb-inv">Main </span>Menu <span class="expicon glyphicon glyphicon-chevron-down"></span></button>
+        <ul role="menu" aria-orientation="vertical" data-ajax-replace="../../ajax/sitemenu-v2-en.html">
+          <li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/jobs.html">Jobs and the workplace</a></li>
+          <li role="presentation"><a role="menuitem" href="https://gc-proto.github.io/travel-advice/optimized/immigration.html">Immigration and citizenship</a></li>
+          <li role="presentation"><a role="menuitem" href="https://gc-proto.github.io/travel-advice/optimized/travel.html">Travel and tourism</a></li>
+          <li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/business.html">Business and industry</a></li>
+          <li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/benefits.html">Benefits</a></li>
+          <li role="presentation"><a role="menuitem" href="https://gc-proto.github.io/travel-advice/optimized/health.html">Health</a></li>
+          <li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/taxes.html">Taxes</a></li>
+          <li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/environment.html">Environment and natural resources</a></li>
+          <li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/defence.html">National security and defence</a></li>
+          <li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/culture.html">Culture, history and sport</a></li>
+          <li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/policing.html">Policing, justice and emergencies</a></li>
+          <li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/transport.html">Transport and infrastructure</a></li>
+          <li role="presentation"><a role="menuitem" href="http://international.gc.ca/world-monde/index.aspx?lang=eng">Canada and the world</a></li>
+          <li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/finance.html">Money and finances</a></li>
+          <li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/finance.html">Science and innovation</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="wb-bc" property="breadcrumb">
+      <h2>You are here:</h2>
+      <div class="container" style="padding-left: 15 !important;">
+        <ol class="breadcrumb">
+          <li class="visible-md visible-lg no-break-breadcrumb cust-breadcrumb"><a href="../en.html">Home</a></li>
+          <li class="cust-breadcrumb"><a href="../travel.html">Travel</a></li>
 
-  button#wb-srch-sub a:visited {
+        </ol>
+      </div>
+    </nav>
+  </header>
 
-  color: white !important;
+  <main role="main" property="mainContentOfPage" class="container">
+    <div class="row profile">
+      <div class="col-md-6 gc-drmt">
+        <h1 id="wb-cont" property="name">Passports and travel documents</h1>
+        <p class="pagetag">Crossing international borders can be complicated and sometimes requires many different kinds of documents. Being prepared is the key to easing your way through this process, so make sure you know what documents you need,
+          where to get them, and which ones will make your crossing quick and easy.</p>
+        <section class="followus mrgn-bttm-md">
+          <h2>Follow:</h2>
+          <ul>
+            <li><a class="twitter" href="https://twitter.com/travelGoC" target="_blank"><span class="wb-inv">Twitter</span></a></li>
+            <li><a class="facebook" href="https://www.facebook.com/travelGoC" target="_blank"><span class="wb-inv">Facebook</span></a></li>
+          </ul>
+        </section>
+      </div>
+      <div class="col-md-6 margin-top-small hidden-sm hidden-xs"><img class="pull-right img-responsive thumbnail" alt="" src="https://travel.gc.ca/vt/images/topic/travel-documents-1.jpg" /></div>
+    </div>
+    <section class="col-md-12 gc-drmt">
+      <h2>Services and information</h2>
+      <div class="row wb-eqht">
+        <section class="col-md-4 gc-drmt">
 
-
-  }
-
-
-  button#wb-srch-sub a {
-
-  color: white !important;
-
-
-  }
-
-  </style>
-<div class="form-group">
-<label for="wb-srch-q" class="wb-inv">Search Canada.ca</label>
-<input id="wb-srch-q" list="wb-srch-q-ac" class="wb-srch-q form-control" name="q" type="search" value="" size="34" maxlength="170" placeholder="Search Canada.ca">
-<datalist id="wb-srch-q-ac">
-</datalist>
-</div>
-<div class="form-group submit">
-<button type="submit" id="wb-srch-sub" class="btn btn-primary btn-small" name="wb-srch-sub"><span class="glyphicon-search glyphicon"></span><span class="wb-inv">Search</span></button>
-</div>
-</form>
-</section>
-</div>
-</div>
-<nav class="gcweb-v2" typeof="SiteNavigationElement">
-<div class="container">
-<h2 class="wb-inv">Menu</h2>
-<button type="button" aria-haspopup="true" aria-expanded="false"><span class="wb-inv">Main </span>Menu <span class="expicon glyphicon glyphicon-chevron-down"></span></button>
-<ul role="menu" aria-orientation="vertical" data-ajax-replace="../../ajax/sitemenu-v2-en.html">
-<li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/jobs.html">Jobs and the workplace</a></li>
-<li role="presentation"><a role="menuitem" href="https://gc-proto.github.io/travel-advice/optimized/immigration.html">Immigration and citizenship</a></li>
-<li role="presentation"><a role="menuitem" href="https://gc-proto.github.io/travel-advice/optimized/travel.html">Travel and tourism</a></li>
-<li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/business.html">Business and industry</a></li>
-<li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/benefits.html">Benefits</a></li>
-<li role="presentation"><a role="menuitem" href="https://gc-proto.github.io/travel-advice/optimized/health.html">Health</a></li>
-<li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/taxes.html">Taxes</a></li>
-<li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/environment.html">Environment and natural resources</a></li>
-<li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/defence.html">National security and defence</a></li>
-<li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/culture.html">Culture, history and sport</a></li>
-<li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/policing.html">Policing, justice and emergencies</a></li>
-<li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/transport.html">Transport and infrastructure</a></li>
-<li role="presentation"><a role="menuitem" href="http://international.gc.ca/world-monde/index.aspx?lang=eng">Canada and the world</a></li>
-<li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/finance.html">Money and finances</a></li>
-<li role="presentation"><a role="menuitem" href="https://www.canada.ca/en/services/finance.html">Science and innovation</a></li>
-</ul>
-</div>
-</nav>
-<nav id="wb-bc" property="breadcrumb">
-<h2>You are here:</h2>
-<div class="container" style="padding-left: 15 !important;"><ol class="breadcrumb">
-<li class="visible-md visible-lg no-break-breadcrumb cust-breadcrumb"><a href="../en.html">Home</a></li>
-<li class="cust-breadcrumb"><a href="../travel.html">Travel</a></li>
-
-</ol>
-</div>
-</nav>
-</header>
-
-<main role="main" property="mainContentOfPage" class="container">
-<div class="row profile">
-<div class="col-md-6 gc-drmt">
-<h1 id="wb-cont" property="name">Passports and travel documents</h1>
-<p class="pagetag">Crossing international borders can be complicated and sometimes requires many different kinds of documents. Being prepared is the key to easing your way through this process, so make sure you know what documents you need, where to get them, and which ones will make your crossing quick and easy.</p>
-<section class="followus mrgn-bttm-md">
-<h2>Follow:</h2>
-<ul>
-<li><a class="twitter" href="https://twitter.com/travelGoC" target="_blank"><span class="wb-inv">Twitter</span></a></li>
-<li><a class="facebook" href="https://www.facebook.com/travelGoC" target="_blank"><span class="wb-inv">Facebook</span></a></li>
-</ul>
-</section>
-</div>
-<div class="col-md-6 margin-top-small hidden-sm hidden-xs"><img class="pull-right img-responsive thumbnail" alt="" src="https://travel.gc.ca/vt/images/topic/travel-documents-1.jpg" /></div>
-</div>
-         <section class="col-md-12 gc-drmt">
-                       <h2>Services and information</h2>
-                       <div class="row wb-eqht">
-				<section class="col-md-4 gc-drmt">
-
-	<h3 class="h5"><a href="../immigration-refugees-citizenship/canadian-passports.html">Canadian passports</a></h3>
-<p>A passport is the only reliable and universally accepted travel identification document, and it proves that you have a right to return to Canada&nbsp;</p>
-</section>
-<section class="col-md-4">
-<h3 class="h5"><a href="http://travel.gc.ca/travelling/documents/visas">Visas</a></h3>
-<p>Find out whether you need a visa for your destination and get it well in advance of your trip</p>
-</section>
-<section class="col-md-4">
-<h3 class="h5"><a href="./health-safety/travel-insurance.html">Travel and health insurance</a></h3>
-<p>If you travel abroad you need travel insurance, no matter where you're going or how long you'll be there&nbsp;</p>
-</section>
-<section class="col-md-4">
-<h3 class="h5"><a href="http://travel.gc.ca/travelling/children/consent-letter">Consent letter for children travelling abroad</a></h3>
-<p>A consent letter will help children travelling without both parents to enter foreign countries and re-enter Canada</p>
-</section>
-<section class="col-md-4">
-<h3 class="h5"><a href="http://travel.gc.ca/travelling/documents/nexus">NEXUS</a></h3>
-<p>If you travel between Canada and the United States often, a NEXUS card will save you time at the border.</p>
-</section>
-<section class="col-md-4">
-<h3 class="h5"><a href="http://travel.gc.ca/travelling/documents/canpass-aircraft">CANPASS - Private aircraft</a></h3>
-<p>This program allows card holders on private aircraft to clear customs and immigration quickly and securely</p>
-</section>
-<section class="col-md-4">
-<h3 class="h5"><a href="http://travel.gc.ca/air/identification-requirements">Pre-boarding identification requirements</a></h3>
-<p>Keep all necessary identification with you to help your airline identify individuals who may pose a security threat</p>
-</section>
-<section class="col-md-4">
-<h3 class="h5"><a href="http://travel.gc.ca/travelling/documents/permanent-resident-card">Travelling with a permanent resident card</a></h3>
-<p>All permanent residents of Canada require this proof of their status to re-enter Canada.</p>
-</section>
-<section class="col-md-4">
-<h3 class="h5"><a href="http://travel.gc.ca/travelling/documents/canadian-citizenship">Certificate of Canadian citizenship</a></h3>
-<p>A Canadian Citizenship Certificate is not a travel document.</p>
-</section>
-<section class="col-md-4">
-<h3 class="h5"><a href="http://travel.gc.ca/travelling/documents/dual-citizenship">Travelling as a dual citizen</a></h3>
-<p>Dual citizenship can be complicated and cause problems when you travel.</p>
-</section>
-<section class="col-md-4">
-<h3 class="h5"><a href="http://travel.gc.ca/travelling/documents/international-driving-permit">International Driving Permit</a></h3>
-<p>Your Canadian driver's licence may not be valid in your destination country</p>
-</section>
-<section class="col-md-4">
-<h3 class="h5"><a href="http://travel.gc.ca/travelling/documents/vaccination">Proof of vaccination</a></h3>
-<p>Some countries require visitors to show an International Certificate of Vaccination or Prophylaxis against yellow fever&nbsp;</p>
-</section>
-<section class="col-md-4">
-<h3 class="h5"><a href="http://travel.gc.ca/travelling/documents/animals-certificate">Travel documents for your pets</a></h3>
-<p>Information on the documents required to ensure that your pet can enter your destination country&nbsp;</p>
-</section>
-<section class="col-md-4">
-<h3 class="h5"><a href="http://travel.gc.ca/travelling/documents/marriage-overseas">Marriage abroad</a></h3>
-<p>Information on the legal issues involved in getting married abroad&nbsp;</p>
-</section>
-<section class="col-md-4">
-<h3 class="h5"><a href="./documents/notarial-services.html">Notarial services</a></h3>
-<p>Document authentication and certification by Canadian government offices abroad&nbsp;</p>
-</section>
-<section class="col-md-4">
-<h3 class="h5"><a href="http://travel.gc.ca/travelling/documents/cites-permits">CITES permits</a></h3>
-<p>You need permits to transport, import or export a listed wildlife species or an item containing a derivative of a listed wildlife species&nbsp;</p>
-</section>
-<section class="col-md-4">
-<h3 class="h5"><a href="http://www.cbsa-asfc.gc.ca/travel-voyage/pik-bip-eng.html">Primary Inspections Kiosks</a></h3>
-<p>You can make an on screen declaration using a Primary Inspection Kiosk at selected <a href="http://www.cbsa-asfc.gc.ca/travel-voyage/pik-bip-eng.html#where">international airports</a>&nbsp;</p>
-</section>
-</section>
-</div>
-</div>
-<!--
+          <h3 class="h5"><a href="../immigration-refugees-citizenship/canadian-passports.html">Canadian passports</a></h3>
+          <p>A passport is the only reliable and universally accepted travel identification document, and it proves that you have a right to return to Canada&nbsp;</p>
+        </section>
+        <section class="col-md-4">
+          <h3 class="h5"><a href="http://travel.gc.ca/travelling/documents/visas">Visas</a></h3>
+          <p>Find out whether you need a visa for your destination and get it well in advance of your trip</p>
+        </section>
+        <section class="col-md-4">
+          <h3 class="h5"><a href="./health-safety/travel-insurance.html">Travel and health insurance</a></h3>
+          <p>If you travel abroad you need travel insurance, no matter where you're going or how long you'll be there&nbsp;</p>
+        </section>
+        <section class="col-md-4">
+          <h3 class="h5"><a href="http://travel.gc.ca/travelling/children/consent-letter">Consent letter for children travelling abroad</a></h3>
+          <p>A consent letter will help children travelling without both parents to enter foreign countries and re-enter Canada</p>
+        </section>
+        <section class="col-md-4">
+          <h3 class="h5"><a href="http://travel.gc.ca/travelling/documents/nexus">NEXUS</a></h3>
+          <p>If you travel between Canada and the United States often, a NEXUS card will save you time at the border.</p>
+        </section>
+        <section class="col-md-4">
+          <h3 class="h5"><a href="http://travel.gc.ca/travelling/documents/canpass-aircraft">CANPASS - Private aircraft</a></h3>
+          <p>This program allows card holders on private aircraft to clear customs and immigration quickly and securely</p>
+        </section>
+        <section class="col-md-4">
+          <h3 class="h5"><a href="http://travel.gc.ca/air/identification-requirements">Pre-boarding identification requirements</a></h3>
+          <p>Keep all necessary identification with you to help your airline identify individuals who may pose a security threat</p>
+        </section>
+        <section class="col-md-4">
+          <h3 class="h5"><a href="http://travel.gc.ca/travelling/documents/permanent-resident-card">Travelling with a permanent resident card</a></h3>
+          <p>All permanent residents of Canada require this proof of their status to re-enter Canada.</p>
+        </section>
+        <section class="col-md-4">
+          <h3 class="h5"><a href="http://travel.gc.ca/travelling/documents/canadian-citizenship">Certificate of Canadian citizenship</a></h3>
+          <p>A Canadian Citizenship Certificate is not a travel document.</p>
+        </section>
+        <section class="col-md-4">
+          <h3 class="h5"><a href="http://travel.gc.ca/travelling/documents/dual-citizenship">Travelling as a dual citizen</a></h3>
+          <p>Dual citizenship can be complicated and cause problems when you travel.</p>
+        </section>
+        <section class="col-md-4">
+          <h3 class="h5"><a href="http://travel.gc.ca/travelling/documents/international-driving-permit">International Driving Permit</a></h3>
+          <p>Your Canadian driver's licence may not be valid in your destination country</p>
+        </section>
+        <section class="col-md-4">
+          <h3 class="h5"><a href="http://travel.gc.ca/travelling/documents/vaccination">Proof of vaccination</a></h3>
+          <p>Some countries require visitors to show an International Certificate of Vaccination or Prophylaxis against yellow fever&nbsp;</p>
+        </section>
+        <section class="col-md-4">
+          <h3 class="h5"><a href="http://travel.gc.ca/travelling/documents/animals-certificate">Travel documents for your pets</a></h3>
+          <p>Information on the documents required to ensure that your pet can enter your destination country&nbsp;</p>
+        </section>
+        <section class="col-md-4">
+          <h3 class="h5"><a href="http://travel.gc.ca/travelling/documents/marriage-overseas">Marriage abroad</a></h3>
+          <p>Information on the legal issues involved in getting married abroad&nbsp;</p>
+        </section>
+        <section class="col-md-4">
+          <h3 class="h5"><a href="./documents/notarial-services.html">Notarial services</a></h3>
+          <p>Document authentication and certification by Canadian government offices abroad&nbsp;</p>
+        </section>
+        <section class="col-md-4">
+          <h3 class="h5"><a href="http://travel.gc.ca/travelling/documents/cites-permits">CITES permits</a></h3>
+          <p>You need permits to transport, import or export a listed wildlife species or an item containing a derivative of a listed wildlife species&nbsp;</p>
+        </section>
+        <section class="col-md-4">
+          <h3 class="h5"><a href="http://www.cbsa-asfc.gc.ca/travel-voyage/pik-bip-eng.html">Primary Inspections Kiosks</a></h3>
+          <p>You can make an on screen declaration using a Primary Inspection Kiosk at selected <a href="http://www.cbsa-asfc.gc.ca/travel-voyage/pik-bip-eng.html#where">international airports</a>&nbsp;</p>
+        </section>
+    </section>
+    </div>
+    </div>
+    <!--
 <section>
 <h2>What we are doing</h2>
 <div class="row wb-eqht">
@@ -241,101 +216,101 @@
 </div>
 </section>
 -->
-<div class="row">
-<div class="wb-eqht col-md-12">
-<div class="row">
-</div>
-</div>
-</div>
-<div class="wb-eqht row gc-prtts">
-	<section class="col-lg-4 col-md-6 gc-drmt">
-		<a href="/travelling">
-			<h2>Travelling abroad?</h2>
-			<img src="https://travel.gc.ca/vt/images/promo/customs-plane.jpg" alt="" class="img-responsive thumbnail mrgn-bttm-sm"/>
-		</a>
-		<p>Find helpful information on health and safety, travel documents, baggage, airport security, country advice and more.</p>
-	</section>
-	<section class="col-lg-4 col-md-6 gc-drmt">
-		<a href="/travelling/children/consent-letter">
-			<h2>Consent letter</h2>
-			<img src="https://travel.gc.ca/vt/images/promo/consent-letter-baby.jpg" alt="" class="img-responsive thumbnail mrgn-bttm-sm"/>
-		</a>
-		<p>Information on a recommended consent letter for Canadian children travelling abroad.</p>
-	</section>
-    <section class="col-lg-4 col-md-6 gc-drmt">
-		<a href="http://www.cic.gc.ca/english/visit/dual-canadian-citizens.asp">
-			<h2>Dual Canadian citizens: Fly to Canada with a valid CDN passport</h2>
-			<img src="https://travel.gc.ca/vt/images/promo/dual-citizen.jpg" alt="" class="img-responsive thumbnail mrgn-bttm-sm"/>
-		</a>
-		<p>Starting November 10, 2016, you will need a valid Canadian passport to board a flight to Canada.</p>
-	</section>
-	<!--<section class="col-lg-4 col-md-6">
+    <div class="row">
+      <div class="wb-eqht col-md-12">
+        <div class="row">
+        </div>
+      </div>
+    </div>
+    <div class="wb-eqht row gc-prtts">
+      <section class="col-lg-4 col-md-6 gc-drmt">
+        <a href="/travelling">
+          <h2>Travelling abroad?</h2>
+          <img src="https://travel.gc.ca/vt/images/promo/customs-plane.jpg" alt="" class="img-responsive thumbnail mrgn-bttm-sm" />
+        </a>
+        <p>Find helpful information on health and safety, travel documents, baggage, airport security, country advice and more.</p>
+      </section>
+      <section class="col-lg-4 col-md-6 gc-drmt">
+        <a href="/travelling/children/consent-letter">
+          <h2>Consent letter</h2>
+          <img src="https://travel.gc.ca/vt/images/promo/consent-letter-baby.jpg" alt="" class="img-responsive thumbnail mrgn-bttm-sm" />
+        </a>
+        <p>Information on a recommended consent letter for Canadian children travelling abroad.</p>
+      </section>
+      <section class="col-lg-4 col-md-6 gc-drmt">
+        <a href="http://www.cic.gc.ca/english/visit/dual-canadian-citizens.asp">
+          <h2>Dual Canadian citizens: Fly to Canada with a valid CDN passport</h2>
+          <img src="https://travel.gc.ca/vt/images/promo/dual-citizen.jpg" alt="" class="img-responsive thumbnail mrgn-bttm-sm" />
+        </a>
+        <p>Starting November 10, 2016, you will need a valid Canadian passport to board a flight to Canada.</p>
+      </section>
+      <!--<section class="col-lg-4 col-md-6">
 		<a href="http://travel.gc.ca/travelling/documents/passport">
 			<h2>Canadian passports</h2>
 			<img src="https://travel.gc.ca/vt/images/promo/passport.jpg" alt="" class="img-responsive"/>
 		</a>
 		<p>Information on your Canadian passport, the only universally accepted travel identification document.</p>
 	</section> -->
-</div>
-
-
-
-<div class="row pagedetails">
-    <div class="col-sm-6 col-lg-4 mrgn-tp-sm">
-    	<a href="https://www.canada.ca/en/report-problem.html" class="btn btn-default btn-block">Report a problem or mistake on this page</a>
     </div>
-<div class="col-sm-3 mrgn-tp-sm pull-right">
-<div class="wb-share" data-wb-share='{"lnkClass": "btn btn-default btn-block"}'></div>
-</div>
-<div class="datemod col-xs-12 mrgn-tp-lg">
-<dl id="wb-dtmd">
-<dt>Date modified:&#32;</dt>
-<dd><time property="dateModified">2018-11-08</time></dd>
-</dl>
-</div>
-</div>
-</main>
 
 
-<footer id="wb-info">
-<div class="landscape">
-<nav class="container wb-navcurr">
-<h2 class="wb-inv">About government</h2>
-<ul class="list-unstyled colcount-sm-2 colcount-md-3">
-<li><a href="https://www.canada.ca/en/contact.html">Contact us</a></li>
-<li><a href="https://www.canada.ca/en/government/dept.html">Departments and agencies</a></li>
-<li><a href="https://www.canada.ca/en/government/publicservice.html">Public service and military</a></li>
-<li><a href="https://www.canada.ca/en/news.html">News</a></li>
-<li><a href="https://www.canada.ca/en/government/system/laws.html">Treaties, laws and regulations</a></li>
-<li><a href="https://www.canada.ca/en/transparency/reporting.html">Government-wide reporting</a></li>
-<li><a href="https://pm.gc.ca/eng">Prime Minister</a></li>
-<li><a href="https://www.canada.ca/en/government/system.html">How government works</a></li>
-<li><a href="https://open.canada.ca/en/">Open government</a></li>
-</ul>
-</nav>
-</div>
-<div class="brand">
-<div class="container">
-<div class="row">
-<nav class="col-md-9 col-lg-10 ftr-urlt-lnk">
-<h2 class="wb-inv">About this site</h2>
-<ul>
-<li><a href="https://www.canada.ca/en/social.html">Social media</a></li>
-<li><a href="https://www.canada.ca/en/mobile.html">Mobile applications</a></li>
-<li><a href="https://www1.canada.ca/en/newsite.html">About Canada.ca</a></li>
-<li><a href="https://www.canada.ca/en/transparency/terms.html">Terms and conditions</a></li>
-<li><a href="https://www.canada.ca/en/transparency/privacy.html">Privacy</a></li>
-</ul>
-</nav>
-<div class="col-xs-6 visible-sm visible-xs tofpg">
-<a href="#wb-cont">Top of Page <span class="glyphicon glyphicon-chevron-up"></span></a>
-</div>
-<div class="col-xs-6 col-md-3 col-lg-2 text-right">
-  <img src="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/assets/wmms-blk.svg" alt="Symbol of the Government of Canada">
-  </div>
-  </div>
-  </div>
-  </div>
+
+    <div class="row pagedetails">
+      <div class="col-sm-6 col-lg-4 mrgn-tp-sm">
+        <a href="https://www.canada.ca/en/report-problem.html" class="btn btn-default btn-block">Report a problem or mistake on this page</a>
+      </div>
+      <div class="col-sm-3 mrgn-tp-sm pull-right">
+        <div class="wb-share" data-wb-share='{"lnkClass": "btn btn-default btn-block"}'></div>
+      </div>
+      <div class="datemod col-xs-12 mrgn-tp-lg">
+        <dl id="wb-dtmd">
+          <dt>Date modified:&#32;</dt>
+          <dd><time property="dateModified">2018-11-08</time></dd>
+        </dl>
+      </div>
+    </div>
+  </main>
+
+
+  <footer id="wb-info">
+    <div class="landscape">
+      <nav class="container wb-navcurr">
+        <h2 class="wb-inv">About government</h2>
+        <ul class="list-unstyled colcount-sm-2 colcount-md-3">
+          <li><a href="https://www.canada.ca/en/contact.html">Contact us</a></li>
+          <li><a href="https://www.canada.ca/en/government/dept.html">Departments and agencies</a></li>
+          <li><a href="https://www.canada.ca/en/government/publicservice.html">Public service and military</a></li>
+          <li><a href="https://www.canada.ca/en/news.html">News</a></li>
+          <li><a href="https://www.canada.ca/en/government/system/laws.html">Treaties, laws and regulations</a></li>
+          <li><a href="https://www.canada.ca/en/transparency/reporting.html">Government-wide reporting</a></li>
+          <li><a href="https://pm.gc.ca/eng">Prime Minister</a></li>
+          <li><a href="https://www.canada.ca/en/government/system.html">How government works</a></li>
+          <li><a href="https://open.canada.ca/en/">Open government</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="brand">
+      <div class="container">
+        <div class="row">
+          <nav class="col-md-9 col-lg-10 ftr-urlt-lnk">
+            <h2 class="wb-inv">About this site</h2>
+            <ul>
+              <li><a href="https://www.canada.ca/en/social.html">Social media</a></li>
+              <li><a href="https://www.canada.ca/en/mobile.html">Mobile applications</a></li>
+              <li><a href="https://www1.canada.ca/en/newsite.html">About Canada.ca</a></li>
+              <li><a href="https://www.canada.ca/en/transparency/terms.html">Terms and conditions</a></li>
+              <li><a href="https://www.canada.ca/en/transparency/privacy.html">Privacy</a></li>
+            </ul>
+          </nav>
+          <div class="col-xs-6 visible-sm visible-xs tofpg">
+            <a href="#wb-cont">Top of Page <span class="glyphicon glyphicon-chevron-up"></span></a>
+          </div>
+          <div class="col-xs-6 col-md-3 col-lg-2 text-right">
+            <img src="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/assets/wmms-blk.svg" alt="Symbol of the Government of Canada">
+          </div>
+        </div>
+      </div>
+    </div>
   </footer>
   <!--[if gte IE 9 | !IE ]><!-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
@@ -348,4 +323,5 @@
   <script src="../../GCWeb/js/theme.js"></script>
   <script src="https://gc-proto.github.io/cra-contactus/js/cannedsearch-querystring.js"></script>
 </body>
+
 </html>
