@@ -16370,3 +16370,11 @@ table.nws-tbl>thead>tr>th {
         margin-top: 20px
     }
 }
+
+.home .home-banner {
+    background-color: #eee;
+    background-image: url(banner.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    color: #fff
+}
