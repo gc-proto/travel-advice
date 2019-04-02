@@ -260,3 +260,15 @@ color: white !important;
 ul.fa-ul li h3 {
   margin-bottom: -1.5em;
 }
+
+.landscape {
+  background: #26374a url(landscape.png) no-repeat right bottom;
+
+  a {
+    color: #fff;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
